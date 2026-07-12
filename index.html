@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0043)file:///C:/Users/efi/Downloads/index_1.html -->
+<!-- saved from url=(0043)file:///C:/Users/efi/Downloads/index_2.html -->
 <html lang="he" dir="rtl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -180,20 +180,24 @@ svg .m.sel{stroke:#fff;animation:selpulse 1.3s ease-in-out infinite}
 .sheet.on{transform:translateY(0)}
 .grab{width:40px;height:4px;border-radius:3px;background:var(--line2);margin:8px auto 12px}
 .sheet h2{margin:2px 0 14px;font-size:19px;font-weight:800}
+.sheettop{position:sticky;top:0;z-index:6;background:var(--panel);margin:0 -16px 10px;padding:6px 16px 10px;border-bottom:1px solid var(--line)}
+.sheettop h2{margin:2px 0 12px}
+.sheettop #exsearch{margin-bottom:10px}
+.sheettop .catrow{margin-bottom:0}
 .field{margin-bottom:14px}
 .field label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px;font-weight:600}
 input[type=date],input[type=time],input[type=text]{width:100%;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;color:var(--text);font-family:inherit;font-size:15px}
 input:focus{outline:none;border-color:var(--accent)}
 
-.minimap{background:var(--panel2);border:1px solid var(--line);border-radius:16px;padding:12px;margin-bottom:14px}
+.minimap{background:var(--panel2);border:1px solid var(--line);border-radius:16px;padding:10px;margin-bottom:14px}
 .mmlabel{font-size:12px;color:var(--muted);font-weight:600;text-align:center;margin-bottom:4px}
 .mmfigs{display:flex;justify-content:center;gap:20px}
-.minimap svg{width:74px;height:auto}
+.minimap svg{width:58px;height:auto}
 
 .catrow{display:flex;gap:6px;margin-bottom:12px;overflow-x:auto;padding-bottom:2px}
 .catrow button{white-space:nowrap;padding:8px 14px;border-radius:20px;background:var(--panel2);border:1px solid var(--line);font-size:13px;font-weight:600;color:var(--muted)}
 .catrow button.on{background:var(--accent);color:#fff;border-color:transparent}
-.exlist{display:flex;flex-direction:column;gap:8px;margin-bottom:10px;max-height:270px;overflow-y:auto}
+.exlist{display:flex;flex-direction:column;gap:8px;margin-bottom:10px}
 .exitem{display:flex;flex-direction:column;background:var(--panel2);border:1px solid var(--line);border-radius:12px;overflow:hidden}
 .exmain{display:flex;align-items:center;justify-content:space-between;padding:11px 13px}
 .exbtns{display:flex;align-items:center;gap:8px;flex:none}
@@ -760,12 +764,12 @@ function afterDraftChange(){refreshList();refreshDraft();refreshMini()}
 function buildSheet(){
   const editing=!!state.editingId;
   document.getElementById('sheetBody').innerHTML=`
-    <div class="grab"></div><h2>${editing?'עריכת אימון':'אימון חדש'}</h2>
-    <div class="field"><label>תאריך</label><input type="date" id="wdate"></div>
-    <div class="minimap"><div class="mmlabel">שרירים שהאימון מפעיל</div>
-      <div class="mmfigs"><svg id="miniFront" viewBox="0 0 220 470"></svg><svg id="miniBack" viewBox="0 0 220 470"></svg></div></div>
-    <div class="field"><input type="text" id="exsearch" placeholder="🔍 חיפוש מתוך ${EX.length} תרגילים..."></div>
-    <div class="catrow" id="catrow">${Object.keys(CATS).map(c=>`<button data-cat="${c}">${CATS[c]}</button>`).join('')}</div>
+    <div class="grab"></div>
+    <div class="sheettop">
+      <h2>${editing?'עריכת אימון':'אימון חדש'}</h2>
+      <input type="text" id="exsearch" placeholder="🔍 חיפוש מתוך ${EX.length} תרגילים...">
+      <div class="catrow" id="catrow">${Object.keys(CATS).map(c=>`<button data-cat="${c}">${CATS[c]}</button>`).join('')}</div>
+    </div>
     <div class="exlist" id="exlist"></div>
     <button class="btn-ghost" id="toggleCustom">＋ תרגיל מותאם אישית</button>
     <div id="customArea" class="hidden">
@@ -775,6 +779,9 @@ function buildSheet(){
       <button class="btn-ghost" id="addCustom" style="margin-top:4px">הוסף לאימון</button>
     </div>
     <div id="draftbox"></div>
+    <div class="minimap"><div class="mmlabel">שרירים שהאימון מפעיל</div>
+      <div class="mmfigs"><svg id="miniFront" viewBox="0 0 220 470"></svg><svg id="miniBack" viewBox="0 0 220 470"></svg></div></div>
+    <div class="field"><label>תאריך האימון</label><input type="date" id="wdate"></div>
     <button class="btn-primary" id="saveW">${editing?'שמור שינויים':'שמור אימון'}</button>
     <button class="btn-ghost" id="cancelW">ביטול</button>`;
   const b=document.getElementById('sheetBody');
