@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0043)file:///C:/Users/efi/Downloads/index_1.html -->
+<html lang="he" dir="rtl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>מפת שרירים — יומן אימונים</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./index_files/css2" rel="stylesheet">
 <meta name="theme-color" content="#0B0B12">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="מפת שרירים">
 <meta name="description" content="יומן אימונים עם מפת חום של הגוף לפי אזורים שעבדו">
-<link rel="manifest" href="manifest.json">
-<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="manifest" href="file:///C:/Users/efi/Downloads/manifest.json">
+<link rel="apple-touch-icon" href="file:///C:/Users/efi/Downloads/icon-192.png">
 <style>
 :root{
   --ink:#0B0B12; --panel:#14141F; --panel2:#1C1C2B; --panel3:#232335;
@@ -30,7 +30,7 @@ body{
   background:var(--ink); color:var(--text);
   font-family:'Assistant',system-ui,sans-serif; min-height:100vh;
   background-image:radial-gradient(120% 60% at 50% -10%, rgba(124,92,255,.14), transparent 60%);
-  padding-bottom:88px;
+  padding-bottom:96px;
 }
 h1,h2,h3,.rubik{font-family:'Rubik',system-ui,sans-serif}
 .num{font-family:'Rubik',system-ui,sans-serif;font-variant-numeric:tabular-nums}
@@ -159,15 +159,17 @@ svg .m.sel{stroke:#fff;animation:selpulse 1.3s ease-in-out infinite}
 .btn-add-day{width:100%;background:rgba(124,92,255,.12);border:1px dashed var(--accent);color:var(--accent2);font-weight:700;font-size:15px;padding:14px;border-radius:14px;margin-bottom:14px}
 .btn-add-day:active{background:rgba(124,92,255,.2)}
 
-.fab{position:fixed;bottom:100px;inset-inline-start:50%;transform:translateX(-50%);z-index:40;
-  background:var(--accent);color:#fff;font-weight:700;font-size:15px;padding:13px 22px;border-radius:30px;
-  box-shadow:0 8px 28px rgba(124,92,255,.45);display:flex;align-items:center;gap:8px;max-width:492px;width:calc(100% - 32px);justify-content:center}
-.fab:active{transform:translateX(-50%) scale(.97)}
-.nav{position:fixed;bottom:0;inset-inline:0;z-index:50;background:rgba(11,11,18,.92);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
-.navin{max-width:520px;margin:0 auto;display:flex}
-.nav button{flex:1;padding:11px 0 14px;display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--muted2);font-size:11px;font-weight:600}
-.nav button .ni{font-size:20px;line-height:1}
-.nav button.on{color:var(--accent2)}
+.fab{position:fixed;bottom:20px;left:max(16px,calc(50% - 244px));z-index:40;
+  background:linear-gradient(135deg,#7C5CFF 0%,#B24BE0 55%,#E0417A 100%);color:#fff;font-weight:700;font-size:15px;
+  padding:13px 20px;border-radius:30px;border:1px solid rgba(255,255,255,.2);
+  box-shadow:0 12px 30px rgba(124,92,255,.55),0 2px 8px rgba(0,0,0,.4);
+  display:flex;align-items:center;gap:9px}
+.fab:active{transform:scale(.95)}
+.fab .fabic{width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.24);display:grid;place-items:center;font-size:20px;line-height:1;box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
+.topnav{display:flex;gap:6px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:6px;margin:4px 0 16px}
+.topnav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:9px 4px;border-radius:12px;color:var(--muted);font-size:12px;font-weight:600;transition:.2s}
+.topnav button .ni{font-size:24px;line-height:1}
+.topnav button.on{background:var(--accent);color:#fff;box-shadow:0 4px 14px rgba(124,92,255,.3)}
 
 .overlay{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:.25s}
 .overlay.on{opacity:1;pointer-events:auto}
@@ -192,7 +194,17 @@ input:focus{outline:none;border-color:var(--accent)}
 .catrow button{white-space:nowrap;padding:8px 14px;border-radius:20px;background:var(--panel2);border:1px solid var(--line);font-size:13px;font-weight:600;color:var(--muted)}
 .catrow button.on{background:var(--accent);color:#fff;border-color:transparent}
 .exlist{display:flex;flex-direction:column;gap:8px;margin-bottom:10px;max-height:270px;overflow-y:auto}
-.exitem{display:flex;align-items:center;justify-content:space-between;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:11px 13px}
+.exitem{display:flex;flex-direction:column;background:var(--panel2);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.exmain{display:flex;align-items:center;justify-content:space-between;padding:11px 13px}
+.exbtns{display:flex;align-items:center;gap:8px;flex:none}
+.infox{width:30px;height:30px;border-radius:9px;background:var(--panel3);color:var(--accent2);font-size:15px;font-weight:700;display:grid;place-items:center;flex:none}
+.infox:active{background:var(--accent);color:#fff}
+.exinfo{padding:0 13px 12px;border-top:1px solid var(--line);background:rgba(124,92,255,.05)}
+.cues{margin:10px 0 2px}
+.cue{font-size:12.5px;color:var(--muted);line-height:1.75}
+.cue b{color:var(--accent2);font-weight:700}
+.videobtn{display:inline-flex;align-items:center;gap:6px;margin-top:8px;background:rgba(255,60,60,.12);border:1px solid rgba(255,90,90,.45);color:#ff9090;font-weight:700;font-size:13px;padding:9px 14px;border-radius:12px;text-decoration:none}
+.videobtn:active{background:rgba(255,60,60,.22)}
 .exitem.on{border-color:var(--accent);background:rgba(124,92,255,.10)}
 .exitem .exn{font-size:14px;font-weight:600}
 .exitem .exm{font-size:11px;color:var(--muted);margin-top:2px}
@@ -218,6 +230,7 @@ input:focus{outline:none;border-color:var(--accent)}
 .btn-primary{width:100%;background:var(--accent);color:#fff;font-weight:700;font-size:16px;padding:15px;border-radius:14px;margin-top:6px}
 .btn-primary:disabled{opacity:.4}
 .btn-ghost{width:100%;background:var(--panel2);color:var(--text);font-weight:600;font-size:15px;padding:13px;border-radius:14px;border:1px solid var(--line);margin-top:8px}
+.backupstat{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center;font-size:13px;color:var(--text);font-weight:600;margin-bottom:14px}
 
 .remcard{display:flex;align-items:center;justify-content:space-between;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:10px}
 .remcard .rl .rd1{font-weight:700;font-size:15px}
@@ -242,7 +255,17 @@ input:focus{outline:none;border-color:var(--accent)}
   <div class="hdr">
     <div><div class="t">מפת <span>שרירים</span></div>
       <div class="sub" id="subtitle">מה עבד לאחרונה — ומה מחכה בתור</div></div>
-    <button class="iconbtn" id="resetBtn" title="איפוס">⟲</button>
+    <div style="display:flex;gap:8px">
+      <button class="iconbtn" id="backupBtn" title="גיבוי ושחזור">💾</button>
+      <button class="iconbtn" id="resetBtn" title="איפוס">⟲</button>
+    </div>
+  </div>
+
+  <div class="topnav" id="nav">
+    <button data-tab="map" class="on"><span class="ni">🫀</span><span>מפה</span></button>
+    <button data-tab="log"><span class="ni">📖</span><span>יומן</span></button>
+    <button data-tab="insights"><span class="ni">📊</span><span>תובנות</span></button>
+    <button data-tab="reminders"><span class="ni">⏰</span><span>תזכורות</span></button>
   </div>
 
   <div id="tab-map">
@@ -261,14 +284,64 @@ input:focus{outline:none;border-color:var(--accent)}
     <div class="mapwrap">
       <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
       <div class="figs">
-        <div class="fig"><div class="figlabel">קדמי</div><svg viewBox="0 0 220 470" id="svgFront"></svg></div>
-        <div class="fig"><div class="figlabel">אחורי</div><svg viewBox="0 0 220 470" id="svgBack"></svg></div>
+        <div class="fig"><div class="figlabel">קדמי</div><svg viewBox="0 0 220 470" id="svgFront">
+<circle class="base" cx="110" cy="28" r="19"></circle>
+<rect class="base" x="101" y="43" width="18" height="14" rx="6"></rect>
+<path class="m" data-muscle="shoulders" d="M56 88 Q76 78 91 92 Q80 107 65 105 Q55 100 56 88 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="shoulders" d="M164 88 Q144 78 129 92 Q140 107 155 105 Q165 100 164 88 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="chest" d="M108 95 Q90 93 84 105 Q82 121 99 127 Q108 122 108 108 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="chest" d="M112 95 Q130 93 136 105 Q138 121 121 127 Q112 122 112 108 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="grid-line" d="M97 106 Q101 114 100 121 M123 106 Q119 114 120 121"></path>
+<ellipse class="m" data-muscle="biceps" cx="59" cy="134" rx="10" ry="25" transform="rotate(9 59 134)" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></ellipse>
+<ellipse class="m" data-muscle="biceps" cx="161" cy="134" rx="10" ry="25" transform="rotate(-9 161 134)" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></ellipse>
+<ellipse class="m" data-muscle="forearms" cx="51" cy="186" rx="8.5" ry="26" transform="rotate(9 51 186)" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></ellipse>
+<ellipse class="m" data-muscle="forearms" cx="169" cy="186" rx="8.5" ry="26" transform="rotate(-9 169 186)" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></ellipse>
+<circle class="base" cx="47" cy="219" r="7"></circle><circle class="base" cx="173" cy="219" r="7"></circle>
+<path class="m" data-muscle="obliques" d="M89 140 Q83 162 91 190 Q96 178 96 150 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="obliques" d="M131 140 Q137 162 129 190 Q124 178 124 150 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<rect class="m" data-muscle="abs" x="98" y="139" width="11" height="15" rx="4" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></rect>
+<rect class="m" data-muscle="abs" x="111" y="139" width="11" height="15" rx="4" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></rect>
+<rect class="m" data-muscle="abs" x="98" y="157" width="11" height="15" rx="4" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></rect>
+<rect class="m" data-muscle="abs" x="111" y="157" width="11" height="15" rx="4" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></rect>
+<rect class="m" data-muscle="abs" x="98" y="175" width="11" height="16" rx="4" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></rect>
+<rect class="m" data-muscle="abs" x="111" y="175" width="11" height="16" rx="4" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></rect>
+<rect class="base" x="95" y="196" width="30" height="20" rx="8"></rect>
+<path class="m" data-muscle="quads" d="M87 224 Q83 270 96 315 Q104 298 104 250 Q104 228 96 224 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="quads" d="M133 224 Q137 270 124 315 Q116 298 116 250 Q116 228 124 224 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="grid-line" d="M96 240 Q94 275 99 304 M124 240 Q126 275 121 304"></path>
+<circle class="base" cx="99" cy="324" r="8"></circle><circle class="base" cx="121" cy="324" r="8"></circle>
+<path class="m" data-muscle="calves" d="M99 348 Q89 372 96 404 L102 404 Q109 372 99 348 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="calves" d="M121 348 Q131 372 124 404 L118 404 Q111 372 121 348 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<ellipse class="base" cx="99" cy="424" rx="9" ry="6"></ellipse><ellipse class="base" cx="121" cy="424" rx="9" ry="6"></ellipse></svg></div>
+        <div class="fig"><div class="figlabel">אחורי</div><svg viewBox="0 0 220 470" id="svgBack">
+<circle class="base" cx="110" cy="28" r="19"></circle>
+<rect class="base" x="101" y="43" width="18" height="14" rx="6"></rect>
+<path class="m" data-muscle="back" d="M88 56 L132 56 Q150 76 150 92 Q110 104 70 92 Q70 76 88 56 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="shoulders" d="M56 90 Q74 82 88 94 Q78 107 64 105 Q55 100 56 90 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="shoulders" d="M164 90 Q146 82 132 94 Q142 107 156 105 Q165 100 164 90 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="back" d="M93 100 Q77 120 83 160 Q91 186 107 190 Q109 150 107 100 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="back" d="M127 100 Q143 120 137 160 Q129 186 113 190 Q111 150 113 100 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="grid-line" d="M97 120 Q92 150 101 178 M123 120 Q128 150 119 178"></path>
+<ellipse class="m" data-muscle="triceps" cx="59" cy="134" rx="10" ry="25" transform="rotate(9 59 134)" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></ellipse>
+<ellipse class="m" data-muscle="triceps" cx="161" cy="134" rx="10" ry="25" transform="rotate(-9 161 134)" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></ellipse>
+<ellipse class="m" data-muscle="forearms" cx="51" cy="186" rx="8.5" ry="26" transform="rotate(9 51 186)" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></ellipse>
+<ellipse class="m" data-muscle="forearms" cx="169" cy="186" rx="8.5" ry="26" transform="rotate(-9 169 186)" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></ellipse>
+<circle class="base" cx="47" cy="219" r="7"></circle><circle class="base" cx="173" cy="219" r="7"></circle>
+<path class="m" data-muscle="lower_back" d="M96 190 Q110 196 124 190 Q122 210 110 216 Q98 210 96 190 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="glutes" d="M108 218 Q92 216 88 233 Q88 251 107 250 Q108 236 108 218 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="glutes" d="M112 218 Q128 216 132 233 Q132 251 113 250 Q112 236 112 218 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="hamstrings" d="M89 254 Q85 285 97 318 Q105 300 105 270 Q105 256 97 254 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="hamstrings" d="M131 254 Q135 285 123 318 Q115 300 115 270 Q115 256 123 254 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<circle class="base" cx="100" cy="346" r="7"></circle><circle class="base" cx="120" cy="346" r="7"></circle>
+<path class="m" data-muscle="calves" d="M100 352 Q88 372 96 402 L104 402 Q112 372 100 352 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="calves" d="M120 352 Q108 372 116 402 L124 402 Q132 372 120 352 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<ellipse class="base" cx="100" cy="426" rx="8" ry="6"></ellipse><ellipse class="base" cx="120" cy="426" rx="8" ry="6"></ellipse></svg></div>
       </div>
       <div class="legend"><span id="legLow">מנוחה</span><div class="legbar"></div><span id="legHigh">עומס גבוה</span></div>
     </div>
     <div class="quick">
-      <div class="qcard"><div class="qt">🔥 הכי מאומן</div><div id="topList"></div></div>
-      <div class="qcard"><div class="qt">🧊 הכי מוזנח</div><div id="neglectList"></div></div>
+      <div class="qcard"><div class="qt">🔥 הכי מאומן</div><div id="topList"><div class="qrow"><span>חזה</span><span class="dot" style="background:rgb(37,42,68)"></span></div><div class="qrow"><span>כתפיים</span><span class="dot" style="background:rgb(37,42,68)"></span></div><div class="qrow"><span>טרייספס</span><span class="dot" style="background:rgb(37,42,68)"></span></div><div class="qrow"><span>גב</span><span class="dot" style="background:rgb(37,42,68)"></span></div></div></div>
+      <div class="qcard"><div class="qt">🧊 הכי מוזנח</div><div id="neglectList"><div class="qrow"><span>תאומים</span><span class="dot" style="background:rgb(37,42,68)"></span></div><div class="qrow"><span>ישבן</span><span class="dot" style="background:rgb(37,42,68)"></span></div><div class="qrow"><span>ירך אחורית</span><span class="dot" style="background:rgb(37,42,68)"></span></div><div class="qrow"><span>ירך קדמית</span><span class="dot" style="background:rgb(37,42,68)"></span></div></div></div>
     </div>
     <div class="detail" id="detail"><div class="hint">👆 גע בשריר במפה כדי לראות פירוט והמלצות</div></div>
   </div>
@@ -278,13 +351,7 @@ input:focus{outline:none;border-color:var(--accent)}
   <div id="tab-reminders" class="hidden"><div id="remindersContent"></div></div>
 </div>
 
-<button class="fab" id="fab">＋ הוסף אימון</button>
-<div class="nav"><div class="navin" id="nav">
-  <button data-tab="map" class="on"><span class="ni">🫀</span>מפה</button>
-  <button data-tab="log"><span class="ni">📖</span>יומן</button>
-  <button data-tab="insights"><span class="ni">📊</span>תובנות</button>
-  <button data-tab="reminders"><span class="ni">⏰</span>תזכורות</button>
-</div></div>
+<button class="fab" id="fab"><span class="fabic">＋</span>הוסף אימון</button>
 <div class="overlay" id="overlay"></div>
 <div class="sheet" id="sheet"><div id="sheetBody"></div></div>
 <div class="toast" id="toast"></div>
@@ -298,48 +365,67 @@ const MUSCLES={
   quads:{he:'ירך קדמית',grp:'legs'}, hamstrings:{he:'ירך אחורית',grp:'legs'}, glutes:{he:'ישבן',grp:'legs'}, calves:{he:'תאומים',grp:'legs'},
 };
 const EX=[
-  {id:'pushup',he:'שכיבות סמיכה',cat:'push',m:{chest:1,triceps:.6,shoulders:.5,abs:.3}},
-  {id:'wide_pushup',he:'שכיבות סמיכה רחבות',cat:'push',m:{chest:1,shoulders:.5,triceps:.4}},
-  {id:'diamond',he:'שכיבות יהלום',cat:'push',m:{triceps:1,chest:.7,shoulders:.4}},
-  {id:'decline_pushup',he:'שכיבות בשיפוע (רגליים למעלה)',cat:'push',m:{chest:1,shoulders:.7,triceps:.5}},
-  {id:'archer_pushup',he:'שכיבות ארצ׳ר',cat:'push',m:{chest:1,triceps:.6,shoulders:.5}},
-  {id:'pseudo_planche',he:'פסאודו פלאנש',cat:'push',m:{shoulders:1,chest:.6,triceps:.5,abs:.4}},
-  {id:'dips',he:'מקבילים (Dips)',cat:'push',m:{triceps:1,chest:.8,shoulders:.5}},
-  {id:'hspu',he:'שכיבות בעמידת ידיים',cat:'push',m:{shoulders:1,triceps:.7}},
-  {id:'pike',he:'פייק פוש-אפ',cat:'push',m:{shoulders:1,triceps:.6}},
-  {id:'bench',he:'לחיצת חזה (משקולות)',cat:'push',m:{chest:1,triceps:.6,shoulders:.5}},
-  {id:'ohp',he:'לחיצת כתפיים (מוט)',cat:'push',m:{shoulders:1,triceps:.6}},
-  {id:'pullup',he:'מתח (Pull-ups)',cat:'pull',m:{back:1,biceps:.6,forearms:.4,shoulders:.2}},
-  {id:'chinup',he:'מתח סנטר (Chin-ups)',cat:'pull',m:{biceps:1,back:.7,forearms:.4}},
-  {id:'wide_pullup',he:'מתח אחיזה רחבה',cat:'pull',m:{back:1,biceps:.5,forearms:.4}},
-  {id:'row',he:'חתירה אוסטרלית',cat:'pull',m:{back:1,biceps:.5,forearms:.3}},
-  {id:'muscleup',he:'מאסל-אפ',cat:'pull',m:{back:.9,chest:.6,triceps:.6,biceps:.6}},
-  {id:'oa_row',he:'חתירת יד אחת (משקולת)',cat:'pull',m:{back:1,biceps:.6,forearms:.4}},
-  {id:'facepull',he:'פייס-פול',cat:'pull',m:{shoulders:.8,back:.6}},
-  {id:'front_lever',he:'פרונט לוור',cat:'pull',m:{back:1,abs:.7,biceps:.4}},
-  {id:'curl',he:'כפיפת מרפק (בייספס)',cat:'pull',m:{biceps:1,forearms:.4}},
-  {id:'hammer_curl',he:'האמר קרל',cat:'pull',m:{biceps:.8,forearms:.7}},
-  {id:'squat',he:'סקוואט',cat:'legs',m:{quads:1,glutes:.7,hamstrings:.4}},
-  {id:'pistol',he:'סקוואט פיסטול',cat:'legs',m:{quads:1,glutes:.8,abs:.3}},
-  {id:'lunge',he:'לאנג׳ים',cat:'legs',m:{quads:.8,glutes:.8,hamstrings:.5}},
-  {id:'bulgarian',he:'סקוואט בולגרי',cat:'legs',m:{quads:1,glutes:.8,hamstrings:.4}},
-  {id:'jump_squat',he:'סקוואט קפיצה',cat:'legs',m:{quads:1,glutes:.7,calves:.4}},
-  {id:'calf',he:'הרמות עקבים',cat:'legs',m:{calves:1}},
-  {id:'nordic',he:'נורדיק קרל',cat:'legs',m:{hamstrings:1,glutes:.4}},
-  {id:'bridge',he:'גשר ישבן',cat:'legs',m:{glutes:1,hamstrings:.5,lower_back:.4}},
-  {id:'hip_thrust',he:'היפ-תראסט',cat:'legs',m:{glutes:1,hamstrings:.6}},
-  {id:'wall_sit',he:'ישיבת קיר',cat:'legs',m:{quads:1,glutes:.4}},
-  {id:'box_jump',he:'קפיצה לקופסה',cat:'legs',m:{quads:.8,glutes:.6,calves:.6}},
-  {id:'plank',he:'פלאנק',cat:'core',m:{abs:1,obliques:.5,shoulders:.3}},
-  {id:'side_plank',he:'פלאנק צד',cat:'core',m:{obliques:1,abs:.5}},
-  {id:'legraise',he:'הרמות רגליים בתלייה',cat:'core',m:{abs:1,obliques:.4,forearms:.3}},
-  {id:'lsit',he:'L-sit',cat:'core',m:{abs:1,quads:.5,forearms:.4}},
-  {id:'hollow',he:'הולו הולד',cat:'core',m:{abs:1,obliques:.4}},
-  {id:'superman',he:'סופרמן',cat:'core',m:{lower_back:1,glutes:.5,back:.3}},
-  {id:'russian_twist',he:'רוסיאן טוויסט',cat:'core',m:{obliques:1,abs:.6}},
-  {id:'ab_wheel',he:'גלגל בטן',cat:'core',m:{abs:1,obliques:.4,shoulders:.3,lower_back:.3}},
-  {id:'dragon_flag',he:'דרגון פלאג',cat:'core',m:{abs:1,obliques:.5,lower_back:.4}},
-  {id:'mountain_climber',he:'הרים מטפסים',cat:'core',m:{abs:.8,obliques:.5,quads:.4}},
+  {id:'pushup',he:'שכיבות סמיכה',cat:'push',en:'push up',m:{chest:1,triceps:.6,shoulders:.5,abs:.3},cue:['גוף ישר מהראש עד העקבים, ליבה בכיווץ','מרפקים בכ-45° לגוף, לא מתנפנפים החוצה','ירידה עד שהחזה כמעט נוגע ברצפה']},
+  {id:'wide_pushup',he:'שכיבות סמיכה רחבות',cat:'push',en:'wide push up',m:{chest:1,shoulders:.5,triceps:.4},cue:['כפות ידיים רחבות מהכתפיים','החזה יורד בין הידיים','שמור על גב ניטרלי בלי שקיעת אגן']},
+  {id:'diamond',he:'שכיבות יהלום',cat:'push',en:'diamond push up',m:{triceps:1,chest:.7,shoulders:.4},cue:['אגודלים ואצבעות נוגעים (צורת יהלום)','מרפקים צמודים לגוף','דגש על פתיחת המרפק בעלייה']},
+  {id:'decline_pushup',he:'שכיבות בשיפוע (רגליים למעלה)',cat:'push',en:'decline push up',m:{chest:1,shoulders:.7,triceps:.5},cue:['רגליים על הגבהה, ידיים על הרצפה','ככל שהרגליים גבוהות – עומס גדול יותר על חזה עליון','אגן יציב בלי שקיעה']},
+  {id:'archer_pushup',he:'שכיבות ארצ׳ר',cat:'push',en:'archer push up',m:{chest:1,triceps:.6,shoulders:.5},cue:['יד אחת מתכופפת, השנייה נשארת ישרה לצד','העבר את המשקל לצד הפעיל','שלב ביניים בדרך לשכיבה על יד אחת']},
+  {id:'pseudo_planche',he:'פסאודו פלאנש',cat:'push',en:'pseudo planche push up',m:{shoulders:1,chest:.6,triceps:.5,abs:.4},cue:['כפות ידיים מסובבות, אצבעות לאחור','הטה את הכתפיים קדימה מעבר לידיים','ליבה חזקה, אגן לא שוקע']},
+  {id:'dips',he:'מקבילים (Dips)',cat:'push',en:'parallel bar dips',m:{triceps:1,chest:.8,shoulders:.5},cue:['כתפיים מושכות מטה, לא נצמדות לאוזניים','הטיה קדימה=חזה, זקוף=טרייספס','ירידה עד ~90° במרפק']},
+  {id:'hspu',he:'שכיבות בעמידת ידיים',cat:'push',en:'handstand push up',m:{shoulders:1,triceps:.7},cue:['עמידת ידיים נשענת על קיר','ירידה מבוקרת עד שהראש מתקרב לרצפה','ליבה וישבן בכיווץ לגוף ישר']},
+  {id:'pike',he:'פייק פוש-אפ',cat:'push',en:'pike push up',m:{shoulders:1,triceps:.6},cue:['אגן גבוה בצורת V הפוך','הורד את הראש קדימה אל הרצפה','דוחף בעיקר מהכתפיים']},
+  {id:'bench',he:'לחיצת חזה (משקולות)',cat:'push',en:'dumbbell bench press',m:{chest:1,triceps:.6,shoulders:.5},cue:['שכמות אסופות ולחוצות לספסל','המשקולות יורדות לגובה החזה','דחיפה בקו ישר מעל החזה']},
+  {id:'ohp',he:'לחיצת כתפיים (מוט)',cat:'push',en:'overhead press',m:{shoulders:1,triceps:.6},cue:['ליבה וישבן נעולים, בלי קשת בגב','המוט עובר קרוב לפנים','נעילה מלאה של המרפקים מעל הראש']},
+  {id:'pullup',he:'מתח (Pull-ups)',cat:'pull',en:'pull up',m:{back:1,biceps:.6,forearms:.4,shoulders:.2},cue:['אחיזה מעט רחבה מהכתפיים, כף יד קדימה','משוך את המרפקים מטה, שכמות ראשונות','סנטר מעל המוט, ירידה מלאה ומבוקרת']},
+  {id:'chinup',he:'מתח סנטר (Chin-ups)',cat:'pull',en:'chin up',m:{biceps:1,back:.7,forearms:.4},cue:['כף יד לאחור (סופינציה)','דגש על בייספס וגב','משוך את החזה אל המוט']},
+  {id:'wide_pullup',he:'מתח אחיזה רחבה',cat:'pull',en:'wide grip pull up',m:{back:1,biceps:.5,forearms:.4},cue:['אחיזה רחבה מאוד','דגש על רוחב הגב (לאטים)','טווח מלא בלי לנדנד את הגוף']},
+  {id:'row',he:'חתירה אוסטרלית',cat:'pull',en:'inverted row',m:{back:1,biceps:.5,forearms:.3},cue:['גוף ישר ואלכסוני מתחת למוט','משוך את החזה אל המוט','אופקי יותר = קשה יותר']},
+  {id:'muscleup',he:'מאסל-אפ',cat:'pull',en:'muscle up',m:{back:.9,chest:.6,triceps:.6,biceps:.6},cue:['מתח נפיץ + הטיה קדימה מעל המוט','מעבר מהיר של שורש כף היד','דורש בסיס חזק במתח ובמקבילים']},
+  {id:'oa_row',he:'חתירת יד אחת (משקולת)',cat:'pull',en:'one arm dumbbell row',m:{back:1,biceps:.6,forearms:.4},cue:['ברך ויד תומכות על ספסל','משוך את המשקולת לכיוון האגן','גב ישר, בלי סיבוב פלג הגוף']},
+  {id:'facepull',he:'פייס-פול',cat:'pull',en:'face pull',m:{shoulders:.8,back:.6},cue:['משוך גומייה/כבל לגובה הפנים','מרפקים גבוהים, פתח את השכמות','מצוין לבריאות הכתף וליציבה']},
+  {id:'front_lever',he:'פרונט לוור',cat:'pull',en:'front lever',m:{back:1,abs:.7,biceps:.4},cue:['גוף ישר ואופקי בתלייה מהמוט','ידיים ישרות, לאטים בכיווץ','התקדם משלב מכופף לגוף מלא']},
+  {id:'curl',he:'כפיפת מרפק (בייספס)',cat:'pull',en:'bicep curl',m:{biceps:1,forearms:.4},cue:['מרפקים צמודים לגוף','העלה בלי תנופה מהגב','כיווץ מלא למעלה, ירידה איטית']},
+  {id:'hammer_curl',he:'האמר קרל',cat:'pull',en:'hammer curl',m:{biceps:.8,forearms:.7},cue:['אחיזה נייטרלית (אגודלים למעלה)','דגש על אמות ובייספס','בלי נדנוד של הגוף']},
+  {id:'squat',he:'סקוואט',cat:'legs',en:'bodyweight squat',m:{quads:1,glutes:.7,hamstrings:.4},cue:['רגליים ברוחב אגן, אצבעות מעט החוצה','ברכיים בכיוון האצבעות','ירך מקבילה לרצפה, גב ישר']},
+  {id:'pistol',he:'סקוואט פיסטול',cat:'legs',en:'pistol squat',m:{quads:1,glutes:.8,abs:.3},cue:['סקוואט על רגל אחת, השנייה ישרה קדימה','שליטה בירידה, עקב על הרצפה','דורש ניידות וכוח – התחל עם אחיזה']},
+  {id:'lunge',he:'לאנג׳ים',cat:'legs',en:'lunges',m:{quads:.8,glutes:.8,hamstrings:.5},cue:['צעד קדימה, שתי הברכיים ל-90°','הברך האחורית קרוב לרצפה','טורסו זקוף לאורך התנועה']},
+  {id:'bulgarian',he:'סקוואט בולגרי',cat:'legs',en:'bulgarian split squat',m:{quads:1,glutes:.8,hamstrings:.4},cue:['רגל אחורית על ספסל','ירידה ישרה מטה על הרגל הקדמית','דגש על ירך וישבן']},
+  {id:'jump_squat',he:'סקוואט קפיצה',cat:'legs',en:'jump squat',m:{quads:1,glutes:.7,calves:.4},cue:['סקוואט ואז קפיצה נפיצה','נחיתה רכה עם ברכיים מכופפות','כוח מתפרץ – איכות לפני כמות']},
+  {id:'calf',he:'הרמות עקבים',cat:'legs',en:'calf raise',m:{calves:1},cue:['עמידה על קצה מדרגה','עלה גבוה על האצבעות, שהייה למעלה','ירידה איטית מתחת לגובה המדרגה']},
+  {id:'nordic',he:'נורדיק קרל',cat:'legs',en:'nordic hamstring curl',m:{hamstrings:1,glutes:.4},cue:['ברכיים מעוגנות, גוף ישר','הורד את הגוף לאט קדימה בבלימה','מתקדם – התחל עם טווח קטן']},
+  {id:'bridge',he:'גשר ישבן',cat:'legs',en:'glute bridge',m:{glutes:1,hamstrings:.5,lower_back:.4},cue:['שכיבה, כפות רגליים קרוב לישבן','דחוף את האגן למעלה','כיווץ ישבן חזק בשיא']},
+  {id:'hip_thrust',he:'היפ-תראסט',cat:'legs',en:'hip thrust',m:{glutes:1,hamstrings:.6},cue:['גב עליון נשען על ספסל','דחוף מהעקבים, אגן לגובה מקביל','כיווץ ישבן מלא, סנטר אסוף']},
+  {id:'wall_sit',he:'ישיבת קיר',cat:'legs',en:'wall sit',m:{quads:1,glutes:.4},cue:['גב לקיר, ברכיים ב-90°','ירך מקבילה לרצפה','החזק סטטי עם נשימה רגועה']},
+  {id:'box_jump',he:'קפיצה לקופסה',cat:'legs',en:'box jump',m:{quads:.8,glutes:.6,calves:.6},cue:['קפיצה נפיצה על קופסה יציבה','נחיתה רכה ושקטה במרכז','רד בבטחה, לא קופצים למטה']},
+  {id:'plank',he:'פלאנק',cat:'core',en:'plank',m:{abs:1,obliques:.5,shoulders:.3},cue:['מרפקים מתחת לכתפיים','גוף ישר, ליבה וישבן בכיווץ','בלי שקיעה או הרמה של האגן']},
+  {id:'side_plank',he:'פלאנק צד',cat:'core',en:'side plank',m:{obliques:1,abs:.5},cue:['מרפק מתחת לכתף, גוף בקו ישר','הרם את האגן, אל תיתן לו לצנוח','דגש על האלכסונים']},
+  {id:'legraise',he:'הרמות רגליים בתלייה',cat:'core',en:'hanging leg raise',m:{abs:1,obliques:.4,forearms:.3},cue:['תלוי מהמוט בלי נדנוד','הרם רגליים ישרות/מכופפות','שליטה בירידה, הבטן עובדת']},
+  {id:'lsit',he:'L-sit',cat:'core',en:'l-sit',m:{abs:1,quads:.5,forearms:.4},cue:['ידיים דוחפות את הרצפה/מקבילים','הרם ישבן ורגליים ישרות','החזק צורת L סטטית']},
+  {id:'hollow',he:'הולו הולד',cat:'core',en:'hollow body hold',m:{abs:1,obliques:.4},cue:['שכיבה על הגב, גב תחתון צמוד לרצפה','הרם כתפיים ורגליים','שמור על הליבה נעולה כל הזמן']},
+  {id:'superman',he:'סופרמן',cat:'core',en:'superman exercise',m:{lower_back:1,glutes:.5,back:.3},cue:['שכיבה על הבטן','הרם ידיים, חזה ורגליים יחד','כיווץ קצר למעלה, ירידה מבוקרת']},
+  {id:'russian_twist',he:'רוסיאן טוויסט',cat:'core',en:'russian twist',m:{obliques:1,abs:.6},cue:['ישיבה עם רגליים מורמות','סובב את הגו מצד לצד','נגיעה קלה של הידיים בצדדים']},
+  {id:'ab_wheel',he:'גלגל בטן',cat:'core',en:'ab wheel rollout',m:{abs:1,obliques:.4,shoulders:.3,lower_back:.3},cue:['אחיזה בגלגל, ברכיים על הרצפה','גלגל קדימה עם ליבה נעולה','בלי קשת בגב התחתון']},
+  {id:'dragon_flag',he:'דרגון פלאג',cat:'core',en:'dragon flag',m:{abs:1,obliques:.5,lower_back:.4},cue:['אחיזה מאחורי הראש על ספסל','הרם גוף ישר ורד לאט כמו לוח','מתקדם – שמור על הגוף נוקשה']},
+  {id:'mountain_climber',he:'הרים מטפסים',cat:'core',en:'mountain climbers',m:{abs:.8,obliques:.5,quads:.4},cue:['עמדת שכיבה, גב ישר','הבא ברכיים לחזה לסירוגין במהירות','ליבה יציבה, האגן לא קופץ']},
+  {id:'incline_pushup',he:'שכיבות בשיפוע (ידיים מוגבהות)',cat:'push',en:'incline push up',m:{chest:1,shoulders:.5,triceps:.4},cue:['ידיים על ספסל/מדרגה בגובה','גרסה קלה יותר לחזה','גוף ישר לכל אורך התנועה']},
+  {id:'knee_pushup',he:'שכיבות על הברכיים',cat:'push',en:'knee push up',m:{chest:1,triceps:.5,shoulders:.4},cue:['ברכיים על הרצפה','קו ישר מהברך עד הראש','נקודת פתיחה מצוינת למתחילים']},
+  {id:'clap_pushup',he:'שכיבות מחיאת כף',cat:'push',en:'clap push up',m:{chest:1,triceps:.6,shoulders:.5},cue:['שכיבה נפיצה עם דחיפה חזקה','מחיאת כף באוויר','נחיתה רכה – תרגיל פלייומטרי']},
+  {id:'scap_pull',he:'משיכות שכמות (סקאפולה)',cat:'pull',en:'scapular pull ups',m:{back:.8,forearms:.5},cue:['תלוי מהמוט עם ידיים ישרות','משוך רק את השכמות מטה','בונה בסיס ובריאות כתף למתח']},
+  {id:'neg_pullup',he:'מתח שלילי (ירידה איטית)',cat:'pull',en:'negative pull up',m:{back:1,biceps:.6,forearms:.4},cue:['התחל מהסנטר מעל המוט (קפיצה)','רד לאט ככל האפשר (3-5 שניות)','דרך מעולה לבנות כוח למתח']},
+  {id:'dead_hang',he:'תלייה על המוט (Dead Hang)',cat:'pull',en:'dead hang',m:{forearms:1,back:.4},cue:['תלייה מלאה מהמוט','כתפיים מעט אקטיביות','בונה כוח אחיזה ומאריך את הגב']},
+  {id:'typewriter_pullup',he:'מתח מכונת כתיבה',cat:'pull',en:'typewriter pull up',m:{back:1,biceps:.5,forearms:.4},cue:['מתח והזזה מצד לצד למעלה','המשקל עובר מיד ליד','מתקדם – דורש שליטה גבוהה']},
+  {id:'step_up',he:'עליית מדרגה (Step-up)',cat:'legs',en:'step up exercise',m:{quads:.9,glutes:.8,hamstrings:.3},cue:['עלה על מדרגה/קופסה עם רגל אחת','דחוף מהעקב, בלי קפיצה מהרגל האחורית','רד בשליטה']},
+  {id:'cossack',he:'סקוואט קוזאק',cat:'legs',en:'cossack squat',m:{quads:.9,glutes:.7,hamstrings:.4},cue:['רגליים רחבות, רד לצד אחד','רגל אחת מתכופפת, השנייה ישרה','דגש על ניידות ירך']},
+  {id:'sissy',he:'סיסי סקוואט',cat:'legs',en:'sissy squat',m:{quads:1},cue:['הישען לאחור על האצבעות','ברכיים קדימה, גוף ישר מהברך','מבודד את הירך הקדמית – בזהירות']},
+  {id:'single_calf',he:'הרמת עקב רגל אחת',cat:'legs',en:'single leg calf raise',m:{calves:1},cue:['הרמת עקב על רגל אחת','טווח מלא עם שהייה למעלה','אחיזה קלה לשיווי משקל']},
+  {id:'broad_jump',he:'קפיצת רוחק',cat:'legs',en:'broad jump',m:{quads:.9,glutes:.8,calves:.5},cue:['קפיצה קדימה למרחק','נחיתה רכה על שתי הרגליים','כוח מתפרץ לשרשרת האחורית']},
+  {id:'bicycle',he:'בטן אופניים',cat:'core',en:'bicycle crunch',m:{abs:1,obliques:.7},cue:['מרפק לכיוון הברך הנגדית','רגליים מתחלפות כמו רכיבה','תנועה איטית ומבוקרת, לא במהירות']},
+  {id:'flutter',he:'בעיטות רפרוף',cat:'core',en:'flutter kicks',m:{abs:1,quads:.3},cue:['שכיבה על הגב, רגליים ישרות','בעיטות קטנות מתחלפות מעלה-מטה','גב תחתון צמוד לרצפה']},
+  {id:'vup',he:'V-up',cat:'core',en:'v-up exercise',m:{abs:1,obliques:.4},cue:['ידיים ורגליים ישרות','הרם יחד ונגע בכפות הרגליים','צורת V, ירידה מבוקרת']},
+  {id:'reverse_crunch',he:'כפיפת בטן הפוכה',cat:'core',en:'reverse crunch',m:{abs:1},cue:['ברכיים מכופפות מעל האגן','גלגל את האגן לכיוון החזה','דגש על הבטן התחתונה']},
+  {id:'deadbug',he:'חיפושית מתה (Dead Bug)',cat:'core',en:'dead bug exercise',m:{abs:1,lower_back:.3},cue:['שכיבה, ידיים ורגליים למעלה','הורד יד ורגל נגדיות לאט','גב תחתון צמוד לרצפה – יציב מאוד']},
+  {id:'bird_dog',he:'ציפור-כלב (Bird Dog)',cat:'core',en:'bird dog exercise',m:{lower_back:.7,glutes:.5,abs:.5},cue:['על ארבע, גב ניטרלי','פשוט יד ורגל נגדיות','החזק שנייה בלי לסובב את האגן']},
+  {id:'toes_to_bar',he:'רגליים למוט (Toes to Bar)',cat:'core',en:'toes to bar',m:{abs:1,back:.4,forearms:.4},cue:['תלוי מהמוט','הבא רגליים ישרות עד למוט','שליטה בירידה, בלי נדנוד']},
 ];
 const EXBYID=Object.fromEntries(EX.map(e=>[e.id,e]));
 const CATS={push:'דחיפה',pull:'משיכה',legs:'רגליים',core:'ליבה'};
@@ -353,7 +439,7 @@ const Store={
 };
 const KEY_W='bodymap:workouts',KEY_R='bodymap:reminders',KEY_SEED='bodymap:seeded';
 let state={workouts:[],reminders:[],period:'week',mode:'volume',tab:'map',sel:null,
-  draft:[],draftDate:'',draftCat:'push',draftSearch:'',editingId:null,customSel:[],showCustom:false,
+  draft:[],draftDate:'',draftCat:'push',draftSearch:'',editingId:null,customSel:[],showCustom:false,expandedEx:null,
   selDate:'',logView:'month'};
 
 function todayISO(){return new Date().toISOString().slice(0,10)}
@@ -643,7 +729,7 @@ function hideSheet(){overlay.classList.remove('on');sheet.classList.remove('on')
 overlay.addEventListener('click',hideSheet);
 
 function openSheet(editing,dateForNew){
-  state.draft=[];state.editingId=null;state.draftSearch='';state.draftCat='push';state.customSel=[];state.showCustom=false;
+  state.draft=[];state.editingId=null;state.draftSearch='';state.draftCat='push';state.customSel=[];state.showCustom=false;state.expandedEx=null;
   if(editing){state.editingId=editing.id;state.draftDate=editing.date;
     state.draft=editing.entries.map(en=>{let x=en.exId||null;if(!x){const f=EX.find(q=>q.he===en.name);x=f?f.id:null}
       return{uid:uid(),exId:x,custom:en.custom||!x,name:en.name,m:en.m,sets:en.sets,reps:en.reps}});
@@ -700,7 +786,9 @@ function buildSheet(){
   b.querySelector('#catrow').addEventListener('click',ev=>{const x=ev.target.closest('[data-cat]');if(!x)return;
     state.draftCat=x.dataset.cat;state.draftSearch='';b.querySelector('#exsearch').value='';
     b.querySelectorAll('#catrow [data-cat]').forEach(c=>c.classList.toggle('on',c===x));refreshList()});
-  b.querySelector('#exlist').addEventListener('click',ev=>{const x=ev.target.closest('[data-add]');if(x)togglePreset(x.dataset.add)});
+  b.querySelector('#exlist').addEventListener('click',ev=>{
+    const info=ev.target.closest('[data-info]');if(info){state.expandedEx=state.expandedEx===info.dataset.info?null:info.dataset.info;refreshList();return}
+    const x=ev.target.closest('[data-add]');if(x)togglePreset(x.dataset.add)});
   b.querySelector('#toggleCustom').addEventListener('click',()=>{state.showCustom=!state.showCustom;b.querySelector('#customArea').classList.toggle('hidden',!state.showCustom)});
   b.querySelector('#customArea').addEventListener('click',ev=>{
     const mm=ev.target.closest('[data-cm]');if(mm){const k=mm.dataset.cm;
@@ -722,9 +810,18 @@ function refreshList(){
   const term=state.draftSearch;
   const list=term?EX.filter(x=>x.he.includes(term)):EX.filter(x=>x.cat===state.draftCat);
   if(!list.length){el.innerHTML='<div class="hint">לא נמצא תרגיל. אפשר להוסיף תרגיל מותאם אישית ↓</div>';return}
-  el.innerHTML=list.map(x=>{const on=state.draft.find(d=>d.exId===x.id);
-    return `<div class="exitem ${on?'on':''}"><div><div class="exn">${x.he}</div><div class="exm">${primaryMuscles(x)}</div></div>
-      <button class="addx" data-add="${x.id}">${on?'✓':'＋'}</button></div>`}).join('');
+  el.innerHTML=list.map(x=>{const on=state.draft.find(d=>d.exId===x.id),open=state.expandedEx===x.id;
+    return `<div class="exitem ${on?'on':''}">
+      <div class="exmain"><div><div class="exn">${x.he}</div><div class="exm">${primaryMuscles(x)}</div></div>
+        <div class="exbtns"><button class="infox" data-info="${x.id}">${open?'▲':'ⓘ'}</button>
+          <button class="addx" data-add="${x.id}">${on?'✓':'＋'}</button></div></div>
+      ${open?exInfoHtml(x):''}</div>`}).join('');
+}
+function exInfoHtml(x){
+  const cues=(x.cue||[]).map(c=>`<div class="cue"><b>•</b> ${c}</div>`).join('');
+  const q=encodeURIComponent((x.en||x.he)+' tutorial');
+  return `<div class="exinfo"><div class="cues">${cues}</div>
+    <a class="videobtn" href="https://www.youtube.com/results?search_query=${q}" target="_blank" rel="noopener">▶ צפה בסרטון הדגמה</a></div>`;
 }
 function refreshDraft(){
   const el=document.getElementById('draftbox');if(!el)return;
@@ -761,6 +858,48 @@ function saveDraft(){
 }
 function closeDraft(){state.draft=[];state.editingId=null;state.customSel=[];state.showCustom=false;hideSheet()}
 
+function exportData(){
+  const data={app:'body-map',version:1,exportedAt:new Date().toISOString(),workouts:state.workouts,reminders:state.reminders};
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download='body-map-backup-'+todayISO()+'.json';
+  document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),1500);
+  toast('קובץ הגיבוי ירד למכשיר 📤');
+}
+function importData(){
+  const inp=document.createElement('input');inp.type='file';inp.accept='application/json,.json';
+  inp.onchange=()=>{const f=inp.files&&inp.files[0];if(!f)return;
+    const r=new FileReader();
+    r.onload=()=>{try{
+      const d=JSON.parse(r.result);
+      const ws=Array.isArray(d.workouts)?d.workouts:null;
+      if(!ws)throw new Error('bad');
+      if(!confirm('שחזור יחליף את כל האימונים הנוכחיים ב-'+ws.length+' אימונים מהגיבוי. להמשיך?'))return;
+      state.workouts=ws;
+      if(Array.isArray(d.reminders))state.reminders=d.reminders;
+      saveW();saveR();hideSheet();renderAll();toast('הגיבוי שוחזר בהצלחה ✓');
+    }catch(e){alert('הקובץ אינו קובץ גיבוי תקין של האפליקציה.')}};
+    r.readAsText(f);
+  };
+  inp.click();
+}
+function openBackupSheet(){
+  const n=state.workouts.length;
+  document.getElementById('sheetBody').innerHTML=`<div class="grab"></div><h2>גיבוי ושחזור</h2>
+    <p style="color:var(--muted);font-size:13.5px;line-height:1.65;margin:0 0 16px">הנתונים נשמרים אוטומטית על המכשיר הזה. גיבוי מאפשר לשמור עותק לקובץ — כדי לא לאבד מידע, או להעביר את האימונים לטלפון/מחשב אחר.</p>
+    <div class="backupstat">${n} אימונים · ${state.reminders.length} תזכורות שמורים כרגע</div>
+    <button class="btn-primary" id="doExport">📤 ייצוא גיבוי לקובץ</button>
+    <button class="btn-ghost" id="doImport">📥 שחזור מקובץ גיבוי</button>
+    <button class="btn-ghost" id="closeBackup">סגור</button>
+    <p style="color:var(--muted2);font-size:12px;line-height:1.6;margin:14px 2px 0">טיפ: שמור את קובץ הגיבוי בגוגל דרייב או שלח לעצמך במייל/וואטסאפ — כך יהיה לך עותק גם בענן.</p>`;
+  const b=document.getElementById('sheetBody');
+  b.querySelector('#doExport').addEventListener('click',exportData);
+  b.querySelector('#doImport').addEventListener('click',importData);
+  b.querySelector('#closeBackup').addEventListener('click',hideSheet);
+  showSheet();
+}
 function openReminderSheet(){
   let sel={days:[],time:'18:00'};
   document.getElementById('sheetBody').innerHTML=`<div class="grab"></div><h2>תזכורת חדשה</h2>
@@ -785,7 +924,7 @@ function switchTab(t){
   state.tab=t;
   ['map','log','insights','reminders'].forEach(x=>document.getElementById('tab-'+x).classList.toggle('hidden',x!==t));
   document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.tab===t));
-  document.getElementById('fab').classList.toggle('hidden',t==='reminders');
+  document.getElementById('fab').classList.toggle('hidden',t==='reminders'||t==='log');
   const subs={map:'מה עבד לאחרונה — ומה מחכה בתור',log:'נווט לפי חודש · שבוע · יום',insights:'מגמות והמלצות',reminders:'תזכורות אימון'};
   document.getElementById('subtitle').textContent=subs[t];renderAll();
 }
@@ -801,10 +940,12 @@ document.getElementById('nav').addEventListener('click',ev=>{const b=ev.target.c
 document.getElementById('periodSeg').addEventListener('click',ev=>{const b=ev.target.closest('button');if(!b)return;state.period=b.dataset.p;document.querySelectorAll('#periodSeg button').forEach(x=>x.classList.toggle('on',x===b));renderAll()});
 document.getElementById('modeSeg').addEventListener('click',ev=>{const b=ev.target.closest('button');if(!b)return;state.mode=b.dataset.m;document.querySelectorAll('#modeSeg button').forEach(x=>x.classList.toggle('on',x===b));renderAll()});
 document.getElementById('fab').addEventListener('click',()=>openSheet(null,state.tab==='log'?state.selDate:undefined));
+document.getElementById('backupBtn').addEventListener('click',openBackupSheet);
 document.getElementById('resetBtn').addEventListener('click',()=>{if(confirm('לאפס את כל הנתונים ולהתחיל מחדש?')){state.workouts=[];saveW();Store.set(KEY_SEED,'1');renderAll();toast('הנתונים אופסו')}});
 
 (async function init(){await load();buildFigures();setupLogNav();state.selDate=todayISO();switchTab('map')})();
 if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}
 </script>
-</body>
-</html>
+
+
+</body></html>
