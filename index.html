@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0043)file:///C:/Users/efi/Downloads/index_5.html -->
+<!-- saved from url=(0044)file:///C:/Users/efi/Downloads/index_12.html -->
 <html lang="he" dir="rtl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -92,8 +92,18 @@ svg .m.sel{stroke:#fff;animation:selpulse 1.3s ease-in-out infinite}
 .quick{display:flex;gap:8px;margin-top:12px}
 .qcard{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:12px}
 .qcard .qt{font-size:11px;color:var(--muted);margin-bottom:8px;font-weight:600}
-.qrow{display:flex;align-items:center;justify-content:space-between;margin:5px 0;font-size:13px}
+.qrow{display:flex;align-items:center;justify-content:space-between;margin:5px 0;font-size:13px;cursor:pointer;border-radius:8px;padding:3px 4px;transition:background .15s}
+.qrow:active{background:var(--panel3)}
+.ncard .nm{cursor:pointer}
 .dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-inline-start:6px;vertical-align:middle}
+.neglectrow{display:flex;gap:10px;overflow-x:auto;padding:2px 2px 8px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+.neglectrow::-webkit-scrollbar{height:0}
+.ncard{flex:0 0 76%;max-width:290px;scroll-snap-align:start;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:13px 14px}
+.ncard .nh{display:flex;align-items:center;justify-content:space-between;margin-bottom:3px}
+.ncard .nm{font-family:'Rubik';font-weight:700;font-size:15px}
+.ncard .ns{font-size:12px;color:var(--muted);margin-bottom:10px}
+.ncard .nex{display:flex;flex-direction:column;gap:6px}
+.ncard .nex .chip{text-align:start}
 
 .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:14px}
 .card h3{margin:0 0 12px;font-size:15px;font-weight:700}
@@ -106,6 +116,21 @@ svg .m.sel{stroke:#fff;animation:selpulse 1.3s ease-in-out infinite}
 .fill{height:100%;border-radius:6px;transition:width .6s ease}
 .bal{margin:6px 0 14px}
 .bal .bh{display:flex;justify-content:space-between;font-size:13px;font-weight:600;margin-bottom:6px}
+.cardio-top{display:flex;align-items:center;gap:16px;margin-bottom:8px}
+.ring{position:relative;width:104px;height:104px;flex:none}
+.ring svg{width:104px;height:104px;display:block}
+.ringc{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ringc .rnum{font-family:'Rubik';font-weight:800;font-size:24px;line-height:1}
+.ringc .rlab{font-size:10px;color:var(--muted);margin-top:2px}
+.cardio-stats{flex:1;display:flex;flex-direction:column;gap:9px}
+.cstat{font-size:13px;color:var(--muted);display:flex;align-items:baseline}
+.cstat b{color:var(--text);font-size:17px;margin-inline-end:6px;font-weight:700}
+.cbars{margin-top:4px}
+.cbar{margin:8px 0}
+.cbt{display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:4px}
+.cbt .num{color:var(--muted)}
+.ctrack{height:8px;border-radius:5px;background:var(--panel3);overflow:hidden}
+.cfill{height:100%;border-radius:5px;background:linear-gradient(90deg,#3ED5C8,#7C5CFF);transition:width .6s ease}
 .balbar{position:relative;height:12px;border-radius:8px;background:linear-gradient(90deg,var(--accent),#2C2C40 50%,var(--hot));overflow:hidden}
 .balmark{position:absolute;top:-4px;width:4px;height:20px;background:#fff;border-radius:3px;transform:translateX(50%);box-shadow:0 0 8px rgba(255,255,255,.5)}
 .recos .reco{display:flex;gap:11px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--line)}
@@ -204,6 +229,12 @@ input:focus{outline:none;border-color:var(--accent)}
 .infox{width:30px;height:30px;border-radius:9px;background:var(--panel3);color:var(--accent2);font-size:15px;font-weight:700;display:grid;place-items:center;flex:none}
 .infox:active{background:var(--accent);color:#fff}
 .exinfo{padding:0 13px 12px;border-top:1px solid var(--line);background:rgba(124,92,255,.05)}
+.exfig{display:block;margin:10px auto 2px;width:120px;height:126px;background:var(--panel3);border-radius:12px}
+.exfig line{stroke:var(--accent2);stroke-width:4;stroke-linecap:round;fill:none}
+.exfig line.far{stroke:#5b4bb0}
+.exfig line.grnd{stroke:var(--line2);stroke-width:2}
+.exfig circle{stroke:var(--accent2);stroke-width:3.5;fill:none}
+.exfigcap{text-align:center;font-size:11px;color:var(--muted2);margin-bottom:2px}
 .cues{margin:10px 0 2px}
 .cue{font-size:12.5px;color:var(--muted);line-height:1.75}
 .cue b{color:var(--accent2);font-weight:700}
@@ -293,30 +324,30 @@ input:focus{outline:none;border-color:var(--accent)}
 <rect class="base" x="101" y="43" width="18" height="14" rx="6"></rect>
 <path class="m" data-muscle="delt_side" d="M56 90 Q60 80 74 86 Q73 99 65 104 Q57 100 56 90 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
 <path class="m" data-muscle="delt_side" d="M164 90 Q160 80 146 86 Q147 99 155 104 Q163 100 164 90 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
-<path class="m" data-muscle="delt_front" d="M76 86 Q88 84 91 95 Q90 106 80 106 Q73 98 76 86 Z" style="fill: rgb(82, 60, 145); filter: drop-shadow(rgb(112, 62, 178) 0px 0px 6.66667px); stroke: rgba(255, 255, 255, 0.1);"></path>
-<path class="m" data-muscle="delt_front" d="M144 86 Q132 84 129 95 Q130 106 140 106 Q147 98 144 86 Z" style="fill: rgb(82, 60, 145); filter: drop-shadow(rgb(112, 62, 178) 0px 0px 6.66667px); stroke: rgba(255, 255, 255, 0.1);"></path>
-<path class="m" data-muscle="chest_upper" d="M85 97 Q96 94 108 97 L108 105 Q96 103 85 105 Z" style="fill: rgb(82, 60, 145); filter: drop-shadow(rgb(112, 62, 178) 0px 0px 6.66667px); stroke: rgba(255, 255, 255, 0.1);"></path>
-<path class="m" data-muscle="chest_upper" d="M135 97 Q124 94 112 97 L112 105 Q124 103 135 105 Z" style="fill: rgb(82, 60, 145); filter: drop-shadow(rgb(112, 62, 178) 0px 0px 6.66667px); stroke: rgba(255, 255, 255, 0.1);"></path>
-<path class="m" data-muscle="chest_mid" d="M85 106 L108 106 L108 115 Q96 113 85 115 Z" style="fill: rgb(234, 95, 101); filter: drop-shadow(rgb(249, 137, 72) 0px 0px 12.1667px); stroke: rgba(255, 255, 255, 0.35);"></path>
-<path class="m" data-muscle="chest_mid" d="M135 106 L112 106 L112 115 Q124 113 135 115 Z" style="fill: rgb(234, 95, 101); filter: drop-shadow(rgb(249, 137, 72) 0px 0px 12.1667px); stroke: rgba(255, 255, 255, 0.35);"></path>
-<path class="m" data-muscle="chest_lower" d="M85 116 L108 116 L108 126 Q96 129 86 125 Z" style="fill: rgb(123, 63, 191); filter: drop-shadow(rgb(171, 64, 158) 0px 0px 8.5px); stroke: rgba(255, 255, 255, 0.35);"></path>
-<path class="m" data-muscle="chest_lower" d="M135 116 L112 116 L112 126 Q124 129 134 125 Z" style="fill: rgb(123, 63, 191); filter: drop-shadow(rgb(171, 64, 158) 0px 0px 8.5px); stroke: rgba(255, 255, 255, 0.35);"></path>
+<path class="m" data-muscle="delt_front" d="M76 86 Q88 84 91 95 Q90 106 80 106 Q73 98 76 86 Z" style="fill: rgb(48, 49, 91); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="delt_front" d="M144 86 Q132 84 129 95 Q130 106 140 106 Q147 98 144 86 Z" style="fill: rgb(48, 49, 91); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="chest_upper" d="M85 97 Q96 94 108 97 L108 105 Q96 103 85 105 Z" style="fill: rgb(48, 49, 91); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="chest_upper" d="M135 97 Q124 94 112 97 L112 105 Q124 103 135 105 Z" style="fill: rgb(48, 49, 91); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="chest_mid" d="M85 106 L108 106 L108 115 Q96 113 85 115 Z" style="fill: rgb(66, 58, 126); filter: drop-shadow(rgb(95, 61, 159) 0px 0px 5.91005px); stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="chest_mid" d="M135 106 L112 106 L112 115 Q124 113 135 115 Z" style="fill: rgb(66, 58, 126); filter: drop-shadow(rgb(95, 61, 159) 0px 0px 5.91005px); stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="chest_lower" d="M85 116 L108 116 L108 126 Q96 129 86 125 Z" style="fill: rgb(53, 52, 102); filter: drop-shadow(rgb(69, 59, 130) 0px 0px 4.74603px); stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="chest_lower" d="M135 116 L112 116 L112 126 Q124 129 134 125 Z" style="fill: rgb(53, 52, 102); filter: drop-shadow(rgb(69, 59, 130) 0px 0px 4.74603px); stroke: rgba(255, 255, 255, 0.1);"></path>
 <ellipse class="m" data-muscle="biceps" cx="59" cy="134" rx="10" ry="25" transform="rotate(9 59 134)" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></ellipse>
 <ellipse class="m" data-muscle="biceps" cx="161" cy="134" rx="10" ry="25" transform="rotate(-9 161 134)" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></ellipse>
 <ellipse class="m" data-muscle="forearm_front" cx="51" cy="186" rx="8.5" ry="26" transform="rotate(9 51 186)" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></ellipse>
 <ellipse class="m" data-muscle="forearm_front" cx="169" cy="186" rx="8.5" ry="26" transform="rotate(-9 169 186)" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></ellipse>
 <circle class="base" cx="47" cy="219" r="7"></circle><circle class="base" cx="173" cy="219" r="7"></circle>
-<path class="m" data-muscle="obliques" d="M89 140 Q83 162 91 190 Q96 178 96 150 Z" style="fill: rgb(82, 60, 145); filter: drop-shadow(rgb(112, 62, 178) 0px 0px 6.66667px); stroke: rgba(255, 255, 255, 0.1);"></path>
-<path class="m" data-muscle="obliques" d="M131 140 Q137 162 129 190 Q124 178 124 150 Z" style="fill: rgb(82, 60, 145); filter: drop-shadow(rgb(112, 62, 178) 0px 0px 6.66667px); stroke: rgba(255, 255, 255, 0.1);"></path>
-<rect class="m" data-muscle="abs_upper" x="98" y="139" width="11" height="15" rx="4" style="fill: rgb(255, 154, 60); filter: drop-shadow(rgb(255, 154, 60) 0px 0px 14px); stroke: rgba(255, 255, 255, 0.35);"></rect>
-<rect class="m" data-muscle="abs_upper" x="111" y="139" width="11" height="15" rx="4" style="fill: rgb(255, 154, 60); filter: drop-shadow(rgb(255, 154, 60) 0px 0px 14px); stroke: rgba(255, 255, 255, 0.35);"></rect>
-<rect class="m" data-muscle="abs_upper" x="98" y="157" width="11" height="15" rx="4" style="fill: rgb(255, 154, 60); filter: drop-shadow(rgb(255, 154, 60) 0px 0px 14px); stroke: rgba(255, 255, 255, 0.35);"></rect>
-<rect class="m" data-muscle="abs_upper" x="111" y="157" width="11" height="15" rx="4" style="fill: rgb(255, 154, 60); filter: drop-shadow(rgb(255, 154, 60) 0px 0px 14px); stroke: rgba(255, 255, 255, 0.35);"></rect>
-<rect class="m" data-muscle="abs_lower" x="98" y="175" width="11" height="16" rx="4" style="fill: rgb(190, 64, 145); filter: drop-shadow(rgb(229, 78, 113) 0px 0px 10.3333px); stroke: rgba(255, 255, 255, 0.35);"></rect>
-<rect class="m" data-muscle="abs_lower" x="111" y="175" width="11" height="16" rx="4" style="fill: rgb(190, 64, 145); filter: drop-shadow(rgb(229, 78, 113) 0px 0px 10.3333px); stroke: rgba(255, 255, 255, 0.35);"></rect>
+<path class="m" data-muscle="obliques" d="M89 140 Q83 162 91 190 Q96 178 96 150 Z" style="fill: rgb(48, 49, 91); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="obliques" d="M131 140 Q137 162 129 190 Q124 178 124 150 Z" style="fill: rgb(48, 49, 91); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<rect class="m" data-muscle="abs_upper" x="98" y="139" width="11" height="15" rx="4" style="fill: rgb(165, 64, 163); filter: drop-shadow(rgb(213, 65, 129) 0px 0px 9.63492px); stroke: rgba(255, 255, 255, 0.35);"></rect>
+<rect class="m" data-muscle="abs_upper" x="111" y="139" width="11" height="15" rx="4" style="fill: rgb(165, 64, 163); filter: drop-shadow(rgb(213, 65, 129) 0px 0px 9.63492px); stroke: rgba(255, 255, 255, 0.35);"></rect>
+<rect class="m" data-muscle="abs_upper" x="98" y="157" width="11" height="15" rx="4" style="fill: rgb(165, 64, 163); filter: drop-shadow(rgb(213, 65, 129) 0px 0px 9.63492px); stroke: rgba(255, 255, 255, 0.35);"></rect>
+<rect class="m" data-muscle="abs_upper" x="111" y="157" width="11" height="15" rx="4" style="fill: rgb(165, 64, 163); filter: drop-shadow(rgb(213, 65, 129) 0px 0px 9.63492px); stroke: rgba(255, 255, 255, 0.35);"></rect>
+<rect class="m" data-muscle="abs_lower" x="98" y="175" width="11" height="16" rx="4" style="fill: rgb(58, 56, 114); filter: drop-shadow(rgb(82, 60, 145) 0px 0px 5.32804px); stroke: rgba(255, 255, 255, 0.1);"></rect>
+<rect class="m" data-muscle="abs_lower" x="111" y="175" width="11" height="16" rx="4" style="fill: rgb(58, 56, 114); filter: drop-shadow(rgb(82, 60, 145) 0px 0px 5.32804px); stroke: rgba(255, 255, 255, 0.1);"></rect>
 <rect class="base" x="95" y="196" width="30" height="20" rx="8"></rect>
-<path class="m" data-muscle="quads" d="M85 224 Q82 268 94 312 Q101 296 101 250 Q101 228 95 224 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
-<path class="m" data-muscle="quads" d="M135 224 Q138 268 126 312 Q119 296 119 250 Q119 228 125 224 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="quads" d="M85 224 Q82 268 94 312 Q101 296 101 250 Q101 228 95 224 Z" style="fill: rgb(237, 103, 95); filter: drop-shadow(rgb(252, 146, 66) 0px 0px 12.4286px); stroke: rgba(255, 255, 255, 0.35);"></path>
+<path class="m" data-muscle="quads" d="M135 224 Q138 268 126 312 Q119 296 119 250 Q119 228 125 224 Z" style="fill: rgb(237, 103, 95); filter: drop-shadow(rgb(252, 146, 66) 0px 0px 12.4286px); stroke: rgba(255, 255, 255, 0.35);"></path>
 <path class="m" data-muscle="adductors" d="M103 228 Q101 262 105 300 L110 300 L110 228 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
 <path class="m" data-muscle="adductors" d="M117 228 Q119 262 115 300 L110 300 L110 228 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
 <circle class="base" cx="99" cy="320" r="8"></circle><circle class="base" cx="121" cy="320" r="8"></circle>
@@ -333,35 +364,53 @@ input:focus{outline:none;border-color:var(--accent)}
 <path class="m" data-muscle="delt_rear" d="M144 88 Q132 86 129 97 Q130 108 140 108 Q147 100 144 88 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
 <path class="m" data-muscle="rhomboids" d="M97 88 L123 88 L120 106 L100 106 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
 <path class="m" data-muscle="traps_mid" d="M100 108 L120 108 L110 140 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
-<path class="m" data-muscle="lats" d="M94 100 Q78 120 84 158 Q92 184 106 188 Q108 148 106 100 Z" style="fill: rgb(82, 60, 145); filter: drop-shadow(rgb(112, 62, 178) 0px 0px 6.66667px); stroke: rgba(255, 255, 255, 0.1);"></path>
-<path class="m" data-muscle="lats" d="M126 100 Q142 120 136 158 Q128 184 114 188 Q112 148 114 100 Z" style="fill: rgb(82, 60, 145); filter: drop-shadow(rgb(112, 62, 178) 0px 0px 6.66667px); stroke: rgba(255, 255, 255, 0.1);"></path>
-<path class="m" data-muscle="triceps_lat" d="M59 110 Q47 114 49 134 Q47 155 58 158 L59 158 Z" style="fill: rgb(82, 60, 145); filter: drop-shadow(rgb(112, 62, 178) 0px 0px 6.66667px); stroke: rgba(255, 255, 255, 0.1);"></path>
-<path class="m" data-muscle="triceps_long" d="M59 110 Q71 114 69 134 Q71 155 60 158 L59 158 Z" style="fill: rgb(82, 60, 145); filter: drop-shadow(rgb(112, 62, 178) 0px 0px 6.66667px); stroke: rgba(255, 255, 255, 0.1);"></path>
-<path class="m" data-muscle="triceps_lat" d="M161 110 Q173 114 171 134 Q173 155 162 158 L161 158 Z" style="fill: rgb(82, 60, 145); filter: drop-shadow(rgb(112, 62, 178) 0px 0px 6.66667px); stroke: rgba(255, 255, 255, 0.1);"></path>
-<path class="m" data-muscle="triceps_long" d="M161 110 Q149 114 151 134 Q149 155 160 158 L161 158 Z" style="fill: rgb(82, 60, 145); filter: drop-shadow(rgb(112, 62, 178) 0px 0px 6.66667px); stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="lats" d="M94 100 Q78 120 84 158 Q92 184 106 188 Q108 148 106 100 Z" style="fill: rgb(48, 49, 91); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="lats" d="M126 100 Q142 120 136 158 Q128 184 114 188 Q112 148 114 100 Z" style="fill: rgb(48, 49, 91); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="triceps_lat" d="M59 110 Q47 114 49 134 Q47 155 58 158 L59 158 Z" style="fill: rgb(48, 49, 91); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="triceps_long" d="M59 110 Q71 114 69 134 Q71 155 60 158 L59 158 Z" style="fill: rgb(48, 49, 91); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="triceps_lat" d="M161 110 Q173 114 171 134 Q173 155 162 158 L161 158 Z" style="fill: rgb(48, 49, 91); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="triceps_long" d="M161 110 Q149 114 151 134 Q149 155 160 158 L161 158 Z" style="fill: rgb(48, 49, 91); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
 <ellipse class="m" data-muscle="forearm_back" cx="51" cy="186" rx="8.5" ry="26" transform="rotate(9 51 186)" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></ellipse>
 <ellipse class="m" data-muscle="forearm_back" cx="169" cy="186" rx="8.5" ry="26" transform="rotate(-9 169 186)" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></ellipse>
 <circle class="base" cx="47" cy="219" r="7"></circle><circle class="base" cx="173" cy="219" r="7"></circle>
-<path class="m" data-muscle="erectors" d="M97 190 Q110 196 123 190 Q122 212 110 218 Q98 212 97 190 Z" style="fill: rgb(62, 58, 122); filter: drop-shadow(rgb(91, 60, 155) 0px 0px 5.75px); stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="erectors" d="M97 190 Q110 196 123 190 Q122 212 110 218 Q98 212 97 190 Z" style="fill: rgb(45, 47, 85); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
 <path class="m" data-muscle="glute_med" d="M87 216 Q80 220 83 232 Q89 228 91 220 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
 <path class="m" data-muscle="glute_med" d="M133 216 Q140 220 137 232 Q131 228 129 220 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
-<path class="m" data-muscle="glute_max" d="M108 220 Q92 218 88 236 Q89 254 107 253 Q108 238 108 220 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
-<path class="m" data-muscle="glute_max" d="M112 220 Q128 218 132 236 Q131 254 113 253 Q112 238 112 220 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
-<path class="m" data-muscle="hamstrings" d="M89 256 Q85 288 97 318 Q104 300 104 272 Q104 258 97 256 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
-<path class="m" data-muscle="hamstrings" d="M131 256 Q135 288 123 318 Q116 300 116 272 Q116 258 123 256 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="glute_max" d="M108 220 Q92 218 88 236 Q89 254 107 253 Q108 238 108 220 Z" style="fill: rgb(237, 103, 95); filter: drop-shadow(rgb(252, 146, 66) 0px 0px 12.4286px); stroke: rgba(255, 255, 255, 0.35);"></path>
+<path class="m" data-muscle="glute_max" d="M112 220 Q128 218 132 236 Q131 254 113 253 Q112 238 112 220 Z" style="fill: rgb(237, 103, 95); filter: drop-shadow(rgb(252, 146, 66) 0px 0px 12.4286px); stroke: rgba(255, 255, 255, 0.35);"></path>
+<path class="m" data-muscle="hamstrings" d="M89 256 Q85 288 97 318 Q104 300 104 272 Q104 258 97 256 Z" style="fill: rgb(237, 103, 95); filter: drop-shadow(rgb(252, 146, 66) 0px 0px 12.4286px); stroke: rgba(255, 255, 255, 0.35);"></path>
+<path class="m" data-muscle="hamstrings" d="M131 256 Q135 288 123 318 Q116 300 116 272 Q116 258 123 256 Z" style="fill: rgb(237, 103, 95); filter: drop-shadow(rgb(252, 146, 66) 0px 0px 12.4286px); stroke: rgba(255, 255, 255, 0.35);"></path>
 <circle class="base" cx="99" cy="322" r="8"></circle><circle class="base" cx="121" cy="322" r="8"></circle>
-<path class="m" data-muscle="gastro" d="M100 350 Q90 366 95 386 L105 386 Q110 366 100 350 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
-<path class="m" data-muscle="gastro" d="M120 350 Q110 366 115 386 L125 386 Q130 366 120 350 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
-<path class="m" data-muscle="soleus" d="M96 386 Q94 398 100 410 Q106 398 104 386 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
-<path class="m" data-muscle="soleus" d="M116 386 Q114 398 120 410 Q126 398 124 386 Z" style="fill: rgb(37, 42, 68); filter: none; stroke: rgba(255, 255, 255, 0.1);"></path>
+<path class="m" data-muscle="gastro" d="M100 350 Q90 366 95 386 L105 386 Q110 366 100 350 Z" style="fill: rgb(255, 154, 60); filter: drop-shadow(rgb(255, 154, 60) 0px 0px 14px); stroke: rgba(255, 255, 255, 0.35);"></path>
+<path class="m" data-muscle="gastro" d="M120 350 Q110 366 115 386 L125 386 Q130 366 120 350 Z" style="fill: rgb(255, 154, 60); filter: drop-shadow(rgb(255, 154, 60) 0px 0px 14px); stroke: rgba(255, 255, 255, 0.35);"></path>
+<path class="m" data-muscle="soleus" d="M96 386 Q94 398 100 410 Q106 398 104 386 Z" style="fill: rgb(210, 65, 132); filter: drop-shadow(rgb(234, 95, 101) 0px 0px 10.8571px); stroke: rgba(255, 255, 255, 0.35);"></path>
+<path class="m" data-muscle="soleus" d="M116 386 Q114 398 120 410 Q126 398 124 386 Z" style="fill: rgb(210, 65, 132); filter: drop-shadow(rgb(234, 95, 101) 0px 0px 10.8571px); stroke: rgba(255, 255, 255, 0.35);"></path>
 <ellipse class="base" cx="100" cy="418" rx="8" ry="6"></ellipse><ellipse class="base" cx="120" cy="418" rx="8" ry="6"></ellipse></svg></div>
       </div>
       <div class="legend"><span id="legLow">מנוחה</span><div class="legbar"></div><span id="legHigh">עומס גבוה</span></div>
     </div>
     <div class="quick">
-      <div class="qcard"><div class="qt">🔥 הכי מאומן</div><div id="topList"><div class="qrow"><span>בטן עליונה</span><span class="dot" style="background:rgb(255,154,60)"></span></div><div class="qrow"><span>חזה אמצעי</span><span class="dot" style="background:rgb(234,95,101)"></span></div><div class="qrow"><span>בטן תחתונה</span><span class="dot" style="background:rgb(190,64,145)"></span></div><div class="qrow"><span>חזה תחתון</span><span class="dot" style="background:rgb(123,63,191)"></span></div></div></div>
-      <div class="qcard"><div class="qt">🧊 הכי מוזנח</div><div id="neglectList"><div class="qrow"><span>סוליאוס</span><span class="dot" style="background:rgb(37,42,68)"></span></div><div class="qrow"><span>תאומים (גסטרוקנמיוס)</span><span class="dot" style="background:rgb(37,42,68)"></span></div><div class="qrow"><span>ישבן אמצעי</span><span class="dot" style="background:rgb(37,42,68)"></span></div><div class="qrow"><span>ישבן גדול</span><span class="dot" style="background:rgb(37,42,68)"></span></div></div></div>
+      <div class="qcard"><div class="qt">🔥 הכי מאומן</div><div id="topList"><div class="qrow" data-selmuscle="gastro"><span>תאומים (גסטרוקנמיוס)</span><span class="dot" style="background:rgb(255,154,60)"></span></div><div class="qrow" data-selmuscle="quads"><span>ירך קדמית (קוואד)</span><span class="dot" style="background:rgb(237,103,95)"></span></div><div class="qrow" data-selmuscle="hamstrings"><span>ירך אחורית (המסטרינג)</span><span class="dot" style="background:rgb(237,103,95)"></span></div><div class="qrow" data-selmuscle="glute_max"><span>ישבן גדול</span><span class="dot" style="background:rgb(237,103,95)"></span></div></div></div>
+      <div class="qcard"><div class="qt">🧊 הכי מוזנח</div><div id="neglectList"><div class="qrow" data-selmuscle="glute_med"><span>ישבן אמצעי</span><span class="dot" style="background:rgb(37,42,68)"></span></div><div class="qrow" data-selmuscle="adductors"><span>מקרבים (פנים הירך)</span><span class="dot" style="background:rgb(37,42,68)"></span></div><div class="qrow" data-selmuscle="rhomboids"><span>מעוינים (רומבואידים)</span><span class="dot" style="background:rgb(37,42,68)"></span></div><div class="qrow" data-selmuscle="traps_mid"><span>טרפז אמצעי/תחתון</span><span class="dot" style="background:rgb(37,42,68)"></span></div></div></div>
     </div>
+    <div class="section-title" style="margin-bottom:4px">🧊 אזורים מוזנחים — הצעות לאימון</div>
+    <div class="neglectrow" id="neglectRow"><div class="ncard"><div class="nh"><span class="nm" data-selmuscle="delt_side">כתף צדית</span><span class="dot" style="background:rgb(37,42,68)"></span></div>
+      <div class="ns">עדיין לא אומן · נפח 0</div>
+      <div class="nex"><button class="chip add" data-quickex="hspu">＋ שכיבות בעמידת ידיים</button><button class="chip add" data-quickex="ohp">＋ לחיצת כתפיים (מוט)</button></div></div><div class="ncard"><div class="nh"><span class="nm" data-selmuscle="delt_rear">כתף אחורית</span><span class="dot" style="background:rgb(37,42,68)"></span></div>
+      <div class="ns">עדיין לא אומן · נפח 0</div>
+      <div class="nex"><button class="chip add" data-quickex="facepull">＋ פייס-פול</button></div></div><div class="ncard"><div class="nh"><span class="nm" data-selmuscle="biceps">בייספס</span><span class="dot" style="background:rgb(37,42,68)"></span></div>
+      <div class="ns">עדיין לא אומן · נפח 0</div>
+      <div class="nex"><button class="chip add" data-quickex="chinup">＋ מתח סנטר (Chin-ups)</button><button class="chip add" data-quickex="curl">＋ כפיפת מרפק (בייספס)</button><button class="chip add" data-quickex="hammer_curl">＋ האמר קרל</button></div></div><div class="ncard"><div class="nh"><span class="nm" data-selmuscle="forearm_front">אמה קדמית (כופפים)</span><span class="dot" style="background:rgb(37,42,68)"></span></div>
+      <div class="ns">עדיין לא אומן · נפח 0</div>
+      <div class="nex"><button class="chip add" data-quickex="dead_hang">＋ תלייה על המוט (Dead Hang)</button><button class="chip add" data-quickex="hammer_curl">＋ האמר קרל</button></div></div><div class="ncard"><div class="nh"><span class="nm" data-selmuscle="forearm_back">אמה אחורית (פושטים)</span><span class="dot" style="background:rgb(37,42,68)"></span></div>
+      <div class="ns">עדיין לא אומן · נפח 0</div>
+      <div class="nex"><button class="chip add" data-quickex="dead_hang">＋ תלייה על המוט (Dead Hang)</button></div></div><div class="ncard"><div class="nh"><span class="nm" data-selmuscle="traps_upper">טרפז עליון</span><span class="dot" style="background:rgb(37,42,68)"></span></div>
+      <div class="ns">עדיין לא אומן · נפח 0</div>
+      <div class="nex"><button class="chip add" data-quickex="shrugs">＋ משיכות כתפיים (Shrugs)</button></div></div><div class="ncard"><div class="nh"><span class="nm" data-selmuscle="traps_mid">טרפז אמצעי/תחתון</span><span class="dot" style="background:rgb(37,42,68)"></span></div>
+      <div class="ns">עדיין לא אומן · נפח 0</div>
+      <div class="nex"><button class="chip add" data-quickex="scap_pull">＋ משיכות שכמות (סקאפולה)</button><button class="chip add" data-quickex="row">＋ חתירה אוסטרלית</button><button class="chip add" data-quickex="oa_row">＋ חתירת יד אחת (משקולת)</button></div></div><div class="ncard"><div class="nh"><span class="nm" data-selmuscle="rhomboids">מעוינים (רומבואידים)</span><span class="dot" style="background:rgb(37,42,68)"></span></div>
+      <div class="ns">עדיין לא אומן · נפח 0</div>
+      <div class="nex"><button class="chip add" data-quickex="row">＋ חתירה אוסטרלית</button><button class="chip add" data-quickex="scap_pull">＋ משיכות שכמות (סקאפולה)</button><button class="chip add" data-quickex="oa_row">＋ חתירת יד אחת (משקולת)</button></div></div></div>
     <div class="detail" id="detail"><div class="hint">👆 גע בשריר במפה כדי לראות פירוט והמלצות</div></div>
   </div>
 
@@ -411,19 +460,20 @@ const EX=[
   {id:'front_lever',he:'פרונט לוור',cat:'pull',en:'front lever',m:{lats:1,abs_lower:.7,abs_upper:.6,erectors:.4,biceps:.4,forearm_front:.3},cue:['גוף ישר ואופקי בתלייה מהמוט','ידיים ישרות, לאטים בכיווץ','התקדם משלב מכופף לגוף מלא']},
   {id:'curl',he:'כפיפת מרפק (בייספס)',cat:'pull',en:'bicep curl',m:{biceps:1,forearm_front:.4},cue:['מרפקים צמודים לגוף','העלה בלי תנופה מהגב','כיווץ מלא למעלה, ירידה איטית']},
   {id:'hammer_curl',he:'האמר קרל',cat:'pull',en:'hammer curl',m:{forearm_front:.7,forearm_back:.5,biceps:.7},cue:['אחיזה נייטרלית (אגודלים למעלה)','דגש על אמות ובייספס','בלי נדנוד של הגוף']},
+  {id:'shrugs',he:'משיכות כתפיים (Shrugs)',cat:'pull',en:'dumbbell shrugs',m:{traps_upper:1,forearm_front:.3},cue:['משקולות לצדדים, ידיים ישרות','משוך את הכתפיים ישר למעלה לכיוון האוזניים','שהייה קצרה למעלה, ירידה מבוקרת בלי סיבוב']},
   {id:'squat',he:'סקוואט',cat:'legs',en:'bodyweight squat',m:{quads:1,glute_max:.7,adductors:.5,hamstrings:.4,erectors:.3},cue:['רגליים ברוחב אגן, אצבעות מעט החוצה','ברכיים בכיוון האצבעות','ירך מקבילה לרצפה, גב ישר']},
-  {id:'pistol',he:'סקוואט פיסטול',cat:'legs',en:'pistol squat',m:{quads:1,glute_max:.8,adductors:.5,abs_lower:.3,hamstrings:.3},cue:['סקוואט על רגל אחת, השנייה ישרה קדימה','שליטה בירידה, עקב על הרצפה','דורש ניידות וכוח – התחל עם אחיזה']},
-  {id:'lunge',he:'לאנג׳ים',cat:'legs',en:'lunges',m:{quads:.8,glute_max:.8,hamstrings:.5,adductors:.4},cue:['צעד קדימה, שתי הברכיים ל-90°','הברך האחורית קרוב לרצפה','טורסו זקוף לאורך התנועה']},
-  {id:'bulgarian',he:'סקוואט בולגרי',cat:'legs',en:'bulgarian split squat',m:{quads:1,glute_max:.8,adductors:.4,hamstrings:.4},cue:['רגל אחורית על ספסל','ירידה ישרה מטה על הרגל הקדמית','דגש על ירך וישבן']},
+  {id:'pistol',he:'סקוואט פיסטול',cat:'legs',en:'pistol squat',m:{quads:1,glute_max:.8,glute_med:.4,adductors:.5,abs_lower:.3,hamstrings:.3},cue:['סקוואט על רגל אחת, השנייה ישרה קדימה','שליטה בירידה, עקב על הרצפה','דורש ניידות וכוח – התחל עם אחיזה']},
+  {id:'lunge',he:'לאנג׳ים',cat:'legs',en:'lunges',m:{quads:.8,glute_max:.8,glute_med:.4,hamstrings:.5,adductors:.4},cue:['צעד קדימה, שתי הברכיים ל-90°','הברך האחורית קרוב לרצפה','טורסו זקוף לאורך התנועה']},
+  {id:'bulgarian',he:'סקוואט בולגרי',cat:'legs',en:'bulgarian split squat',m:{quads:1,glute_max:.8,glute_med:.4,adductors:.4,hamstrings:.4},cue:['רגל אחורית על ספסל','ירידה ישרה מטה על הרגל הקדמית','דגש על ירך וישבן']},
   {id:'jump_squat',he:'סקוואט קפיצה',cat:'legs',en:'jump squat',m:{quads:1,glute_max:.7,gastro:.5,soleus:.3,adductors:.3},cue:['סקוואט ואז קפיצה נפיצה','נחיתה רכה עם ברכיים מכופפות','כוח מתפרץ – איכות לפני כמות']},
   {id:'calf',he:'הרמות עקבים',cat:'legs',en:'calf raise',m:{gastro:1,soleus:.8},cue:['עמידה על קצה מדרגה','עלה גבוה על האצבעות, שהייה למעלה','ירידה איטית מתחת לגובה המדרגה']},
   {id:'nordic',he:'נורדיק קרל',cat:'legs',en:'nordic hamstring curl',m:{hamstrings:1,glute_max:.4,gastro:.2},cue:['ברכיים מעוגנות, גוף ישר','הורד את הגוף לאט קדימה בבלימה','מתקדם – התחל עם טווח קטן']},
-  {id:'bridge',he:'גשר ישבן',cat:'legs',en:'glute bridge',m:{glute_max:1,hamstrings:.5,erectors:.4},cue:['שכיבה, כפות רגליים קרוב לישבן','דחוף את האגן למעלה','כיווץ ישבן חזק בשיא']},
-  {id:'hip_thrust',he:'היפ-תראסט',cat:'legs',en:'hip thrust',m:{glute_max:1,hamstrings:.6,quads:.3},cue:['גב עליון נשען על ספסל','דחוף מהעקבים, אגן לגובה מקביל','כיווץ ישבן מלא, סנטר אסוף']},
+  {id:'bridge',he:'גשר ישבן',cat:'legs',en:'glute bridge',m:{glute_max:1,glute_med:.3,hamstrings:.5,erectors:.4},cue:['שכיבה, כפות רגליים קרוב לישבן','דחוף את האגן למעלה','כיווץ ישבן חזק בשיא']},
+  {id:'hip_thrust',he:'היפ-תראסט',cat:'legs',en:'hip thrust',m:{glute_max:1,glute_med:.3,hamstrings:.6,quads:.3},cue:['גב עליון נשען על ספסל','דחוף מהעקבים, אגן לגובה מקביל','כיווץ ישבן מלא, סנטר אסוף']},
   {id:'wall_sit',he:'ישיבת קיר',cat:'legs',en:'wall sit',m:{quads:1,glute_max:.4,adductors:.3},cue:['גב לקיר, ברכיים ב-90°','ירך מקבילה לרצפה','החזק סטטי עם נשימה רגועה']},
   {id:'box_jump',he:'קפיצה לקופסה',cat:'legs',en:'box jump',m:{quads:.8,glute_max:.6,gastro:.6,soleus:.4},cue:['קפיצה נפיצה על קופסה יציבה','נחיתה רכה ושקטה במרכז','רד בבטחה, לא קופצים למטה']},
   {id:'plank',he:'פלאנק',cat:'core',en:'plank',m:{abs_upper:1,abs_lower:.8,obliques:.5,delt_front:.3,erectors:.2},cue:['מרפקים מתחת לכתפיים','גוף ישר, ליבה וישבן בכיווץ','בלי שקיעה או הרמה של האגן']},
-  {id:'side_plank',he:'פלאנק צד',cat:'core',en:'side plank',m:{obliques:1,abs_upper:.4,abs_lower:.4,delt_side:.3},cue:['מרפק מתחת לכתף, גוף בקו ישר','הרם את האגן, אל תיתן לו לצנוח','דגש על האלכסונים']},
+  {id:'side_plank',he:'פלאנק צד',cat:'core',en:'side plank',m:{obliques:1,abs_upper:.4,abs_lower:.4,glute_med:.4,delt_side:.3},cue:['מרפק מתחת לכתף, גוף בקו ישר','הרם את האגן, אל תיתן לו לצנוח','דגש על האלכסונים']},
   {id:'legraise',he:'הרמות רגליים בתלייה',cat:'core',en:'hanging leg raise',m:{abs_lower:1,abs_upper:.5,obliques:.3,forearm_front:.3},cue:['תלוי מהמוט בלי נדנוד','הרם רגליים ישרות/מכופפות','שליטה בירידה, הבטן עובדת']},
   {id:'lsit',he:'L-sit',cat:'core',en:'l-sit',m:{abs_lower:1,abs_upper:.7,quads:.5,forearm_front:.4},cue:['ידיים דוחפות את הרצפה/מקבילים','הרם ישבן ורגליים ישרות','החזק צורת L סטטית']},
   {id:'hollow',he:'הולו הולד',cat:'core',en:'hollow body hold',m:{abs_upper:1,abs_lower:1,obliques:.4},cue:['שכיבה על הגב, גב תחתון צמוד לרצפה','הרם כתפיים ורגליים','שמור על הליבה נעולה כל הזמן']},
@@ -439,10 +489,12 @@ const EX=[
   {id:'neg_pullup',he:'מתח שלילי (ירידה איטית)',cat:'pull',en:'negative pull up',m:{lats:1,biceps:.6,traps_mid:.4,rhomboids:.4,forearm_front:.4},cue:['התחל מהסנטר מעל המוט (קפיצה)','רד לאט ככל האפשר (3-5 שניות)','דרך מעולה לבנות כוח למתח']},
   {id:'dead_hang',he:'תלייה על המוט (Dead Hang)',cat:'pull',en:'dead hang',m:{forearm_front:1,forearm_back:.6,lats:.4,traps_upper:.3},cue:['תלייה מלאה מהמוט','כתפיים מעט אקטיביות','בונה כוח אחיזה ומאריך את הגב']},
   {id:'typewriter_pullup',he:'מתח מכונת כתיבה',cat:'pull',en:'typewriter pull up',m:{lats:1,biceps:.5,rhomboids:.5,forearm_front:.4},cue:['מתח והזזה מצד לצד למעלה','המשקל עובר מיד ליד','מתקדם – דורש שליטה גבוהה']},
-  {id:'step_up',he:'עליית מדרגה (Step-up)',cat:'legs',en:'step up exercise',m:{quads:.9,glute_max:.8,hamstrings:.3,adductors:.3},cue:['עלה על מדרגה/קופסה עם רגל אחת','דחוף מהעקב, בלי קפיצה מהרגל האחורית','רד בשליטה']},
-  {id:'cossack',he:'סקוואט קוזאק',cat:'legs',en:'cossack squat',m:{adductors:1,quads:.8,glute_max:.6,hamstrings:.3},cue:['רגליים רחבות, רד לצד אחד','רגל אחת מתכופפת, השנייה ישרה','דגש על ניידות ירך']},
+  {id:'step_up',he:'עליית מדרגה (Step-up)',cat:'legs',en:'step up exercise',m:{quads:.9,glute_max:.8,glute_med:.4,hamstrings:.3,adductors:.3},cue:['עלה על מדרגה/קופסה עם רגל אחת','דחוף מהעקב, בלי קפיצה מהרגל האחורית','רד בשליטה']},
+  {id:'cossack',he:'סקוואט קוזאק',cat:'legs',en:'cossack squat',m:{adductors:1,quads:.8,glute_max:.6,glute_med:.5,hamstrings:.3},cue:['רגליים רחבות, רד לצד אחד','רגל אחת מתכופפת, השנייה ישרה','דגש על ניידות ירך']},
   {id:'sissy',he:'סיסי סקוואט',cat:'legs',en:'sissy squat',m:{quads:1},cue:['הישען לאחור על האצבעות','ברכיים קדימה, גוף ישר מהברך','מבודד את הירך הקדמית – בזהירות']},
   {id:'single_calf',he:'הרמת עקב רגל אחת',cat:'legs',en:'single leg calf raise',m:{gastro:1,soleus:.8},cue:['הרמת עקב על רגל אחת','טווח מלא עם שהייה למעלה','אחיזה קלה לשיווי משקל']},
+  {id:'side_leg_raise',he:'הרחקת ירך (בשכיבה על הצד)',cat:'legs',en:'side lying leg raise',m:{glute_med:1,glute_max:.3,obliques:.3},cue:['שכיבה על הצד, רגליים ישרות','הרם את הרגל העליונה לצד בשליטה','אגן יציב, בלי להתגלגל אחורה']},
+  {id:'clamshell',he:'צדפה (Clamshell)',cat:'legs',en:'clamshell exercise',m:{glute_med:1,glute_max:.4},cue:['שכיבה על הצד, ברכיים מכופפות','פתח את הברך העליונה כמו צדפה','כפות הרגליים צמודות, האגן לא זז']},
   {id:'broad_jump',he:'קפיצת רוחק',cat:'legs',en:'broad jump',m:{quads:.9,glute_max:.8,hamstrings:.4,gastro:.5,soleus:.3},cue:['קפיצה קדימה למרחק','נחיתה רכה על שתי הרגליים','כוח מתפרץ לשרשרת האחורית']},
   {id:'bicycle',he:'בטן אופניים',cat:'core',en:'bicycle crunch',m:{obliques:1,abs_upper:.6,abs_lower:.6},cue:['מרפק לכיוון הברך הנגדית','רגליים מתחלפות כמו רכיבה','תנועה איטית ומבוקרת, לא במהירות']},
   {id:'flutter',he:'בעיטות רפרוף',cat:'core',en:'flutter kicks',m:{abs_lower:1,abs_upper:.4,quads:.3},cue:['שכיבה על הגב, רגליים ישרות','בעיטות קטנות מתחלפות מעלה-מטה','גב תחתון צמוד לרצפה']},
@@ -451,9 +503,19 @@ const EX=[
   {id:'deadbug',he:'חיפושית מתה (Dead Bug)',cat:'core',en:'dead bug exercise',m:{abs_upper:.7,abs_lower:.8,erectors:.3},cue:['שכיבה, ידיים ורגליים למעלה','הורד יד ורגל נגדיות לאט','גב תחתון צמוד לרצפה – יציב מאוד']},
   {id:'bird_dog',he:'ציפור-כלב (Bird Dog)',cat:'core',en:'bird dog exercise',m:{erectors:.8,glute_max:.5,abs_upper:.4,abs_lower:.4},cue:['על ארבע, גב ניטרלי','פשוט יד ורגל נגדיות','החזק שנייה בלי לסובב את האגן']},
   {id:'toes_to_bar',he:'רגליים למוט (Toes to Bar)',cat:'core',en:'toes to bar',m:{abs_lower:1,abs_upper:.6,lats:.4,forearm_front:.4},cue:['תלוי מהמוט','הבא רגליים ישרות עד למוט','שליטה בירידה, בלי נדנוד']},
+  {id:'run',he:'ריצה',cat:'cardio',type:'cardio',en:'running form',m:{quads:.6,hamstrings:.6,glute_max:.6,gastro:.7,soleus:.5,abs_upper:.2},cue:['נחיתה מתחת למרכז הכובד, לא לפני','צעדים קצרים ותכופים (קדנס גבוה)','כתפיים רפויות, מבט קדימה']},
+  {id:'walk',he:'הליכה נמרצת',cat:'cardio',type:'cardio',en:'brisk walking workout',m:{quads:.4,hamstrings:.4,glute_max:.4,gastro:.5,soleus:.5,abs_upper:.1},cue:['צעד מהיר ורציף','הנע את הידיים בקצב','יציבה זקופה, מבט קדימה']},
+  {id:'swim',he:'שחייה',cat:'cardio',type:'cardio',en:'freestyle swimming technique',m:{lats:.8,delt_rear:.5,delt_side:.5,chest_mid:.5,triceps_long:.4,abs_upper:.4,glute_max:.3,forearm_back:.2},cue:['גוף אופקי וארוך במים','נשימה קצבית לצד','בעיטות מהירך, לא מהברך']},
+  {id:'stairs',he:'עלייה במדרגות',cat:'cardio',type:'cardio',en:'stair climbing workout',m:{quads:.8,glute_max:.8,gastro:.6,hamstrings:.4,soleus:.4},cue:['דחוף מהעקב על כל מדרגה','גב זקוף, ליבה אקטיבית','קצב אחיד, נשימה מבוקרת']},
+  {id:'cycle',he:'רכיבה על אופניים',cat:'cardio',type:'cardio',en:'indoor cycling',m:{quads:.8,glute_max:.5,hamstrings:.4,gastro:.4},cue:['גובה אוכף נכון (ברך מעט כפופה למטה)','דיווש עגול ואחיד','גב ישר, כתפיים רפויות']},
+  {id:'jump_rope',he:'קפיצה בחבל',cat:'cardio',type:'cardio',en:'jump rope basics',m:{gastro:.8,soleus:.6,quads:.4,delt_side:.3,forearm_front:.3},cue:['קפיצות קטנות על כריות כף הרגל','מרפקים צמודים, סיבוב מהמפרק','קצב אחיד ורך']},
+  {id:'rowing',he:'חתירה במכונה',cat:'cardio',type:'cardio',en:'rowing machine technique',m:{lats:.7,rhomboids:.6,traps_mid:.5,biceps:.4,quads:.5,glute_max:.4,erectors:.4},cue:['סדר התנועה: רגליים → גב → ידיים','דחיפה חזקה מהרגליים','חזרה מבוקרת עם גב ישר']},
 ];
 const EXBYID=Object.fromEntries(EX.map(e=>[e.id,e]));
-const CATS={push:'דחיפה',pull:'משיכה',legs:'רגליים',core:'ליבה'};
+const CATS={push:'דחיפה',pull:'משיכה',legs:'רגליים',core:'ליבה',cardio:'לב-ריאה'};
+const CARDIO_FACTOR=0.18;
+function isCardio(en){return en&&en.type==='cardio'}
+function entryVol(en,mk){const w=en.m[mk]||0;if(!w)return 0;return isCardio(en)?(en.minutes||0)*w*CARDIO_FACTOR:(en.sets||0)*w;}
 const DAYS_HE=['א׳','ב׳','ג׳','ד׳','ה׳','ו׳','ש׳'];
 
 /* ================= STORAGE ================= */
@@ -494,7 +556,7 @@ function saveR(){Store.set(KEY_R,JSON.stringify(state.reminders))}
 /* ================= COMPUTE ================= */
 function periodDays(p){return p==='week'?7:p==='month'?30:p==='year'?365:99999}
 function filtered(){const cut=daysAgoISO(periodDays(state.period));return state.workouts.filter(w=>w.date>=cut)}
-function volumeByMuscle(ws){const v={};for(const k in MUSCLES)v[k]=0;for(const w of ws)for(const en of w.entries)for(const mk in en.m)v[mk]+=en.sets*en.m[mk];return v}
+function volumeByMuscle(ws){const v={};for(const k in MUSCLES)v[k]=0;for(const w of ws)for(const en of w.entries)for(const mk in en.m)v[mk]+=entryVol(en,mk);return v}
 function lastTrained(mk){let best=null;for(const w of state.workouts)for(const en of w.entries)if((en.m[mk]||0)>0){if(!best||w.date>best)best=w.date}return best}
 function heatValues(){
   const v=volumeByMuscle(filtered());const res={};
@@ -598,19 +660,37 @@ function paintMap(){
 }
 
 /* ================= MAP EXTRAS ================= */
+function selectMuscle(k){state.sel=k;paintMap();renderDetail();const d=document.getElementById('detail');if(d)d.scrollIntoView({behavior:'smooth',block:'nearest'});}
 function renderQuick(){
   const {vol,res}=heatValues();
   const arr=Object.keys(MUSCLES).map(k=>({k,v:vol[k]})).sort((a,b)=>b.v-a.v);
-  const rowHtml=o=>`<div class="qrow"><span>${MUSCLES[o.k].he}</span><span class="dot" style="background:${heatColor(res[o.k]||0)}"></span></div>`;
+  const rowHtml=o=>`<div class="qrow" data-selmuscle="${o.k}"><span>${MUSCLES[o.k].he}</span><span class="dot" style="background:${heatColor(res[o.k]||0)}"></span></div>`;
   document.getElementById('topList').innerHTML=arr.slice(0,4).map(rowHtml).join('');
   document.getElementById('neglectList').innerHTML=arr.slice(-4).reverse().map(rowHtml).join('');
+  document.querySelectorAll('#topList [data-selmuscle], #neglectList [data-selmuscle]').forEach(b=>b.addEventListener('click',()=>selectMuscle(b.dataset.selmuscle)));
 }
 function suggestExercises(mk){return EX.filter(x=>(x.m[mk]||0)>=.6).sort((a,b)=>(b.m[mk]||0)-(a.m[mk]||0)).slice(0,3)}
+function renderNeglectRow(){
+  const el=document.getElementById('neglectRow');if(!el)return;
+  const {vol,res}=heatValues();
+  const arr=Object.keys(MUSCLES).map(k=>({k,v:vol[k]})).sort((a,b)=>a.v-b.v).slice(0,8);
+  el.innerHTML=arr.map(o=>{
+    const lt=lastTrained(o.k),d=lt?daysBetween(lt,todayISO()):null;
+    const st=lt?(d===0?'אומן היום':d===1?'אומן אתמול':`לפני ${d} ימים`):'עדיין לא אומן';
+    const sug=suggestExercises(o.k);
+    const chips=sug.length?sug.map(x=>`<button class="chip add" data-quickex="${x.id}">＋ ${x.he}</button>`).join(''):'<span class="ns">אין תרגיל ממופה</span>';
+    return `<div class="ncard"><div class="nh"><span class="nm" data-selmuscle="${o.k}">${MUSCLES[o.k].he}</span><span class="dot" style="background:${heatColor(res[o.k]||0)}"></span></div>
+      <div class="ns">${st} · נפח ${o.v.toFixed(0)}</div>
+      <div class="nex">${chips}</div></div>`;
+  }).join('');
+  el.querySelectorAll('[data-quickex]').forEach(b=>b.addEventListener('click',()=>{openSheetToExercise(b.dataset.quickex)}));
+  el.querySelectorAll('[data-selmuscle]').forEach(b=>b.addEventListener('click',()=>selectMuscle(b.dataset.selmuscle)));
+}
 function renderDetail(){
   const el=document.getElementById('detail');
   if(!state.sel){el.innerHTML='<div class="hint">👆 גע בשריר במפה כדי לראות פירוט והמלצות</div>';return}
   const mk=state.sel,{vol}=heatValues();
-  const sets=filtered().flatMap(w=>w.entries).filter(en=>(en.m[mk]||0)>=.6).reduce((s,en)=>s+en.sets,0);
+  const sets=filtered().flatMap(w=>w.entries).filter(en=>(en.m[mk]||0)>=.6).reduce((s,en)=>s+(en.sets||0),0);
   const lt=lastTrained(mk),d=lt?daysBetween(lt,todayISO()):null;
   const ltTxt=lt?(d===0?'היום':d===1?'אתמול':`לפני ${d} ימים`):'עדיין לא אומן';
   let status,scol;
@@ -623,7 +703,7 @@ function renderDetail(){
       <div class="stat"><div class="v" style="font-size:14px;padding-top:3px">${ltTxt}</div><div class="l">אומן לאחרונה</div></div></div>
     <div class="sugg"><div class="lab">תרגילים מומלצים לאזור:</div>
       <div class="chips">${sug.map(x=>`<button class="chip add" data-quickex="${x.id}">＋ ${x.he}</button>`).join('')}</div></div>`;
-  el.querySelectorAll('[data-quickex]').forEach(b=>b.addEventListener('click',()=>{openSheet();togglePreset(b.dataset.quickex)}));
+  el.querySelectorAll('[data-quickex]').forEach(b=>b.addEventListener('click',()=>{openSheetToExercise(b.dataset.quickex)}));
 }
 
 /* ================= INSIGHTS ================= */
@@ -654,6 +734,31 @@ function buildRecos(){
   return recos;
 }
 function periodLabel(){return{week:'השבוע האחרון',month:'החודש האחרון',year:'השנה האחרונה',all:'כל הזמן'}[state.period]}
+function cardioBreakdown(ws){const b={};let total=0;ws.forEach(w=>w.entries.forEach(en=>{if(isCardio(en)){const min=en.minutes||0;b[en.name]=(b[en.name]||0)+min;total+=min;}}));return{b,total};}
+function cardioSessions(ws){let n=0;ws.forEach(w=>{if(w.entries.some(isCardio))n++;});return n;}
+function renderCardioCard(){
+  const {b,total}=cardioBreakdown(filtered());
+  const week=cardioBreakdown(state.workouts.filter(w=>w.date>=daysAgoISO(7))).total;
+  const sessions=cardioSessions(filtered());
+  const goal=150,pct=Math.min(1,week/goal);
+  const R=42,C=2*Math.PI*R,off=C*(1-pct);
+  const acts=Object.entries(b).sort((x,y)=>y[1]-x[1]).slice(0,4);
+  const maxA=Math.max(1,...acts.map(a=>a[1]));
+  const bars=acts.length?acts.map(([name,min])=>`<div class="cbar"><div class="cbt"><span>${name}</span><span class="num">${min} דק׳</span></div><div class="ctrack"><div class="cfill" style="width:${(min/maxA*100)||3}%"></div></div></div>`).join('')
+    :'<div class="hint" style="padding:8px 4px">עדיין אין פעילות אירובית בתקופה — הוסף ריצה, הליכה, שחייה או מדרגות מקטגוריית "לב-ריאה".</div>';
+  return `<div class="card"><h3>🫁 סיבולת לב-ריאה</h3>
+    <div class="cardio-top">
+      <div class="ring"><svg viewBox="0 0 100 100"><defs><linearGradient id="cg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3ED5C8"/><stop offset="1" stop-color="#7C5CFF"/></linearGradient></defs>
+        <circle cx="50" cy="50" r="${R}" fill="none" stroke="var(--panel3)" stroke-width="9"/>
+        <circle cx="50" cy="50" r="${R}" fill="none" stroke="url(#cg)" stroke-width="9" stroke-linecap="round" stroke-dasharray="${C.toFixed(1)}" stroke-dashoffset="${off.toFixed(1)}" transform="rotate(-90 50 50)"/></svg>
+        <div class="ringc"><div class="rnum num">${week}</div><div class="rlab">דק׳ השבוע</div></div></div>
+      <div class="cardio-stats">
+        <div class="cstat"><b class="num">${Math.round(pct*100)}%</b>מיעד שבועי (${goal} דק׳)</div>
+        <div class="cstat"><b class="num">${total}</b>דק׳ ${periodLabel()}</div>
+        <div class="cstat"><b class="num">${sessions}</b>אימוני לב-ריאה</div></div>
+    </div>
+    <div class="cbars">${bars}</div></div>`;
+}
 function renderInsights(){
   const v=volumeByMuscle(filtered()),max=Math.max(1,...Object.values(v)),{res}=heatValues();
   const bars=Object.keys(MUSCLES).map(k=>({k,v:v[k]})).sort((a,b)=>b.v-a.v)
@@ -666,6 +771,7 @@ function renderInsights(){
       <div class="metric"><div class="mv num">${streak()}</div><div class="ml">רצף ימים</div></div>
       <div class="metric"><div class="mv num">${countInDays(7)}</div><div class="ml">אימונים השבוע</div></div>
       <div class="metric"><div class="mv num">${state.workouts.length}</div><div class="ml">סה״כ אימונים</div></div></div>
+    ${renderCardioCard()}
     <div class="card"><h3>המלצות לשיפור</h3><div class="recos">
       ${buildRecos().map(r=>`<div class="reco"><div class="ic" style="background:${r.c}22">${r.ic}</div><div><div class="rt">${r.t}</div><div class="rd">${r.d}</div></div></div>`).join('')}</div></div>
     <div class="card"><h3>איזון דחיפה / משיכה</h3>
@@ -683,7 +789,7 @@ function shiftDate(iso,days=0,months=0){const d=parseISO(iso);
   if(months){const day=d.getDate();d.setDate(1);d.setMonth(d.getMonth()+months);const max=new Date(d.getFullYear(),d.getMonth()+1,0).getDate();d.setDate(Math.min(day,max))}
   if(days)d.setDate(d.getDate()+days);return d.toISOString().slice(0,10)}
 function startOfWeek(iso){const d=parseISO(iso);d.setDate(d.getDate()-d.getDay());return d.toISOString().slice(0,10)}
-function dayVolume(iso){let s=0;state.workouts.filter(w=>w.date===iso).forEach(w=>w.entries.forEach(en=>{for(const k in en.m)s+=en.sets*en.m[k]}));return s}
+function dayVolume(iso){let s=0;state.workouts.filter(w=>w.date===iso).forEach(w=>w.entries.forEach(en=>{for(const k in en.m)s+=entryVol(en,k)}));return s}
 function maxDayVol(){const ds=[...new Set(state.workouts.map(w=>w.date))];return ds.length?Math.max(1,...ds.map(dayVolume)):1}
 function monthLabel(iso){const d=parseISO(iso);return `${MONTHS_HE[d.getMonth()]} ${d.getFullYear()}`}
 function weekLabel(iso){const s=parseISO(startOfWeek(iso)),e=new Date(s);e.setDate(s.getDate()+6);
@@ -694,7 +800,7 @@ function dayLabel(iso){const d=parseISO(iso);const rel=iso===todayISO()?' · ה�
 function wcardHtml(w){
   const ms={};w.entries.forEach(en=>Object.keys(en.m).forEach(k=>{if(en.m[k]>=.5)ms[k]=1}));
   const tags=Object.keys(ms).map(k=>`<span class="tag">${MUSCLES[k].he}</span>`).join('');
-  const rows=w.entries.map(en=>`<div class="we"><span>${en.name}</span><span class="sets num">${en.sets}×${en.reps}</span></div>`).join('');
+  const rows=w.entries.map(en=>`<div class="we"><span>${en.name}</span><span class="sets num">${isCardio(en)?((en.minutes||0)+' דק׳'):(en.sets+'×'+en.reps)}</span></div>`).join('');
   return `<div class="wcard">${rows}<div class="wmuscles">${tags}</div>
     <div class="wactions"><span class="wedit" data-edit="${w.id}">✎ ערוך</span><span class="wdel" data-del="${w.id}">✕ מחק</span></div></div>`;
 }
@@ -776,21 +882,33 @@ if(window.visualViewport){
   window.visualViewport.addEventListener('scroll',adjustSheetForKeyboard);
 }
 function showSheet(){overlay.classList.add('on');sheet.classList.add('on');setTimeout(adjustSheetForKeyboard,60)}
-function hideSheet(){overlay.classList.remove('on');sheet.classList.remove('on');sheet.style.bottom='';sheet.style.maxHeight='';}
+function hideSheet(){overlay.classList.remove('on');sheet.classList.remove('on');sheet.style.bottom='';sheet.style.maxHeight='';if(typeof stopExAnim==='function')stopExAnim();}
 overlay.addEventListener('click',hideSheet);
 
 function openSheet(editing,dateForNew){
   state.draft=[];state.editingId=null;state.draftSearch='';state.draftCat='push';state.customSel=[];state.showCustom=false;state.expandedEx=null;
   if(editing){state.editingId=editing.id;state.draftDate=editing.date;
     state.draft=editing.entries.map(en=>{let x=en.exId||null;if(!x){const f=EX.find(q=>q.he===en.name);x=f?f.id:null}
-      return{uid:uid(),exId:x,custom:en.custom||!x,name:en.name,m:en.m,sets:en.sets,reps:en.reps}});
+      const base={uid:uid(),exId:x,custom:en.custom||!x,name:en.name,m:en.m};
+      return en.type==='cardio'?Object.assign(base,{type:'cardio',minutes:en.minutes||20}):Object.assign(base,{sets:en.sets,reps:en.reps});});
   }else state.draftDate=dateForNew||state.selDate||todayISO();
   buildSheet();showSheet();
 }
+function openSheetToExercise(id){
+  const x=EXBYID[id];if(!x){openSheet();return;}
+  openSheet();
+  state.draftCat=x.cat;
+  state.expandedEx=id;
+  if(!state.draft.find(d=>d.exId===id)) state.draft.push(mkDraft(x));
+  document.querySelectorAll('#catrow [data-cat]').forEach(c=>c.classList.toggle('on',c.dataset.cat===state.draftCat));
+  refreshList();refreshDraft();refreshMini();
+  setTimeout(()=>{const it=document.querySelector('#exlist [data-info="'+id+'"]');if(it){const card=it.closest('.exitem');if(card)card.scrollIntoView({behavior:'smooth',block:'center'});}},140);
+}
+function mkDraft(x){const base={uid:uid(),exId:x.id,custom:false,name:x.he,m:x.m};return x.type==='cardio'?Object.assign(base,{type:'cardio',minutes:20}):Object.assign(base,{sets:3,reps:10});}
 function togglePreset(id){
   const i=state.draft.findIndex(d=>d.exId===id);
   if(i>=0)state.draft.splice(i,1);
-  else{const x=EXBYID[id];state.draft.push({uid:uid(),exId:id,custom:false,name:x.he,m:x.m,sets:3,reps:10})}
+  else state.draft.push(mkDraft(EXBYID[id]));
   afterDraftChange();
 }
 function addCustom(){
@@ -805,7 +923,8 @@ function addCustom(){
   afterDraftChange();toast('נוסף לאימון');
 }
 function step(key,dir){const[uidv,field]=key.split('|');const d=state.draft.find(x=>x.uid===uidv);if(!d)return;
-  if(field==='sets')d.sets=Math.max(1,Math.min(20,d.sets+dir));else d.reps=Math.max(1,Math.min(90,d.reps+dir));afterDraftChange()}
+  if(field==='min')d.minutes=Math.max(5,Math.min(180,(d.minutes||20)+dir*5));
+  else if(field==='sets')d.sets=Math.max(1,Math.min(20,d.sets+dir));else d.reps=Math.max(1,Math.min(90,d.reps+dir));afterDraftChange()}
 function afterDraftChange(){refreshList();refreshDraft();refreshMini()}
 
 function buildSheet(){
@@ -858,6 +977,75 @@ function buildSheet(){
   b.querySelectorAll('#catrow [data-cat]').forEach(c=>c.classList.toggle('on',c.dataset.cat===state.draftCat));
   refreshList();refreshDraft();refreshMini();
 }
+/* ===== EXERCISE DEMO ANIMATION ===== */
+const FIG={TORSO:30,NECK:6,HEAD:8,UARM:16,FARM:16,THIGH:21,SHIN:21};
+function _D(a){a=a*Math.PI/180;return[Math.cos(a),Math.sin(a)]}
+function poseLerp(A,B,t){const o={};for(const k in A){const av=A[k],bv=(k in B)?B[k]:A[k];o[k]=(typeof av==='number')?av+(bv-av)*t:av}return o}
+function figSVG(P){
+  const F=FIG,hx=P.hx,hy=P.hy;
+  const sh=[hx+F.TORSO*_D(P.torso)[0],hy+F.TORSO*_D(P.torso)[1]];
+  const hd=[sh[0]+(F.NECK+F.HEAD)*_D(P.torso)[0],sh[1]+(F.NECK+F.HEAD)*_D(P.torso)[1]];
+  const arm=(a,e)=>{const el=[sh[0]+F.UARM*_D(a)[0],sh[1]+F.UARM*_D(a)[1]];return[el,[el[0]+F.FARM*_D(e)[0],el[1]+F.FARM*_D(e)[1]]]};
+  const leg=(l,k)=>{const kn=[hx+F.THIGH*_D(l)[0],hy+F.THIGH*_D(l)[1]];return[kn,[kn[0]+F.SHIN*_D(k)[0],kn[1]+F.SHIN*_D(k)[1]]]};
+  const L=(p,q,c='')=>`<line class="${c}" x1="${p[0].toFixed(1)}" y1="${p[1].toFixed(1)}" x2="${q[0].toFixed(1)}" y2="${q[1].toFixed(1)}"/>`;
+  let s='';
+  if(P.ground!=null)s+=`<line class="grnd" x1="12" y1="${P.ground}" x2="108" y2="${P.ground}"/>`;
+  if(P.bar)s+=`<line class="grnd" x1="24" y1="8" x2="96" y2="8"/>`;
+  if(P.bars)s+=`<line class="grnd" x1="40" y1="30" x2="40" y2="72"/><line class="grnd" x1="80" y1="30" x2="80" y2="72"/>`;
+  let farArm=null,farLeg=null;
+  if(P.sym){farArm=arm(180-P.arm,180-P.elbow);farLeg=leg(180-P.leg,180-P.knee);}
+  else{if(P.arm2!=null)farArm=arm(P.arm2,P.elbow2!=null?P.elbow2:P.arm2);if(P.leg2!=null)farLeg=leg(P.leg2,P.knee2!=null?P.knee2:P.leg2);}
+  if(farArm)s+=L(sh,farArm[0],'far')+L(farArm[0],farArm[1],'far');
+  if(farLeg)s+=L([hx,hy],farLeg[0],'far')+L(farLeg[0],farLeg[1],'far');
+  const a1=arm(P.arm,P.elbow),l1=leg(P.leg,P.knee);
+  s+=L([hx,hy],sh)+L([hx,hy],l1[0])+L(l1[0],l1[1])+L(sh,a1[0])+L(a1[0],a1[1]);
+  s+=`<circle cx="${hd[0].toFixed(1)}" cy="${hd[1].toFixed(1)}" r="${F.HEAD}" fill="none"/>`;
+  return s;
+}
+const ANIM={
+  squat:{dur:1600,a:{hx:60,hy:70,torso:-90,arm:100,elbow:100,leg:83,knee:83,ground:114,sym:1},b:{hx:60,hy:84,torso:-72,arm:20,elbow:22,leg:52,knee:116,ground:114,sym:1}},
+  press:{dur:1300,a:{hx:60,hy:70,torso:-90,arm:-52,elbow:-105,leg:90,knee:90,ground:114,sym:1},b:{hx:60,hy:70,torso:-90,arm:-84,elbow:-90,leg:90,knee:90,ground:114,sym:1}},
+  curl:{dur:1300,a:{hx:60,hy:70,torso:-90,arm:96,elbow:96,leg:90,knee:90,ground:114,sym:1},b:{hx:60,hy:70,torso:-90,arm:96,elbow:-70,leg:90,knee:90,ground:114,sym:1}},
+  calf:{dur:1100,a:{hx:60,hy:72,torso:-90,arm:96,elbow:96,leg:90,knee:90,ground:114,sym:1},b:{hx:60,hy:64,torso:-90,arm:96,elbow:96,leg:90,knee:90,ground:114,sym:1}},
+  sideraise:{dur:1500,a:{hx:52,hy:74,torso:200,arm:150,elbow:150,leg:8,knee:8,ground:96},b:{hx:52,hy:74,torso:200,arm:150,elbow:150,leg:-24,knee:-24,ground:96}},
+  pushup:{dur:1500,a:{hx:70,hy:84,torso:203,arm:92,elbow:92,leg:-7,knee:-7,ground:104},b:{hx:70,hy:90,torso:203,arm:70,elbow:128,leg:-7,knee:-7,ground:104}},
+  pullup:{dur:1600,a:{hx:60,hy:72,torso:-90,arm:-90,elbow:-90,leg:88,knee:100,bar:1},b:{hx:60,hy:62,torso:-90,arm:-90,elbow:-112,leg:88,knee:104,bar:1}},
+  dip:{dur:1500,a:{hx:60,hy:66,torso:-88,arm:96,elbow:92,leg:78,knee:96,bars:1},b:{hx:60,hy:78,torso:-84,arm:112,elbow:70,leg:76,knee:98,bars:1}},
+  lunge:{dur:1600,a:{hx:60,hy:70,torso:-90,arm:96,elbow:96,leg:58,knee:96,leg2:120,knee2:70,ground:114},b:{hx:60,hy:84,torso:-88,arm:96,elbow:96,leg:52,knee:120,leg2:128,knee2:44,ground:114}},
+  row:{dur:1400,a:{hx:60,hy:74,torso:196,arm:92,elbow:92,leg:92,knee:60,ground:116},b:{hx:60,hy:74,torso:196,arm:66,elbow:30,leg:92,knee:60,ground:116}},
+  bridge:{dur:1500,a:{hx:66,hy:96,torso:180,arm:150,elbow:150,leg:20,knee:120,ground:104},b:{hx:66,hy:80,torso:180,arm:150,elbow:150,leg:40,knee:135,ground:104}},
+  legraise:{dur:1500,a:{hx:70,hy:92,torso:174,arm:150,elbow:150,leg:8,knee:8,ground:104},b:{hx:70,hy:92,torso:174,arm:150,elbow:150,leg:-54,knee:-54,ground:104}},
+  plank:{dur:2200,a:{hx:74,hy:86,torso:205,arm:80,elbow:150,leg:-8,knee:-8,ground:100},b:{hx:74,hy:88,torso:205,arm:80,elbow:150,leg:-8,knee:-8,ground:100}},
+  run:{dur:900,a:{hx:60,hy:64,torso:-84,arm:130,elbow:170,arm2:60,elbow2:20,leg:62,knee:100,leg2:112,knee2:150,ground:116},b:{hx:60,hy:64,torso:-84,arm:60,elbow:20,arm2:130,elbow2:170,leg:112,knee:150,leg2:62,knee2:100,ground:116}},
+  swim:{dur:1400,a:{hx:66,hy:66,torso:184,arm:150,elbow:150,arm2:232,elbow2:232,leg:-4,knee:-4,leg2:4,knee2:4,ground:100},b:{hx:66,hy:66,torso:184,arm:232,elbow:232,arm2:150,elbow2:150,leg:4,knee:4,leg2:-4,knee2:-4,ground:100}},
+};
+const ANIM_MAP={
+  pushup:'pushup',wide_pushup:'pushup',diamond:'pushup',decline_pushup:'pushup',archer_pushup:'pushup',pseudo_planche:'pushup',bench:'pushup',incline_pushup:'pushup',knee_pushup:'pushup',clap_pushup:'pushup',ab_wheel:'pushup',
+  dips:'dip', hspu:'press',pike:'press',ohp:'press',shrugs:'press',
+  pullup:'pullup',wide_pullup:'pullup',chinup:'pullup',neg_pullup:'pullup',typewriter_pullup:'pullup',muscleup:'pullup',scap_pull:'pullup',dead_hang:'pullup',
+  row:'row',oa_row:'row',facepull:'row', curl:'curl',hammer_curl:'curl',
+  front_lever:'plank',plank:'plank',side_plank:'plank',mountain_climber:'plank',superman:'plank',bird_dog:'plank',deadbug:'plank',hollow:'plank',
+  squat:'squat',pistol:'squat',jump_squat:'squat',wall_sit:'squat',box_jump:'squat',sissy:'squat',broad_jump:'squat',cossack:'squat',
+  lunge:'lunge',bulgarian:'lunge',step_up:'lunge', calf:'calf',single_calf:'calf',
+  bridge:'bridge',hip_thrust:'bridge',nordic:'bridge', side_leg_raise:'sideraise',clamshell:'sideraise',
+  legraise:'legraise',toes_to_bar:'legraise',dragon_flag:'legraise',lsit:'legraise',vup:'legraise',reverse_crunch:'legraise',flutter:'legraise',bicycle:'legraise',russian_twist:'legraise',
+  run:'run',walk:'run',stairs:'run',cycle:'run',jump_rope:'run',swim:'swim',rowing:'row',
+};
+function animKeyFor(id){if(ANIM_MAP[id])return ANIM_MAP[id];const x=EXBYID[id];const f={push:'pushup',pull:'pullup',legs:'squat',core:'plank',cardio:'run'};return x?f[x.cat]:'plank'}
+let _animRAF=null;
+function stopExAnim(){if(_animRAF)cancelAnimationFrame(_animRAF);_animRAF=null}
+function startExAnim(){
+  stopExAnim();
+  if(!state.expandedEx)return;
+  const svg=document.getElementById('exfig');if(!svg)return;
+  const A=ANIM[animKeyFor(state.expandedEx)];if(!A)return;
+  const t0=performance.now();
+  (function frame(now){
+    const ph=((now-t0)%A.dur)/A.dur, t=0.5-0.5*Math.cos(ph*2*Math.PI);
+    svg.innerHTML=figSVG(poseLerp(A.a,A.b,t));
+    _animRAF=requestAnimationFrame(frame);
+  })(t0);
+}
 function primaryMuscles(x){return Object.keys(x.m).filter(k=>x.m[k]>=.5).map(k=>MUSCLES[k].he).join(', ')}
 function refreshList(){
   const el=document.getElementById('exlist');if(!el)return;
@@ -870,12 +1058,16 @@ function refreshList(){
         <div class="exbtns"><button class="infox" data-info="${x.id}">${open?'▲':'ⓘ'}</button>
           <button class="addx" data-add="${x.id}">${on?'✓':'＋'}</button></div></div>
       ${open?exInfoHtml(x):''}</div>`}).join('');
+  startExAnim();
 }
 function exInfoHtml(x){
   const cues=(x.cue||[]).map(c=>`<div class="cue"><b>•</b> ${c}</div>`).join('');
   const q=encodeURIComponent((x.en||x.he)+' tutorial');
-  return `<div class="exinfo"><div class="cues">${cues}</div>
-    <a class="videobtn" href="https://www.youtube.com/results?search_query=${q}" target="_blank" rel="noopener">▶ צפה בסרטון הדגמה</a></div>`;
+  return `<div class="exinfo">
+    <svg class="exfig" id="exfig" viewBox="0 0 120 126"></svg>
+    <div class="exfigcap">הדגמה סכמטית של התנועה</div>
+    <div class="cues">${cues}</div>
+    <a class="videobtn" href="https://www.youtube.com/results?search_query=${q}" target="_blank" rel="noopener">▶ צפה בסרטון הדגמה מלא</a></div>`;
 }
 function refreshDraft(){
   const el=document.getElementById('draftbox');if(!el)return;
@@ -884,13 +1076,15 @@ function refreshDraft(){
   el.innerHTML=`<div class="dhh">האימון שלך (${state.draft.length})</div>${state.draft.map(d=>`
     <div class="drow"><div class="dn">${d.name}${d.custom?' ·מותאם':''}</div>
       <div style="display:flex;align-items:center;gap:10px">
-        <div class="stepper"><button data-dec="${d.uid}|sets">−</button><div class="sv"><b class="num">${d.sets}</b> סטים</div><button data-inc="${d.uid}|sets">＋</button></div>
-        <div class="stepper"><button data-dec="${d.uid}|reps">−</button><div class="sv"><b class="num">${d.reps}</b> חז׳</div><button data-inc="${d.uid}|reps">＋</button></div>
+        ${isCardio(d)
+          ? `<div class="stepper"><button data-dec="${d.uid}|min">−</button><div class="sv"><b class="num">${d.minutes||20}</b> דק׳</div><button data-inc="${d.uid}|min">＋</button></div>`
+          : `<div class="stepper"><button data-dec="${d.uid}|sets">−</button><div class="sv"><b class="num">${d.sets}</b> סטים</div><button data-inc="${d.uid}|sets">＋</button></div>
+        <div class="stepper"><button data-dec="${d.uid}|reps">−</button><div class="sv"><b class="num">${d.reps}</b> חז׳</div><button data-inc="${d.uid}|reps">＋</button></div>`}
         <button class="rm" data-rm="${d.uid}">הסר</button></div></div>`).join('')}`;
 }
 function draftMuscleIntensity(){
   const v={};for(const k in MUSCLES)v[k]=0;
-  state.draft.forEach(d=>{for(const k in d.m)v[k]+=d.m[k]*d.sets});
+  state.draft.forEach(d=>{const wgt=isCardio(d)?((d.minutes||0)*CARDIO_FACTOR):(d.sets||0);for(const k in d.m)v[k]+=d.m[k]*wgt});
   state.customSel.forEach(k=>{v[k]=Math.max(v[k],3)});
   const max=Math.max(1,...Object.values(v));const r={};for(const k in v)r[k]=v[k]/max;return r;
 }
@@ -903,7 +1097,9 @@ function refreshMini(){
 function saveDraft(){
   if(!state.draft.length)return;
   const wasEditing=!!state.editingId,savedDate=state.draftDate;
-  const entries=state.draft.map(d=>({exId:d.exId||null,custom:!!d.custom,name:d.name,m:d.m,sets:d.sets,reps:d.reps}));
+  const entries=state.draft.map(d=>isCardio(d)
+    ?({exId:d.exId||null,custom:!!d.custom,name:d.name,m:d.m,type:'cardio',minutes:d.minutes||0})
+    :({exId:d.exId||null,custom:!!d.custom,name:d.name,m:d.m,sets:d.sets,reps:d.reps}));
   if(wasEditing){const w=state.workouts.find(x=>x.id===state.editingId);if(w){w.date=savedDate;w.entries=entries}}
   else state.workouts.push({id:'w'+Date.now(),date:savedDate,entries});
   saveW();closeDraft();
@@ -983,7 +1179,7 @@ function switchTab(t){
   document.getElementById('subtitle').textContent=subs[t];renderAll();
 }
 function renderAll(){
-  if(state.tab==='map'){paintMap();renderQuick();renderDetail()}
+  if(state.tab==='map'){paintMap();renderQuick();renderNeglectRow();renderDetail()}
   if(state.tab==='log')renderLog();
   if(state.tab==='insights')renderInsights();
   if(state.tab==='reminders')renderReminders();
@@ -998,7 +1194,11 @@ document.getElementById('backupBtn').addEventListener('click',openBackupSheet);
 document.getElementById('resetBtn').addEventListener('click',()=>{if(confirm('לאפס את כל הנתונים ולהתחיל מחדש?')){state.workouts=[];saveW();Store.set(KEY_SEED,'1');renderAll();toast('הנתונים אופסו')}});
 
 (async function init(){await load();buildFigures();setupLogNav();state.selDate=todayISO();switchTab('map')})();
-if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}
+if('serviceWorker' in navigator){
+  let refreshing=false;
+  navigator.serviceWorker.addEventListener('controllerchange',()=>{if(refreshing)return;refreshing=true;location.reload();});
+  window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+}
 </script>
 
 
