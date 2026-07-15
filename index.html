@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0044)file:///C:/Users/efi/Downloads/index_18.html -->
+<!-- saved from url=(0044)file:///C:/Users/efi/Downloads/index_19.html -->
 <html lang="he" dir="rtl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -108,6 +108,23 @@ svg .m.sel{stroke:#fff;animation:selpulse 1.3s ease-in-out infinite}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:14px}
 .card h3{margin:0 0 12px;font-size:15px;font-weight:700}
 .section-title{font-family:'Rubik';font-weight:700;font-size:15px;color:var(--muted);margin:18px 4px 10px}
+.prcard{background:var(--panel);border:1px solid var(--line);border-radius:16px;margin-bottom:10px;overflow:hidden}
+.prhead{display:flex;align-items:center;justify-content:space-between;padding:14px;cursor:pointer}
+.prhead:active{background:var(--panel2)}
+.prname{font-family:'Rubik';font-weight:700;font-size:15px}
+.prsub{font-size:12px;color:var(--muted);margin-top:2px}
+.prright{display:flex;align-items:center;gap:8px;flex:none}
+.prbadge{background:rgba(255,154,60,.15);color:#FFB454;font-weight:700;font-size:13px;padding:6px 11px;border-radius:20px;white-space:nowrap}
+.prchev{color:var(--muted2);font-size:12px}
+.prgraph{padding:2px 14px 14px;border-top:1px solid var(--line)}
+.prgraph svg{width:100%;height:auto;margin-top:8px}
+.prline{stroke:var(--accent2);stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round}
+.prgraph circle{fill:var(--accent2)}
+.prgraph circle.pr{fill:#FFB454;stroke:#fff;stroke-width:1.5}
+.prax{fill:var(--muted2);font-size:10px;font-family:'Rubik'}
+.prmeta{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);margin-top:8px;font-weight:600}
+.prmeta .up{color:var(--ok)}
+.prmeta .down{color:var(--bad)}
 
 .bar{margin:9px 0}
 .bar .bt{display:flex;justify-content:space-between;font-size:13px;margin-bottom:5px}
@@ -140,6 +157,36 @@ svg .m.sel{stroke:#fff;animation:selpulse 1.3s ease-in-out infinite}
 .reco .rd{font-size:13px;color:var(--muted);margin-top:2px;line-height:1.4}
 .metrics{display:flex;gap:10px;margin-bottom:14px}
 .metric{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px 10px;text-align:center}
+.trend{width:100%;height:auto}
+.trendline{fill:none;stroke:var(--accent2);stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round}
+.axl{fill:var(--muted2);font-size:9px;font-family:'Rubik'}
+.trendleg{display:flex;gap:12px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:8px;align-items:center}
+.trendleg i{display:inline-block;width:10px;height:10px;border-radius:3px;vertical-align:middle;margin-inline-end:4px}
+.trendleg .dotv{background:var(--accent2)}.trendleg .dotb{background:rgba(124,92,255,.4)}
+.trendleg .up{color:var(--ok)}.trendleg .down{color:var(--bad)}
+.cboard{display:flex;gap:3px}
+.ccol{flex:1;display:flex;flex-direction:column;gap:3px}
+.ccell{aspect-ratio:1;border-radius:3px}
+.cbleg{display:flex;align-items:center;gap:4px;justify-content:flex-end;font-size:11px;color:var(--muted);margin-top:10px}
+.cbleg i{width:12px;height:12px;border-radius:3px}
+.stg{margin:8px 0}
+.stgt{display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px}
+.stgt .num{font-weight:700}
+.stgtrack{position:relative;height:12px;border-radius:6px;background:var(--panel3);overflow:hidden}
+.stgband{position:absolute;top:0;height:100%;background:rgba(62,213,152,.18);border-inline:1px dashed rgba(62,213,152,.5)}
+.stgfill{position:absolute;top:0;right:0;height:100%;border-radius:6px}
+.radar{width:100%;max-width:250px;display:block;margin:4px auto;height:auto}
+.rgrid{fill:none;stroke:var(--line);stroke-width:1}
+.raxis{stroke:var(--line);stroke-width:1}
+.rdata{fill:rgba(154,124,255,.35);stroke:var(--accent2);stroke-width:2}
+.rlabel{fill:var(--muted);font-size:10px;font-weight:600}
+.prbanner{border-color:rgba(255,180,84,.4);background:linear-gradient(180deg,rgba(255,180,84,.08),var(--panel))}
+.prb{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--line);font-size:14px}
+.prb:last-child{border-bottom:none}
+.prbv{color:#FFB454;font-weight:700}
+.readyrow{display:flex;flex-wrap:wrap;gap:8px}
+.readychip{background:var(--panel2);border:1px solid var(--line);border-radius:20px;padding:7px 12px;font-size:13px;font-weight:600;display:flex;gap:6px;align-items:center}
+.readychip b{color:var(--muted);font-weight:600;font-size:11px}
 .metric .mv{font-family:'Rubik';font-weight:800;font-size:26px;line-height:1}
 .metric .ml{font-size:11px;color:var(--muted);margin-top:5px}
 
@@ -282,6 +329,18 @@ input:focus{outline:none;border-color:var(--accent)}
 .toast{position:fixed;bottom:170px;inset-inline:0;margin:0 auto;max-width:340px;z-index:200;background:var(--panel3);border:1px solid var(--line2);border-radius:14px;padding:12px 16px;text-align:center;font-size:13px;opacity:0;transform:translateY(10px);transition:.3s;pointer-events:none}
 .toast.on{opacity:1;transform:translateY(0)}
 .hidden{display:none!important}
+.resttimer{display:flex;align-items:center;gap:6px;margin-top:10px}
+.resttimer .rtlabel{color:var(--muted);font-weight:600;font-size:12.5px;margin-inline-end:auto}
+.resttimer button{background:var(--panel3);border:1px solid var(--line);border-radius:20px;padding:6px 13px;font-weight:700;font-size:13px;color:var(--accent2)}
+.resttimer button:active{background:var(--accent);color:#fff}
+.restfloat{position:fixed;bottom:78px;inset-inline:0;margin:0 auto;max-width:340px;width:calc(100% - 32px);z-index:210;background:var(--panel3);border:1px solid var(--line2);border-radius:16px;padding:11px 14px;box-shadow:0 12px 32px rgba(0,0,0,.55)}
+.rfbar{height:6px;border-radius:4px;background:var(--panel);overflow:hidden;margin-bottom:9px}
+.rffill{height:100%;background:linear-gradient(90deg,#3ED5C8,#7C5CFF);border-radius:4px;transition:width 1s linear}
+.rfrow{display:flex;align-items:center;gap:10px}
+.rfrow .rflabel{font-size:13px;color:var(--muted);font-weight:600}
+.rftime{font-family:'Rubik';font-weight:800;font-size:22px;margin-inline-end:auto}
+.rfadd{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:6px 11px;font-size:12px;font-weight:700;color:var(--accent2)}
+.rfstop{background:var(--accent);color:#fff;border-radius:16px;padding:6px 15px;font-size:13px;font-weight:700}
 @media (prefers-reduced-motion:reduce){.m.sel{animation:none}}
 </style>
 </head>
@@ -300,6 +359,7 @@ input:focus{outline:none;border-color:var(--accent)}
     <button data-tab="map" class="on"><span class="ni">🫀</span><span>מפה</span></button>
     <button data-tab="log"><span class="ni">📖</span><span>יומן</span></button>
     <button data-tab="insights"><span class="ni">📊</span><span>תובנות</span></button>
+    <button data-tab="progress"><span class="ni">🏆</span><span>שיאים</span></button>
     <button data-tab="reminders"><span class="ni">⏰</span><span>תזכורות</span></button>
   </div>
 
@@ -417,12 +477,14 @@ input:focus{outline:none;border-color:var(--accent)}
   <div id="tab-log" class="hidden"><div id="logContent"></div></div>
   <div id="tab-insights" class="hidden"><div id="insightsContent"></div></div>
   <div id="tab-reminders" class="hidden"><div id="remindersContent"></div></div>
+  <div id="tab-progress" class="hidden"><div id="progressContent"></div></div>
 </div>
 
 <button class="fab" id="fab"><span class="fabic">＋</span>הוסף אימון</button>
 <div class="overlay" id="overlay"></div>
 <div class="sheet" id="sheet"><div id="sheetBody"></div></div>
 <div class="toast" id="toast"></div>
+<div class="restfloat hidden" id="restFloat"></div>
 
 <script>
 /* ================= DATA ================= */
@@ -539,9 +601,9 @@ const Store={
   get(k){try{return localStorage.getItem(k)}catch(e){return mem[k]??null}},
   set(k,v){mem[k]=v;try{localStorage.setItem(k,v)}catch(e){}}
 };
-const KEY_W='bodymap:workouts',KEY_R='bodymap:reminders',KEY_SEED='bodymap:seeded';
-let state={workouts:[],reminders:[],period:'week',mode:'volume',tab:'map',sel:null,
-  draft:[],draftDate:'',draftCat:'push',draftSearch:'',editingId:null,customSel:[],showCustom:false,expandedEx:null,
+const KEY_W='bodymap:workouts',KEY_R='bodymap:reminders',KEY_SEED='bodymap:seeded',KEY_T='bodymap:templates';
+let state={workouts:[],reminders:[],templates:[],period:'week',mode:'volume',tab:'map',sel:null,progOpen:null,
+  draft:[],draftDate:'',draftCat:'push',draftSearch:'',editingId:null,customSel:[],showCustom:false,showTemplates:false,expandedEx:null,
   selDate:'',logView:'month'};
 
 function todayISO(){return new Date().toISOString().slice(0,10)}
@@ -564,9 +626,11 @@ async function load(){
   if(w)state.workouts=JSON.parse(w);
   else if(!seeded){state.workouts=seedData();await Store.set(KEY_W,JSON.stringify(state.workouts));await Store.set(KEY_SEED,'1')}
   state.reminders=r?JSON.parse(r):[{id:'r1',days:[1,3,5],time:'18:00',label:'אימון ערב',on:true}];
+  const t=await Store.get(KEY_T);state.templates=t?JSON.parse(t):[];
 }
 function saveW(){Store.set(KEY_W,JSON.stringify(state.workouts))}
 function saveR(){Store.set(KEY_R,JSON.stringify(state.reminders))}
+function saveT(){Store.set(KEY_T,JSON.stringify(state.templates))}
 
 /* ================= COMPUTE ================= */
 function periodDays(p){return p==='week'?7:p==='month'?30:p==='year'?365:99999}
@@ -774,6 +838,96 @@ function renderCardioCard(){
     </div>
     <div class="cbars">${bars}</div></div>`;
 }
+const MAJOR={
+  chest:{he:'חזה',heads:['chest_upper','chest_mid','chest_lower']},
+  back:{he:'גב',heads:['lats','traps_upper','traps_mid','rhomboids']},
+  shoulders:{he:'כתפיים',heads:['delt_front','delt_side','delt_rear']},
+  arms_pull:{he:'ידיים (משיכה)',heads:['biceps','forearm_front','forearm_back']},
+  arms_push:{he:'ידיים (דחיפה)',heads:['triceps_long','triceps_lat']},
+  core:{he:'ליבה',heads:['abs_upper','abs_lower','obliques','erectors']},
+  quads:{he:'ירך קדמית',heads:['quads','adductors']},
+  hamstrings:{he:'ירך אחורית',heads:['hamstrings']},
+  glutes:{he:'ישבן',heads:['glute_max','glute_med']},
+  calves:{he:'תאומים',heads:['gastro','soleus']},
+};
+const RADAR=[
+  {he:'חזה',heads:['chest_upper','chest_mid','chest_lower']},
+  {he:'גב',heads:['lats','traps_upper','traps_mid','rhomboids']},
+  {he:'כתפיים',heads:['delt_front','delt_side','delt_rear']},
+  {he:'ידיים',heads:['biceps','triceps_long','triceps_lat','forearm_front','forearm_back']},
+  {he:'ליבה',heads:['abs_upper','abs_lower','obliques','erectors']},
+  {he:'רגליים',heads:['quads','adductors','hamstrings','glute_max','glute_med','gastro','soleus']},
+];
+function lastNWeeks(n){const weeks=[],cur=startOfWeek(todayISO());
+  for(let i=n-1;i>=0;i--){const start=shiftDate(cur,-7*i),end=shiftDate(start,6);
+    const ws=state.workouts.filter(w=>w.date>=start&&w.date<=end);
+    const vol=Object.values(volumeByMuscle(ws)).reduce((a,b)=>a+b,0);
+    weeks.push({start,vol:Math.round(vol),count:ws.length});}return weeks;}
+function renderTrendCard(){
+  const wk=lastNWeeks(10),n=wk.length;
+  const maxV=Math.max(1,...wk.map(w=>w.vol)),maxC=Math.max(1,...wk.map(w=>w.count));
+  const W=320,H=140,padL=8,padR=8,padT=14,padB=22;
+  const bx=i=>padL+(i+.5)/n*(W-padL-padR),bw=(W-padL-padR)/n*0.5,vy=v=>H-padB-(v/maxV)*(H-padT-padB);
+  const bars=wk.map((w,i)=>{const h=(w.count/maxC)*(H-padT-padB);return `<rect x="${(bx(i)-bw/2).toFixed(1)}" y="${(H-padB-h).toFixed(1)}" width="${bw.toFixed(1)}" height="${h.toFixed(1)}" rx="2" fill="rgba(124,92,255,.28)"/>`;}).join('');
+  const line=wk.map((w,i)=>`${bx(i).toFixed(1)},${vy(w.vol).toFixed(1)}`).join(' ');
+  const dots=wk.map((w,i)=>`<circle cx="${bx(i).toFixed(1)}" cy="${vy(w.vol).toFixed(1)}" r="3" fill="var(--accent2)"/>`).join('');
+  const labels=wk.map((w,i)=>{if(i%2!==0&&i!==n-1)return '';const d=parseISO(w.start);return `<text x="${bx(i).toFixed(1)}" y="${H-6}" class="axl" text-anchor="middle">${d.getDate()}/${d.getMonth()+1}</text>`;}).join('');
+  const last=wk[n-1],prev=wk[n-2]||{vol:0},delta=last.vol-prev.vol;
+  return `<div class="card"><h3>מגמת נפח ואימונים · 10 שבועות</h3>
+    <svg viewBox="0 0 ${W} ${H}" class="trend">${bars}<polyline points="${line}" class="trendline"/>${dots}${labels}</svg>
+    <div class="trendleg"><span><i class="dotv"></i> נפח שבועי</span><span><i class="dotb"></i> מס׳ אימונים</span><span class="${delta>0?'up':delta<0?'down':''}">${delta>0?'▲':delta<0?'▼':'●'} ${Math.abs(delta)} מהשבוע שעבר</span></div></div>`;
+}
+function renderConsistency(){
+  const weeks=12,cur=startOfWeek(todayISO()),maxD=maxDayVol();let cols='';
+  for(let wi=weeks-1;wi>=0;wi--){const start=shiftDate(cur,-7*wi);let cells='';
+    for(let d=0;d<7;d++){const iso=shiftDate(start,d);const c=iso>todayISO()?'transparent':(dayVolume(iso)>0?heatColor(dayVolume(iso)/maxD):'var(--panel3)');
+      cells+=`<div class="ccell" style="background:${c}"></div>`;}
+    cols+=`<div class="ccol">${cells}</div>`;}
+  return `<div class="card"><h3>לוח עקביות · 12 שבועות</h3><div class="cboard">${cols}</div>
+    <div class="cbleg"><span>פחות</span><i style="background:var(--panel3)"></i><i style="background:#3E3A7A"></i><i style="background:#7B3FBF"></i><i style="background:#E0417A"></i><i style="background:#FF9A3C"></i><span>יותר</span></div></div>`;
+}
+function weeklySetsByGroup(){
+  const res={};for(const g in MAJOR)res[g]=0;
+  const ws=state.workouts.filter(w=>w.date>=daysAgoISO(7));
+  for(const w of ws)for(const en of w.entries){if(isCardio(en))continue;const sets=en.sets||0;
+    for(const g in MAJOR){let wg=0;for(const h of MAJOR[g].heads)wg=Math.max(wg,en.m[h]||0);
+      if(wg>=.5)res[g]+=sets;else if(wg>=.3)res[g]+=sets*.5;}}
+  return res;
+}
+function renderSetsTarget(){
+  const s=weeklySetsByGroup(),LO=10,HI=20,SCALE=24;
+  const rows=Object.keys(MAJOR).map(g=>{const val=Math.round(s[g]*10)/10;
+    const status=val<LO?'under':val<=HI?'in':'over',col=status==='under'?'var(--warn)':status==='in'?'var(--ok)':'var(--bad)';
+    const w=Math.min(100,val/SCALE*100),loPct=LO/SCALE*100,hiPct=HI/SCALE*100;
+    return `<div class="stg"><div class="stgt"><span>${MAJOR[g].he}</span><span class="num" style="color:${col}">${val}</span></div>
+      <div class="stgtrack"><div class="stgband" style="right:${loPct}%;width:${(hiPct-loPct)}%"></div><div class="stgfill" style="width:${w}%;background:${col}"></div></div></div>`;
+  }).join('');
+  return `<div class="card"><h3>סטים השבוע לכל קבוצה · יעד 10-20</h3>${rows}
+    <div class="hint" style="padding:6px 2px 0;text-align:start">האזור המוצל = הטווח המומלץ במחקר לפיתוח שריר (כ־10-20 סטים בשבוע לקבוצה).</div></div>`;
+}
+function renderRadar(){
+  const v=volumeByMuscle(filtered());
+  const vals=RADAR.map(a=>a.heads.reduce((s,h)=>s+(v[h]||0),0)),max=Math.max(1,...vals);
+  const cx=110,cy=100,R=74,N=RADAR.length,ang=i=>(-90+i*360/N)*Math.PI/180,pt=(i,r)=>[cx+Math.cos(ang(i))*r,cy+Math.sin(ang(i))*r];
+  let grid='';[0.25,0.5,0.75,1].forEach(f=>{grid+=`<polygon points="${RADAR.map((_,i)=>pt(i,R*f).map(z=>z.toFixed(1)).join(',')).join(' ')}" class="rgrid"/>`;});
+  let axes='',labels='';RADAR.forEach((a,i)=>{const[x,y]=pt(i,R);axes+=`<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" class="raxis"/>`;
+    const[lx,ly]=pt(i,R+15);labels+=`<text x="${lx.toFixed(1)}" y="${(ly+3).toFixed(1)}" class="rlabel" text-anchor="middle">${a.he}</text>`;});
+  const dp=RADAR.map((a,i)=>pt(i,R*(vals[i]/max)).map(z=>z.toFixed(1)).join(',')).join(' ');
+  return `<div class="card"><h3>רדאר איזון · ${periodLabel()}</h3><svg viewBox="0 0 220 200" class="radar">${grid}${axes}<polygon points="${dp}" class="rdata"/>${labels}</svg></div>`;
+}
+function recentPRs(){
+  const out=[];performedExercises().forEach(o=>{const h=exerciseHistory(o.key);if(h.length<2)return;
+    const last=h[h.length-1],prevMax=Math.max(...h.slice(0,-1).map(p=>p.val));
+    if(last.val>prevMax&&daysBetween(last.date,todayISO())<=7)out.push({name:o.name,val:last.val,unit:o.unit,date:last.date});});
+  return out.sort((a,b)=>b.date<a.date?-1:1).slice(0,4);
+}
+function renderRecentPRs(){const prs=recentPRs();if(!prs.length)return '';
+  return `<div class="card prbanner"><h3>🎉 שיאים חדשים השבוע</h3>${prs.map(p=>`<div class="prb"><span>${p.name}</span><span class="prbv num">${p.val} ${p.unit}</span></div>`).join('')}</div>`;}
+function readyToday(){const out=[];for(const g in MAJOR){let last=null;for(const h of MAJOR[g].heads){const lt=lastTrained(h);if(lt&&(!last||lt>last))last=lt;}
+    const d=last?daysBetween(last,todayISO()):999;if(d>=3)out.push({he:MAJOR[g].he,d,ever:!!last});}
+  return out.sort((a,b)=>b.d-a.d).slice(0,6);}
+function renderReady(){const r=readyToday();if(!r.length)return '';
+  return `<div class="card"><h3>💪 מוכן לאימון היום</h3><div class="readyrow">${r.map(o=>`<span class="readychip">${o.he}<b>${o.ever?('לפני '+o.d+' ימ׳'):'טרם'}</b></span>`).join('')}</div></div>`;}
 function renderInsights(){
   const v=volumeByMuscle(filtered()),max=Math.max(1,...Object.values(v)),{res}=heatValues();
   const bars=Object.keys(MUSCLES).map(k=>({k,v:v[k]})).sort((a,b)=>b.v-a.v)
@@ -786,9 +940,15 @@ function renderInsights(){
       <div class="metric"><div class="mv num">${streak()}</div><div class="ml">רצף ימים</div></div>
       <div class="metric"><div class="mv num">${countInDays(7)}</div><div class="ml">אימונים השבוע</div></div>
       <div class="metric"><div class="mv num">${state.workouts.length}</div><div class="ml">סה״כ אימונים</div></div></div>
+    ${renderRecentPRs()}
     ${renderCardioCard()}
+    ${renderTrendCard()}
+    ${renderConsistency()}
+    ${renderSetsTarget()}
+    ${renderRadar()}
     <div class="card"><h3>המלצות לשיפור</h3><div class="recos">
       ${buildRecos().map(r=>`<div class="reco"><div class="ic" style="background:${r.c}22">${r.ic}</div><div><div class="rt">${r.t}</div><div class="rd">${r.d}</div></div></div>`).join('')}</div></div>
+    ${renderReady()}
     <div class="card"><h3>איזון דחיפה / משיכה</h3>
       <div class="bal"><div class="bh"><span>דחיפה ${push.toFixed(0)}</span><span>משיכה ${pull.toFixed(0)}</span></div>
         <div class="balbar"><div class="balmark" style="inset-inline-start:${pushPct}%"></div></div></div>
@@ -869,6 +1029,68 @@ function setupLogNav(){
 }
 
 /* ================= REMINDERS ================= */
+/* ================= PROGRESS / PRs ================= */
+function entryMetric(en){
+  if(isCardio(en))return{val:en.minutes||0,unit:(en.unit==='floors'?'קומות':'דק׳')};
+  if(isHold(en))return{val:en.reps||0,unit:'שנ׳'};
+  return{val:en.reps||0,unit:'חז׳'};
+}
+function exKey(en){return en.exId||('c:'+en.name);}
+function relDate(iso){const d=daysBetween(iso,todayISO());return d===0?'היום':d===1?'אתמול':`לפני ${d} ימים`;}
+function performedExercises(){
+  const map={};
+  for(const w of state.workouts)for(const en of w.entries){
+    const k=exKey(en);const mv=entryMetric(en).val;
+    if(!map[k])map[k]={key:k,name:en.name,unit:entryMetric(en).unit,count:0,last:w.date,pr:0};
+    const o=map[k];o.count++;if(w.date>o.last)o.last=w.date;if(mv>o.pr)o.pr=mv;
+  }
+  return Object.values(map).sort((a,b)=>b.last<a.last?-1:1);
+}
+function exerciseHistory(key){
+  const hist=[];
+  for(const w of [...state.workouts].sort((a,b)=>a.date<b.date?-1:1)){
+    let best=null;
+    for(const en of w.entries)if(exKey(en)===key){const mv=entryMetric(en).val;if(best==null||mv>best.val)best={val:mv,sets:en.sets||1};}
+    if(best)hist.push({date:w.date,val:best.val,sets:best.sets});
+  }
+  return hist;
+}
+function prGraph(o){
+  const h=exerciseHistory(o.key);
+  if(h.length<2)return `<div class="prgraph"><div class="hint">בצע את התרגיל עוד פעם או פעמיים כדי לראות גרף מגמה. הביצוע האחרון: ${h[0]?h[0].val:0} ${o.unit}.</div></div>`;
+  const W=300,H=120,pad=26;
+  const ys=h.map(p=>p.val),maxY=Math.max(...ys),minY=Math.min(...ys),rng=Math.max(1,maxY-minY);
+  const px=i=>pad+(i/(h.length-1))*(W-pad*2), py=v=>H-pad-((v-minY)/rng)*(H-pad*2);
+  const pts=h.map((p,i)=>`${px(i).toFixed(1)},${py(p.val).toFixed(1)}`).join(' ');
+  const area=`M${px(0).toFixed(1)},${(H-pad).toFixed(1)} L${pts.split(' ').join(' L')} L${px(h.length-1).toFixed(1)},${(H-pad).toFixed(1)} Z`;
+  const dots=h.map((p,i)=>`<circle cx="${px(i).toFixed(1)}" cy="${py(p.val).toFixed(1)}" r="${p.val===maxY?4.5:3}" class="${p.val===maxY?'pr':''}"/>`).join('');
+  const trend=ys[ys.length-1]-ys[0];
+  const trendTxt=trend>0?`▲ שיפור של ${trend} ${o.unit}`:trend<0?`▼ ירידה של ${-trend} ${o.unit}`:'ללא שינוי';
+  return `<div class="prgraph"><svg viewBox="0 0 ${W} ${H}">
+    <defs><linearGradient id="pg${o.key.replace(/[^a-z0-9]/gi,'')}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="rgba(154,124,255,.35)"/><stop offset="1" stop-color="rgba(154,124,255,0)"/></linearGradient></defs>
+    <path d="${area}" fill="url(#pg${o.key.replace(/[^a-z0-9]/gi,'')})"/>
+    <polyline fill="none" points="${pts}" class="prline"/>${dots}
+    <text x="${pad}" y="13" class="prax">${maxY} ${o.unit}</text><text x="${pad}" y="${H-6}" class="prax">${minY}</text></svg>
+    <div class="prmeta"><span>התחלה: ${ys[0]} ${o.unit}</span><span class="${trend>0?'up':trend<0?'down':''}">${trendTxt}</span><span>שיא: 🏆 ${maxY} ${o.unit}</span></div></div>`;
+}
+function renderProgress(){
+  const el=document.getElementById('progressContent');
+  const list=performedExercises();
+  if(!list.length){el.innerHTML='<div class="empty"><div class="e1">🏆</div><div class="e2">אין עדיין נתונים לשיאים</div><div>רשום כמה אימונים ותראה כאן את השיאים וההתקדמות שלך</div></div>';return;}
+  el.innerHTML=`<div class="section-title" style="margin-top:8px">🏆 שיאים אישיים · ${list.length} תרגילים</div>`+list.map(o=>{
+    const open=state.progOpen===o.key;
+    return `<div class="prcard"><div class="prhead" data-prtoggle="${o.key}">
+      <div><div class="prname">${o.name}</div><div class="prsub">${o.count} פעמים · לאחרונה ${relDate(o.last)}</div></div>
+      <div class="prright"><div class="prbadge">🏆 ${o.pr} ${o.unit}</div><span class="prchev">${open?'▲':'▾'}</span></div></div>
+      ${open?prGraph(o):''}</div>`;
+  }).join('');
+}
+function setupProgressNav(){
+  document.getElementById('progressContent').addEventListener('click',ev=>{
+    const t=ev.target.closest('[data-prtoggle]');if(!t)return;
+    state.progOpen=state.progOpen===t.dataset.prtoggle?null:t.dataset.prtoggle;renderProgress();
+  });
+}
 function renderReminders(){
   const el=document.getElementById('remindersContent');
   const list=state.reminders.map(r=>{const days=r.days.map(d=>DAYS_HE[d]).join(' · ');
@@ -901,11 +1123,9 @@ function hideSheet(){overlay.classList.remove('on');sheet.classList.remove('on')
 overlay.addEventListener('click',hideSheet);
 
 function openSheet(editing,dateForNew){
-  state.draft=[];state.editingId=null;state.draftSearch='';state.draftCat='push';state.customSel=[];state.showCustom=false;state.expandedEx=null;
+  state.draft=[];state.editingId=null;state.draftSearch='';state.draftCat='push';state.customSel=[];state.showCustom=false;state.showTemplates=false;state.expandedEx=null;
   if(editing){state.editingId=editing.id;state.draftDate=editing.date;
-    state.draft=editing.entries.map(en=>{let x=en.exId||null;if(!x){const f=EX.find(q=>q.he===en.name);x=f?f.id:null}
-      const base={uid:uid(),exId:x,custom:en.custom||!x,name:en.name,m:en.m};
-      return en.type==='cardio'?Object.assign(base,{type:'cardio',unit:en.unit||(EXBYID[x]&&EXBYID[x].unit)||'min',minutes:en.minutes||20}):Object.assign(base,isHold(en)||en.hold?{sets:en.sets,reps:en.reps,hold:true}:{sets:en.sets,reps:en.reps});});
+    state.draft=editing.entries.map(entryToDraft);
   }else state.draftDate=dateForNew||state.selDate||todayISO();
   buildSheet();showSheet();
 }
@@ -951,9 +1171,12 @@ function buildSheet(){
     <div class="grab"></div>
     <div class="sheettop">
       <h2>${editing?'עריכת אימון':'אימון חדש'}</h2>
+      <button class="btn-ghost" id="toggleTemplates" style="margin:0 0 10px">📋 שגרות שמורות (${state.templates.length})</button>
+      <div id="templatesArea" class="hidden"></div>
       <input type="text" id="exsearch" placeholder="🔍 חיפוש מתוך ${EX.length} תרגילים...">
       <div class="catrow" id="catrow">${Object.keys(CATS).map(c=>`<button data-cat="${c}">${CATS[c]}</button>`).join('')}</div>
     </div>
+    <div class="resttimer" id="restBar"><span class="rtlabel">⏱ מנוחה בין סטים</span><button data-rest="60">60</button><button data-rest="90">90</button><button data-rest="120">120</button><button data-rest="180">180</button></div>
     <div class="exlist" id="exlist"></div>
     <button class="btn-ghost" id="toggleCustom">＋ תרגיל מותאם אישית</button>
     <div id="customArea" class="hidden">
@@ -963,6 +1186,7 @@ function buildSheet(){
       <button class="btn-ghost" id="addCustom" style="margin-top:4px">הוסף לאימון</button>
     </div>
     <div id="draftbox"></div>
+    <button class="btn-ghost" id="saveTemplate">💾 שמור אימון זה כשגרה</button>
     <div class="minimap"><div class="mmlabel">שרירים שהאימון מפעיל</div>
       <div class="mmfigs"><svg id="miniFront" viewBox="0 0 220 470"></svg><svg id="miniBack" viewBox="0 0 220 470"></svg></div></div>
     <div class="field"><label>תאריך האימון</label><input type="date" id="wdate"></div>
@@ -974,6 +1198,11 @@ function buildSheet(){
   const dt=b.querySelector('#wdate');dt.value=state.draftDate;dt.max=todayISO();
   dt.addEventListener('change',ev=>state.draftDate=ev.target.value);
   b.querySelector('#exsearch').addEventListener('input',ev=>{state.draftSearch=ev.target.value.trim();refreshList()});
+  b.querySelector('#toggleTemplates').addEventListener('click',()=>{state.showTemplates=!state.showTemplates;const a=b.querySelector('#templatesArea');a.classList.toggle('hidden',!state.showTemplates);if(state.showTemplates)renderTemplatesPanel();});
+  b.querySelector('#templatesArea').addEventListener('click',ev=>{
+    const del=ev.target.closest('[data-tdel]');if(del){ev.stopPropagation();deleteTemplate(del.dataset.tdel);return}
+    const load=ev.target.closest('[data-tload]');if(load)loadTemplate(load.dataset.tload);});
+  b.querySelector('#saveTemplate').addEventListener('click',saveTemplateFromDraft);
   b.querySelector('#catrow').addEventListener('click',ev=>{const x=ev.target.closest('[data-cat]');if(!x)return;
     state.draftCat=x.dataset.cat;state.draftSearch='';b.querySelector('#exsearch').value='';
     b.querySelectorAll('#catrow [data-cat]').forEach(c=>c.classList.toggle('on',c===x));refreshList()});
@@ -1113,12 +1342,17 @@ function refreshMini(){
     const t=r[el.dataset.muscle]||0;el.style.fill=heatColor(t);
     el.style.filter=t>0.12?`drop-shadow(0 0 ${2+t*7}px ${heatColor(t)})`:'none';});
 }
+function draftToEntries(){return state.draft.map(d=>isCardio(d)
+  ?({exId:d.exId||null,custom:!!d.custom,name:d.name,m:d.m,type:'cardio',unit:d.unit||'min',minutes:d.minutes||0})
+  :Object.assign({exId:d.exId||null,custom:!!d.custom,name:d.name,m:d.m,sets:d.sets,reps:d.reps},isHold(d)?{hold:true}:{}));}
+function entryToDraft(en){let x=en.exId||null;if(!x){const f=EX.find(q=>q.he===en.name);x=f?f.id:null}
+  const base={uid:uid(),exId:x,custom:en.custom||!x,name:en.name,m:en.m};
+  if(en.type==='cardio')return Object.assign(base,{type:'cardio',unit:en.unit||'min',minutes:en.minutes||20});
+  return Object.assign(base,(isHold(en)||en.hold)?{sets:en.sets,reps:en.reps,hold:true}:{sets:en.sets,reps:en.reps});}
 function saveDraft(){
   if(!state.draft.length)return;
   const wasEditing=!!state.editingId,savedDate=state.draftDate;
-  const entries=state.draft.map(d=>isCardio(d)
-    ?({exId:d.exId||null,custom:!!d.custom,name:d.name,m:d.m,type:'cardio',unit:d.unit||'min',minutes:d.minutes||0})
-    :Object.assign({exId:d.exId||null,custom:!!d.custom,name:d.name,m:d.m,sets:d.sets,reps:d.reps},isHold(d)?{hold:true}:{}));
+  const entries=draftToEntries();
   if(wasEditing){const w=state.workouts.find(x=>x.id===state.editingId);if(w){w.date=savedDate;w.entries=entries}}
   else state.workouts.push({id:'w'+Date.now(),date:savedDate,entries});
   saveW();closeDraft();
@@ -1191,10 +1425,10 @@ function openReminderSheet(){
 /* ================= NAV ================= */
 function switchTab(t){
   state.tab=t;
-  ['map','log','insights','reminders'].forEach(x=>document.getElementById('tab-'+x).classList.toggle('hidden',x!==t));
+  ['map','log','insights','reminders','progress'].forEach(x=>document.getElementById('tab-'+x).classList.toggle('hidden',x!==t));
   document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.tab===t));
-  document.getElementById('fab').classList.toggle('hidden',t==='reminders'||t==='log');
-  const subs={map:'מה עבד לאחרונה — ומה מחכה בתור',log:'נווט לפי חודש · שבוע · יום',insights:'מגמות והמלצות',reminders:'תזכורות אימון'};
+  document.getElementById('fab').classList.toggle('hidden',t==='reminders'||t==='log'||t==='progress');
+  const subs={map:'מה עבד לאחרונה — ומה מחכה בתור',log:'נווט לפי חודש · שבוע · יום',insights:'מגמות והמלצות',reminders:'תזכורות אימון',progress:'שיאים אישיים והתקדמות'};
   document.getElementById('subtitle').textContent=subs[t];renderAll();
 }
 function renderAll(){
@@ -1202,8 +1436,28 @@ function renderAll(){
   if(state.tab==='log')renderLog();
   if(state.tab==='insights')renderInsights();
   if(state.tab==='reminders')renderReminders();
+  if(state.tab==='progress')renderProgress();
 }
 let toastT;function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('on');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('on'),2200)}
+/* ===== REST TIMER ===== */
+let _restT=null,_restRem=0,_restTot=0;
+function fmtMMSS(s){const m=Math.floor(s/60),ss=s%60;return (m<10?'0':'')+m+':'+(ss<10?'0':'')+ss;}
+function updateRestFloat(){const f=document.getElementById('restFloat');if(!f)return;
+  if(_restT==null){f.classList.add('hidden');return;}
+  f.classList.remove('hidden');
+  const pct=_restTot?Math.max(0,_restRem/_restTot*100):0;
+  f.innerHTML=`<div class="rfbar"><div class="rffill" style="width:${pct}%"></div></div>
+    <div class="rfrow"><span class="rflabel">⏱ מנוחה</span><span class="rftime num">${fmtMMSS(_restRem)}</span>
+    <button class="rfadd" data-rest="add">+15</button><button class="rfstop" data-rest="stop">דלג</button></div>`;
+}
+function restStart(sec){restStop();_restTot=sec;_restRem=sec;updateRestFloat();
+  _restT=setInterval(()=>{_restRem--;if(_restRem<=0){restDone();return;}updateRestFloat();},1000);
+  toast('מנוחה '+sec+' שניות התחילה');}
+function restAdd(s){if(_restT==null)return;_restRem+=s;_restTot=Math.max(_restTot,_restRem);updateRestFloat();}
+function restStop(){if(_restT){clearInterval(_restT);_restT=null;}_restRem=0;_restTot=0;updateRestFloat();}
+function restDone(){if(_restT){clearInterval(_restT);_restT=null;}_restRem=0;updateRestFloat();try{navigator.vibrate&&navigator.vibrate([220,120,220]);}catch(e){}beep();toast('המנוחה הסתיימה — קדימה לסט הבא! 💪');}
+function beep(){try{const C=window.AudioContext||window.webkitAudioContext;if(!C)return;const ctx=new C();const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.type='sine';o.frequency.value=880;g.gain.setValueAtTime(.0001,ctx.currentTime);g.gain.exponentialRampToValueAtTime(.22,ctx.currentTime+.02);g.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+.45);o.start();o.stop(ctx.currentTime+.47);setTimeout(()=>ctx.close(),700);}catch(e){}}
+document.addEventListener('click',ev=>{const r=ev.target.closest('[data-rest]');if(!r)return;const v=r.dataset.rest;if(v==='stop')restStop();else if(v==='add')restAdd(15);else restStart(parseInt(v));});
 
 document.getElementById('nav').addEventListener('click',ev=>{const b=ev.target.closest('button');if(b)switchTab(b.dataset.tab)});
 document.getElementById('periodSeg').addEventListener('click',ev=>{const b=ev.target.closest('button');if(!b)return;state.period=b.dataset.p;document.querySelectorAll('#periodSeg button').forEach(x=>x.classList.toggle('on',x===b));renderAll()});
@@ -1212,7 +1466,7 @@ document.getElementById('fab').addEventListener('click',()=>openSheet(null,state
 document.getElementById('backupBtn').addEventListener('click',openBackupSheet);
 document.getElementById('resetBtn').addEventListener('click',()=>{if(confirm('לאפס את כל הנתונים ולהתחיל מחדש?')){state.workouts=[];saveW();Store.set(KEY_SEED,'1');renderAll();toast('הנתונים אופסו')}});
 
-(async function init(){await load();buildFigures();setupLogNav();state.selDate=todayISO();switchTab('map')})();
+(async function init(){await load();buildFigures();setupLogNav();setupProgressNav();state.selDate=todayISO();switchTab('map')})();
 if('serviceWorker' in navigator){
   let refreshing=false;
   navigator.serviceWorker.addEventListener('controllerchange',()=>{if(refreshing)return;refreshing=true;location.reload();});
