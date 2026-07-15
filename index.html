@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0044)file:///C:/Users/efi/Downloads/index_21.html -->
+<!-- saved from url=(0044)file:///C:/Users/efi/Downloads/index_22.html -->
 <html lang="he" dir="rtl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -329,6 +329,38 @@ input:focus{outline:none;border-color:var(--accent)}
 .toast{position:fixed;bottom:170px;inset-inline:0;margin:0 auto;max-width:340px;z-index:200;background:var(--panel3);border:1px solid var(--line2);border-radius:14px;padding:12px 16px;text-align:center;font-size:13px;opacity:0;transform:translateY(10px);transition:.3s;pointer-events:none}
 .toast.on{opacity:1;transform:translateY(0)}
 .hidden{display:none!important}
+#splash{position:fixed;inset:0;z-index:500;background:radial-gradient(120% 80% at 50% 32%,#1a1636,#0B0B12 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;transition:opacity .55s ease}
+#splash.gone{opacity:0;pointer-events:none}
+.splogo svg,.wlogo svg{width:118px;height:118px;filter:drop-shadow(0 0 22px rgba(124,92,255,.55))}
+.splogo{animation:splpop .8s cubic-bezier(.2,.9,.2,1.2)}
+@keyframes splpop{0%{transform:scale(.6);opacity:0}100%{transform:scale(1);opacity:1}}
+.spname{font-family:'Rubik';font-weight:800;font-size:26px;letter-spacing:-.5px}
+.spname span{color:var(--accent2)}
+.spdots{display:flex;gap:7px}
+.spdots i{width:8px;height:8px;border-radius:50%;background:var(--accent2);animation:spd 1s infinite ease-in-out}
+.spdots i:nth-child(2){animation-delay:.15s}.spdots i:nth-child(3){animation-delay:.3s}
+@keyframes spd{0%,100%{opacity:.3;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
+#welcome{position:fixed;inset:0;z-index:400;background:radial-gradient(120% 80% at 50% 18%,#181433,#0B0B12 72%);display:flex;align-items:center;justify-content:center;padding:24px;overflow-y:auto}
+.wcard{max-width:360px;width:100%;text-align:center}
+.wtitle{font-family:'Rubik';font-weight:800;font-size:27px;margin-top:8px}
+.wtitle span{color:var(--accent2)}
+.wtag{color:var(--muted);font-size:14px;margin:4px 0 22px}
+#wname{width:100%;background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:15px;color:var(--text);font-size:16px;text-align:center;font-family:inherit}
+#wname:focus{outline:none;border-color:var(--accent)}
+.wbtn-primary{width:100%;margin-top:12px;background:linear-gradient(135deg,#7C5CFF,#B24BE0);color:#fff;font-weight:700;font-size:16px;padding:15px;border-radius:14px;box-shadow:0 8px 24px rgba(124,92,255,.4)}
+.wbtn-primary:active{transform:scale(.98)}
+.wor{display:flex;align-items:center;gap:12px;color:var(--muted2);font-size:12px;margin:18px 0}
+.wor::before,.wor::after{content:"";flex:1;height:1px;background:var(--line)}
+.wbtn-social{width:100%;margin-top:9px;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-weight:600;font-size:14px;padding:13px;border-radius:14px;display:flex;align-items:center;justify-content:center;gap:8px;opacity:.75}
+.wbtn-social .soon{background:var(--panel3);color:var(--accent2);font-size:10px;padding:2px 7px;border-radius:10px;font-weight:700}
+.wnote{color:var(--muted2);font-size:11.5px;line-height:1.6;margin-top:16px}
+#templatesArea{margin-bottom:10px}
+.tplitem{display:flex;gap:8px;align-items:stretch;margin-bottom:7px}
+.tplload{flex:1;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:11px 13px;display:flex;justify-content:space-between;align-items:center;text-align:start}
+.tplload:active{background:var(--panel3)}
+.tplload b{font-weight:700;font-size:14px}
+.tplload span{font-size:12px;color:var(--muted)}
+.tpldel{width:42px;background:var(--panel2);border:1px solid var(--line);border-radius:12px;color:var(--bad);font-size:15px;font-weight:700}
 .resttimer{display:flex;align-items:center;gap:6px;margin-top:10px}
 .resttimer .rtlabel{color:var(--muted);font-weight:600;font-size:12.5px;margin-inline-end:auto}
 .resttimer button{background:var(--panel3);border:1px solid var(--line);border-radius:20px;padding:6px 13px;font-weight:700;font-size:13px;color:var(--accent2)}
@@ -345,10 +377,28 @@ input:focus{outline:none;border-color:var(--accent)}
 </style>
 </head>
 <body>
+<div id="splash" class="gone hidden">
+  <div class="splogo"><svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><defs><lineargradient id="lgA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7C5CFF"></stop><stop offset=".5" stop-color="#E0417A"></stop><stop offset="1" stop-color="#FF9A3C"></stop></lineargradient></defs><rect x="8" y="8" width="104" height="104" rx="28" fill="#12121C" stroke="rgba(124,92,255,.35)" stroke-width="1.5"></rect><g fill="url(#lgA)"><circle cx="60" cy="35" r="9.5"></circle><path d="M48 47 Q60 44 72 47 L68 73 Q60 77 52 73 Z"></path><ellipse cx="45.5" cy="50" rx="8.5" ry="6.5"></ellipse><ellipse cx="74.5" cy="50" rx="8.5" ry="6.5"></ellipse><rect x="34" y="47" width="8" height="30" rx="4"></rect><rect x="78" y="47" width="8" height="30" rx="4"></rect><rect x="50" y="75" width="8" height="31" rx="4"></rect><rect x="62" y="75" width="8" height="31" rx="4"></rect></g></svg></div>
+  <div class="spname">מפת <span>שרירים</span></div>
+  <div class="spdots"><i></i><i></i><i></i></div>
+</div>
+<div id="welcome" class="hidden">
+  <div class="wcard">
+    <div class="wlogo"><svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><defs><lineargradient id="lgB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7C5CFF"></stop><stop offset=".5" stop-color="#E0417A"></stop><stop offset="1" stop-color="#FF9A3C"></stop></lineargradient></defs><rect x="8" y="8" width="104" height="104" rx="28" fill="#12121C" stroke="rgba(124,92,255,.35)" stroke-width="1.5"></rect><g fill="url(#lgB)"><circle cx="60" cy="35" r="9.5"></circle><path d="M48 47 Q60 44 72 47 L68 73 Q60 77 52 73 Z"></path><ellipse cx="45.5" cy="50" rx="8.5" ry="6.5"></ellipse><ellipse cx="74.5" cy="50" rx="8.5" ry="6.5"></ellipse><rect x="34" y="47" width="8" height="30" rx="4"></rect><rect x="78" y="47" width="8" height="30" rx="4"></rect><rect x="50" y="75" width="8" height="31" rx="4"></rect><rect x="62" y="75" width="8" height="31" rx="4"></rect></g></svg></div>
+    <div class="wtitle">מפת <span>שרירים</span></div>
+    <div class="wtag">יומן האימונים החכם שלך</div>
+    <input type="text" id="wname" placeholder="איך קוראים לך?" autocomplete="name">
+    <button class="wbtn-primary" id="startBtn">בוא נתחיל 💪</button>
+    <div class="wor"><span>או</span></div>
+    <button class="wbtn-social" disabled=""><svg viewBox="0 0 24 24" width="17" height="17"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1Z"></path><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23Z"></path><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84Z"></path><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84C6.71 7.31 9.14 5.38 12 5.38Z"></path></svg> המשך עם Google <span class="soon">בקרוב</span></button>
+    <button class="wbtn-social" disabled="">📧 הרשמה עם אימייל וסיסמה <span class="soon">בקרוב</span></button>
+    <div class="wnote">חשבון וסנכרון בין מכשירים — בפיתוח. כרגע הנתונים נשמרים בבטחה במכשיר שלך.</div>
+  </div>
+</div>
 <div class="app">
   <div class="hdr">
     <div><div class="t">מפת <span>שרירים</span></div>
-      <div class="sub" id="subtitle">מה עבד לאחרונה — ומה מחכה בתור</div></div>
+      <div class="sub" id="subtitle">שלום אפי! מה עבד לאחרונה</div></div>
     <div style="display:flex;gap:8px">
       <button class="iconbtn" id="backupBtn" title="גיבוי ושחזור">💾</button>
       <button class="iconbtn" id="resetBtn" title="איפוס">⟲</button>
@@ -357,13 +407,13 @@ input:focus{outline:none;border-color:var(--accent)}
 
   <div class="topnav" id="nav">
     <button data-tab="map" class="on"><span class="ni">🫀</span><span>מפה</span></button>
-    <button data-tab="log" class=""><span class="ni">📖</span><span>יומן</span></button>
-    <button data-tab="insights" class=""><span class="ni">📊</span><span>תובנות</span></button>
+    <button data-tab="log"><span class="ni">📖</span><span>יומן</span></button>
+    <button data-tab="insights"><span class="ni">📊</span><span>תובנות</span></button>
     <button data-tab="progress"><span class="ni">🏆</span><span>שיאים</span></button>
     <button data-tab="reminders"><span class="ni">⏰</span><span>תזכורות</span></button>
   </div>
 
-  <div id="tab-map" class="">
+  <div id="tab-map">
     <div class="controls">
       <div class="seg" id="periodSeg">
         <button data-p="week" class="on">שבוע</button>
@@ -474,110 +524,8 @@ input:focus{outline:none;border-color:var(--accent)}
       <div class="nex"><button class="chip add" data-quickex="row">＋ חתירה אוסטרלית</button><button class="chip add" data-quickex="scap_pull">＋ משיכות שכמות (סקאפולה)</button><button class="chip add" data-quickex="oa_row">＋ חתירת יד אחת (משקולת)</button></div></div></div>
   </div>
 
-  <div id="tab-log" class="hidden"><div id="logContent"><div class="seg logseg"><button data-view="month" class="on">חודש</button><button data-view="week" class="">שבוע</button><button data-view="day" class="">יום</button></div><div class="lognav"><button data-nav="prev">‹</button><span class="lognavlabel">יולי 2026</span><button data-nav="next">›</button></div><div class="mgrid"><div class="mhead">א׳</div><div class="mhead">ב׳</div><div class="mhead">ג׳</div><div class="mhead">ד׳</div><div class="mhead">ה׳</div><div class="mhead">ו׳</div><div class="mhead">ש׳</div><div class="mcell empty"></div><div class="mcell empty"></div><div class="mcell empty"></div><div class="mcell  " data-day="2026-07-01">
-      <span class="mnum">1</span></div><div class="mcell  " data-day="2026-07-02">
-      <span class="mnum">2</span></div><div class="mcell  " data-day="2026-07-03">
-      <span class="mnum">3</span></div><div class="mcell  " data-day="2026-07-04">
-      <span class="mnum">4</span></div><div class="mcell  " data-day="2026-07-05">
-      <span class="mnum">5</span></div><div class="mcell  " data-day="2026-07-06">
-      <span class="mnum">6</span></div><div class="mcell  " data-day="2026-07-07">
-      <span class="mnum">7</span></div><div class="mcell  " data-day="2026-07-08">
-      <span class="mnum">8</span></div><div class="mcell  " data-day="2026-07-09">
-      <span class="mnum">9</span></div><div class="mcell  " data-day="2026-07-10">
-      <span class="mnum">10</span></div><div class="mcell  " data-day="2026-07-11">
-      <span class="mnum">11</span><span class="mdot" style="background:rgb(90,60,154);box-shadow:0 0 7px rgb(90,60,154)"></span></div><div class="mcell  " data-day="2026-07-12">
-      <span class="mnum">12</span></div><div class="mcell  " data-day="2026-07-13">
-      <span class="mnum">13</span><span class="mdot" style="background:rgb(255,154,60);box-shadow:0 0 7px rgb(255,154,60)"></span></div><div class="mcell  " data-day="2026-07-14">
-      <span class="mnum">14</span></div><div class="mcell today sel" data-day="2026-07-15">
-      <span class="mnum">15</span></div><div class="mcell  " data-day="2026-07-16">
-      <span class="mnum">16</span></div><div class="mcell  " data-day="2026-07-17">
-      <span class="mnum">17</span></div><div class="mcell  " data-day="2026-07-18">
-      <span class="mnum">18</span></div><div class="mcell  " data-day="2026-07-19">
-      <span class="mnum">19</span></div><div class="mcell  " data-day="2026-07-20">
-      <span class="mnum">20</span></div><div class="mcell  " data-day="2026-07-21">
-      <span class="mnum">21</span></div><div class="mcell  " data-day="2026-07-22">
-      <span class="mnum">22</span></div><div class="mcell  " data-day="2026-07-23">
-      <span class="mnum">23</span></div><div class="mcell  " data-day="2026-07-24">
-      <span class="mnum">24</span></div><div class="mcell  " data-day="2026-07-25">
-      <span class="mnum">25</span></div><div class="mcell  " data-day="2026-07-26">
-      <span class="mnum">26</span></div><div class="mcell  " data-day="2026-07-27">
-      <span class="mnum">27</span></div><div class="mcell  " data-day="2026-07-28">
-      <span class="mnum">28</span></div><div class="mcell  " data-day="2026-07-29">
-      <span class="mnum">29</span></div><div class="mcell  " data-day="2026-07-30">
-      <span class="mnum">30</span></div><div class="mcell  " data-day="2026-07-31">
-      <span class="mnum">31</span></div></div><div class="hint">גע ביום כדי לפתוח אותו ולערוך אימונים</div></div></div>
-  <div id="tab-insights" class="hidden"><div id="insightsContent">
-    <div class="metrics">
-      <div class="metric"><div class="mv num">0</div><div class="ml">רצף ימים</div></div>
-      <div class="metric"><div class="mv num">3</div><div class="ml">אימונים השבוע</div></div>
-      <div class="metric"><div class="mv num">3</div><div class="ml">סה״כ אימונים</div></div></div>
-    
-    <div class="card"><h3>🫁 סיבולת לב-ריאה</h3>
-    <div class="cardio-top">
-      <div class="ring"><svg viewBox="0 0 100 100"><defs><lineargradient id="cg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3ED5C8"></stop><stop offset="1" stop-color="#7C5CFF"></stop></lineargradient></defs>
-        <circle cx="50" cy="50" r="42" fill="none" stroke="var(--panel3)" stroke-width="9"></circle>
-        <circle cx="50" cy="50" r="42" fill="none" stroke="url(#cg)" stroke-width="9" stroke-linecap="round" stroke-dasharray="263.9" stroke-dashoffset="211.1" transform="rotate(-90 50 50)"></circle></svg>
-        <div class="ringc"><div class="rnum num">30</div><div class="rlab">דק׳ השבוע</div></div></div>
-      <div class="cardio-stats">
-        <div class="cstat"><b class="num">20%</b>מיעד שבועי (150 דק׳)</div>
-        <div class="cstat"><b class="num">30</b>דק׳ השבוע האחרון</div>
-        <div class="cstat"><b class="num">1</b>אימוני לב-ריאה</div></div>
-    </div>
-    <div class="cbars"><div class="cbar"><div class="cbt"><span>ריצה</span><span class="num">30 דק׳</span></div><div class="ctrack"><div class="cfill" style="width:100%"></div></div></div></div></div>
-    <div class="card"><h3>מגמת נפח ואימונים · 10 שבועות</h3>
-    <svg viewBox="0 0 320 140" class="trend"><rect x="15.6" y="118.0" width="15.2" height="0.0" rx="2" fill="rgba(124,92,255,.28)"></rect><rect x="46.0" y="118.0" width="15.2" height="0.0" rx="2" fill="rgba(124,92,255,.28)"></rect><rect x="76.4" y="118.0" width="15.2" height="0.0" rx="2" fill="rgba(124,92,255,.28)"></rect><rect x="106.8" y="118.0" width="15.2" height="0.0" rx="2" fill="rgba(124,92,255,.28)"></rect><rect x="137.2" y="118.0" width="15.2" height="0.0" rx="2" fill="rgba(124,92,255,.28)"></rect><rect x="167.6" y="118.0" width="15.2" height="0.0" rx="2" fill="rgba(124,92,255,.28)"></rect><rect x="198.0" y="118.0" width="15.2" height="0.0" rx="2" fill="rgba(124,92,255,.28)"></rect><rect x="228.4" y="118.0" width="15.2" height="0.0" rx="2" fill="rgba(124,92,255,.28)"></rect><rect x="258.8" y="14.0" width="15.2" height="104.0" rx="2" fill="rgba(124,92,255,.28)"></rect><rect x="289.2" y="66.0" width="15.2" height="52.0" rx="2" fill="rgba(124,92,255,.28)"></rect><polyline points="23.2,118.0 53.6,118.0 84.0,118.0 114.4,118.0 144.8,118.0 175.2,118.0 205.6,118.0 236.0,118.0 266.4,81.3 296.8,14.0" class="trendline"></polyline><circle cx="23.2" cy="118.0" r="3" fill="var(--accent2)"></circle><circle cx="53.6" cy="118.0" r="3" fill="var(--accent2)"></circle><circle cx="84.0" cy="118.0" r="3" fill="var(--accent2)"></circle><circle cx="114.4" cy="118.0" r="3" fill="var(--accent2)"></circle><circle cx="144.8" cy="118.0" r="3" fill="var(--accent2)"></circle><circle cx="175.2" cy="118.0" r="3" fill="var(--accent2)"></circle><circle cx="205.6" cy="118.0" r="3" fill="var(--accent2)"></circle><circle cx="236.0" cy="118.0" r="3" fill="var(--accent2)"></circle><circle cx="266.4" cy="81.3" r="3" fill="var(--accent2)"></circle><circle cx="296.8" cy="14.0" r="3" fill="var(--accent2)"></circle><text x="23.2" y="134" class="axl" text-anchor="middle">10/5</text><text x="84.0" y="134" class="axl" text-anchor="middle">24/5</text><text x="144.8" y="134" class="axl" text-anchor="middle">7/6</text><text x="205.6" y="134" class="axl" text-anchor="middle">21/6</text><text x="266.4" y="134" class="axl" text-anchor="middle">5/7</text><text x="296.8" y="134" class="axl" text-anchor="middle">12/7</text></svg>
-    <div class="trendleg"><span><i class="dotv"></i> נפח שבועי</span><span><i class="dotb"></i> מס׳ אימונים</span><span class="up">▲ 11 מהשבוע שעבר</span></div></div>
-    <div class="card"><h3>לוח עקביות · 12 שבועות</h3><div class="cboard"><div class="ccol"><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div></div><div class="ccol"><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div></div><div class="ccol"><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div></div><div class="ccol"><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div></div><div class="ccol"><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div></div><div class="ccol"><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div></div><div class="ccol"><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div></div><div class="ccol"><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div></div><div class="ccol"><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div></div><div class="ccol"><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div></div><div class="ccol"><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:rgb(90,60,154)"></div></div><div class="ccol"><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:rgb(255,154,60)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:var(--panel3)"></div><div class="ccell" style="background:transparent"></div><div class="ccell" style="background:transparent"></div><div class="ccell" style="background:transparent"></div></div></div>
-    <div class="cbleg"><span>פחות</span><i style="background:var(--panel3)"></i><i style="background:#3E3A7A"></i><i style="background:#7B3FBF"></i><i style="background:#E0417A"></i><i style="background:#FF9A3C"></i><span>יותר</span></div></div>
-    <div class="card"><h3>סטים השבוע לכל קבוצה · יעד 10-20</h3><div class="stg"><div class="stgt"><span>חזה</span><span class="num" style="color:var(--warn)">1</span></div>
-      <div class="stgtrack"><div class="stgband" style="right:41.66666666666667%;width:41.66666666666667%"></div><div class="stgfill" style="width:4.166666666666666%;background:var(--warn)"></div></div></div><div class="stg"><div class="stgt"><span>גב</span><span class="num" style="color:var(--warn)">0.5</span></div>
-      <div class="stgtrack"><div class="stgband" style="right:41.66666666666667%;width:41.66666666666667%"></div><div class="stgfill" style="width:2.083333333333333%;background:var(--warn)"></div></div></div><div class="stg"><div class="stgt"><span>כתפיים</span><span class="num" style="color:var(--warn)">0.5</span></div>
-      <div class="stgtrack"><div class="stgband" style="right:41.66666666666667%;width:41.66666666666667%"></div><div class="stgfill" style="width:2.083333333333333%;background:var(--warn)"></div></div></div><div class="stg"><div class="stgt"><span>ידיים (משיכה)</span><span class="num" style="color:var(--warn)">0</span></div>
-      <div class="stgtrack"><div class="stgband" style="right:41.66666666666667%;width:41.66666666666667%"></div><div class="stgfill" style="width:0%;background:var(--warn)"></div></div></div><div class="stg"><div class="stgt"><span>ידיים (דחיפה)</span><span class="num" style="color:var(--warn)">0.5</span></div>
-      <div class="stgtrack"><div class="stgband" style="right:41.66666666666667%;width:41.66666666666667%"></div><div class="stgfill" style="width:2.083333333333333%;background:var(--warn)"></div></div></div><div class="stg"><div class="stgt"><span>ליבה</span><span class="num" style="color:var(--warn)">1</span></div>
-      <div class="stgtrack"><div class="stgband" style="right:41.66666666666667%;width:41.66666666666667%"></div><div class="stgfill" style="width:4.166666666666666%;background:var(--warn)"></div></div></div><div class="stg"><div class="stgt"><span>ירך קדמית</span><span class="num" style="color:var(--warn)">0</span></div>
-      <div class="stgtrack"><div class="stgband" style="right:41.66666666666667%;width:41.66666666666667%"></div><div class="stgfill" style="width:0%;background:var(--warn)"></div></div></div><div class="stg"><div class="stgt"><span>ירך אחורית</span><span class="num" style="color:var(--warn)">0</span></div>
-      <div class="stgtrack"><div class="stgband" style="right:41.66666666666667%;width:41.66666666666667%"></div><div class="stgfill" style="width:0%;background:var(--warn)"></div></div></div><div class="stg"><div class="stgt"><span>ישבן</span><span class="num" style="color:var(--warn)">0</span></div>
-      <div class="stgtrack"><div class="stgband" style="right:41.66666666666667%;width:41.66666666666667%"></div><div class="stgfill" style="width:0%;background:var(--warn)"></div></div></div><div class="stg"><div class="stgt"><span>תאומים</span><span class="num" style="color:var(--warn)">0</span></div>
-      <div class="stgtrack"><div class="stgband" style="right:41.66666666666667%;width:41.66666666666667%"></div><div class="stgfill" style="width:0%;background:var(--warn)"></div></div></div>
-    <div class="hint" style="padding:6px 2px 0;text-align:start">האזור המוצל = הטווח המומלץ במחקר לפיתוח שריר (כ־10-20 סטים בשבוע לקבוצה).</div></div>
-    <div class="card"><h3>רדאר איזון · השבוע האחרון</h3><svg viewBox="0 0 220 200" class="radar"><polygon points="110.0,81.5 126.0,90.8 126.0,109.3 110.0,118.5 94.0,109.3 94.0,90.8" class="rgrid"></polygon><polygon points="110.0,63.0 142.0,81.5 142.0,118.5 110.0,137.0 78.0,118.5 78.0,81.5" class="rgrid"></polygon><polygon points="110.0,44.5 158.1,72.3 158.1,127.8 110.0,155.5 61.9,127.8 61.9,72.3" class="rgrid"></polygon><polygon points="110.0,26.0 174.1,63.0 174.1,137.0 110.0,174.0 45.9,137.0 45.9,63.0" class="rgrid"></polygon><line x1="110" y1="100" x2="110.0" y2="26.0" class="raxis"></line><line x1="110" y1="100" x2="174.1" y2="63.0" class="raxis"></line><line x1="110" y1="100" x2="174.1" y2="137.0" class="raxis"></line><line x1="110" y1="100" x2="110.0" y2="174.0" class="raxis"></line><line x1="110" y1="100" x2="45.9" y2="137.0" class="raxis"></line><line x1="110" y1="100" x2="45.9" y2="63.0" class="raxis"></line><polygon points="110.0,90.9 111.6,99.1 111.6,100.9 110.0,103.7 95.0,108.6 45.9,63.0" class="rdata"></polygon><text x="110.0" y="14.0" class="rlabel" text-anchor="middle">חזה</text><text x="187.1" y="58.5" class="rlabel" text-anchor="middle">גב</text><text x="187.1" y="147.5" class="rlabel" text-anchor="middle">כתפיים</text><text x="110.0" y="192.0" class="rlabel" text-anchor="middle">ידיים</text><text x="32.9" y="147.5" class="rlabel" text-anchor="middle">ליבה</text><text x="32.9" y="58.5" class="rlabel" text-anchor="middle">רגליים</text></svg></div>
-    <div class="card"><h3>המלצות לשיפור</h3><div class="recos">
-      <div class="reco"><div class="ic" style="background:var(--bad)22">🧊</div><div><div class="rt">אזורים שלא עבדו כלל בתקופה</div><div class="rd">כתף צדית, כתף אחורית, בייספס ועוד. התחלה טובה: הרמות צד.</div></div></div><div class="reco"><div class="ic" style="background:var(--warn)22">⚖️</div><div><div class="rt">יותר מדי דחיפה מול משיכה</div><div class="rd">הוסף מתח/חתירה כדי לשמור על כתף בריאה ויציבה.</div></div></div><div class="reco"><div class="ic" style="background:var(--ok)22">🔥</div><div><div class="rt">שבוע חזק — 3 אימונים</div><div class="rd">עקביות מצוינת. שמור על יום מנוחה אחד לפחות.</div></div></div></div></div>
-    <div class="card"><h3>💪 מוכן לאימון היום</h3><div class="readyrow"><span class="readychip">ידיים (משיכה)<b>טרם</b></span><span class="readychip">חזה<b>לפני 4 ימ׳</b></span><span class="readychip">גב<b>לפני 4 ימ׳</b></span><span class="readychip">כתפיים<b>לפני 4 ימ׳</b></span><span class="readychip">ידיים (דחיפה)<b>לפני 4 ימ׳</b></span></div></div>
-    <div class="card"><h3>איזון דחיפה / משיכה</h3>
-      <div class="bal"><div class="bh"><span>דחיפה 3</span><span>משיכה 0</span></div>
-        <div class="balbar"><div class="balmark" style="inset-inline-start:88.8888888888889%"></div></div></div>
-      <h3 style="margin-top:16px">איזון פלג עליון / תחתון</h3>
-      <div class="bal"><div class="bh"><span>עליון 4</span><span>תחתון 16</span></div>
-        <div class="balbar"><div class="balmark" style="inset-inline-start:18.181818181818183%"></div></div></div></div>
-    <div class="card"><h3>נפח לפי שריר · השבוע האחרון</h3><div class="bar"><div class="bt"><span>תאומים (גסטרוקנמיוס)</span><span class="val num">4</span></div>
-      <div class="track"><div class="fill" style="width:100%;background:rgb(255,154,60)"></div></div></div><div class="bar"><div class="bt"><span>ירך קדמית (קוואד)</span><span class="val num">3</span></div>
-      <div class="track"><div class="fill" style="width:85.71428571428571%;background:rgb(237,103,95)"></div></div></div><div class="bar"><div class="bt"><span>ירך אחורית (המסטרינג)</span><span class="val num">3</span></div>
-      <div class="track"><div class="fill" style="width:85.71428571428571%;background:rgb(237,103,95)"></div></div></div><div class="bar"><div class="bt"><span>ישבן גדול</span><span class="val num">3</span></div>
-      <div class="track"><div class="fill" style="width:85.71428571428571%;background:rgb(237,103,95)"></div></div></div><div class="bar"><div class="bt"><span>סוליאוס</span><span class="val num">3</span></div>
-      <div class="track"><div class="fill" style="width:71.42857142857143%;background:rgb(210,65,132)"></div></div></div><div class="bar"><div class="bt"><span>בטן עליונה</span><span class="val num">2</span></div>
-      <div class="track"><div class="fill" style="width:60.31746031746032%;background:rgb(165,64,163)"></div></div></div><div class="bar"><div class="bt"><span>חזה אמצעי</span><span class="val num">1</span></div>
-      <div class="track"><div class="fill" style="width:26.45502645502646%;background:rgb(66,58,126)"></div></div></div><div class="bar"><div class="bt"><span>בטן תחתונה</span><span class="val num">1</span></div>
-      <div class="track"><div class="fill" style="width:21.164021164021165%;background:rgb(58,56,114)"></div></div></div><div class="bar"><div class="bt"><span>חזה תחתון</span><span class="val num">1</span></div>
-      <div class="track"><div class="fill" style="width:15.873015873015872%;background:rgb(53,52,102)"></div></div></div><div class="bar"><div class="bt"><span>חזה עליון</span><span class="val num">0</span></div>
-      <div class="track"><div class="fill" style="width:10.582010582010582%;background:rgb(48,49,91)"></div></div></div><div class="bar"><div class="bt"><span>כתף קדמית</span><span class="val num">0</span></div>
-      <div class="track"><div class="fill" style="width:10.582010582010582%;background:rgb(48,49,91)"></div></div></div><div class="bar"><div class="bt"><span>טרייספס · ראש ארוך</span><span class="val num">0</span></div>
-      <div class="track"><div class="fill" style="width:10.582010582010582%;background:rgb(48,49,91)"></div></div></div><div class="bar"><div class="bt"><span>טרייספס · ראש צדי</span><span class="val num">0</span></div>
-      <div class="track"><div class="fill" style="width:10.582010582010582%;background:rgb(48,49,91)"></div></div></div><div class="bar"><div class="bt"><span>רחב גבי (לאטים)</span><span class="val num">0</span></div>
-      <div class="track"><div class="fill" style="width:10.582010582010582%;background:rgb(48,49,91)"></div></div></div><div class="bar"><div class="bt"><span>אלכסונים</span><span class="val num">0</span></div>
-      <div class="track"><div class="fill" style="width:10.582010582010582%;background:rgb(48,49,91)"></div></div></div><div class="bar"><div class="bt"><span>זוקפי גב (גב תחתון)</span><span class="val num">0</span></div>
-      <div class="track"><div class="fill" style="width:7.936507936507936%;background:rgb(45,47,85)"></div></div></div><div class="bar"><div class="bt"><span>כתף צדית</span><span class="val num">0</span></div>
-      <div class="track"><div class="fill" style="width:2%;background:rgb(37,42,68)"></div></div></div><div class="bar"><div class="bt"><span>כתף אחורית</span><span class="val num">0</span></div>
-      <div class="track"><div class="fill" style="width:2%;background:rgb(37,42,68)"></div></div></div><div class="bar"><div class="bt"><span>בייספס</span><span class="val num">0</span></div>
-      <div class="track"><div class="fill" style="width:2%;background:rgb(37,42,68)"></div></div></div><div class="bar"><div class="bt"><span>אמה קדמית (כופפים)</span><span class="val num">0</span></div>
-      <div class="track"><div class="fill" style="width:2%;background:rgb(37,42,68)"></div></div></div><div class="bar"><div class="bt"><span>אמה אחורית (פושטים)</span><span class="val num">0</span></div>
-      <div class="track"><div class="fill" style="width:2%;background:rgb(37,42,68)"></div></div></div><div class="bar"><div class="bt"><span>טרפז עליון</span><span class="val num">0</span></div>
-      <div class="track"><div class="fill" style="width:2%;background:rgb(37,42,68)"></div></div></div><div class="bar"><div class="bt"><span>טרפז אמצעי/תחתון</span><span class="val num">0</span></div>
-      <div class="track"><div class="fill" style="width:2%;background:rgb(37,42,68)"></div></div></div><div class="bar"><div class="bt"><span>מעוינים (רומבואידים)</span><span class="val num">0</span></div>
-      <div class="track"><div class="fill" style="width:2%;background:rgb(37,42,68)"></div></div></div><div class="bar"><div class="bt"><span>מקרבים (פנים הירך)</span><span class="val num">0</span></div>
-      <div class="track"><div class="fill" style="width:2%;background:rgb(37,42,68)"></div></div></div><div class="bar"><div class="bt"><span>ישבן אמצעי</span><span class="val num">0</span></div>
-      <div class="track"><div class="fill" style="width:2%;background:rgb(37,42,68)"></div></div></div></div></div></div>
+  <div id="tab-log" class="hidden"><div id="logContent"></div></div>
+  <div id="tab-insights" class="hidden"><div id="insightsContent"></div></div>
   <div id="tab-reminders" class="hidden"><div id="remindersContent"></div></div>
   <div id="tab-progress" class="hidden"><div id="progressContent"></div></div>
 </div>
@@ -585,7 +533,7 @@ input:focus{outline:none;border-color:var(--accent)}
 <button class="fab" id="fab"><span class="fabic">＋</span>הוסף אימון</button>
 <div class="overlay" id="overlay"></div>
 <div class="sheet" id="sheet"><div id="sheetBody"></div></div>
-<div class="toast" id="toast"></div>
+<div class="toast" id="toast">ברוך הבא, אפי! 💪</div>
 <div class="restfloat hidden" id="restFloat"></div>
 
 <script>
@@ -703,7 +651,7 @@ const Store={
   get(k){try{return localStorage.getItem(k)}catch(e){return mem[k]??null}},
   set(k,v){mem[k]=v;try{localStorage.setItem(k,v)}catch(e){}}
 };
-const KEY_W='bodymap:workouts',KEY_R='bodymap:reminders',KEY_SEED='bodymap:seeded',KEY_T='bodymap:templates';
+const KEY_W='bodymap:workouts',KEY_R='bodymap:reminders',KEY_SEED='bodymap:seeded',KEY_T='bodymap:templates',KEY_PROFILE='bodymap:profile';
 let state={workouts:[],reminders:[],templates:[],period:'week',mode:'volume',tab:'map',sel:null,progOpen:null,
   draft:[],draftDate:'',draftCat:'push',draftSearch:'',editingId:null,customSel:[],showCustom:false,showTemplates:false,expandedEx:null,
   selDate:'',logView:'month'};
@@ -734,6 +682,36 @@ async function load(){
 function saveW(){Store.set(KEY_W,JSON.stringify(state.workouts))}
 function saveR(){Store.set(KEY_R,JSON.stringify(state.reminders))}
 function saveT(){Store.set(KEY_T,JSON.stringify(state.templates))}
+function draftToEntries(){return state.draft.map(d=>isCardio(d)
+  ?({exId:d.exId||null,custom:!!d.custom,name:d.name,m:d.m,type:'cardio',unit:d.unit||'min',minutes:d.minutes||0})
+  :Object.assign({exId:d.exId||null,custom:!!d.custom,name:d.name,m:d.m,sets:d.sets,reps:d.reps},isHold(d)?{hold:true}:{}));}
+function entryToDraft(en){const base={uid:uid(),exId:en.exId||null,custom:!!en.custom,name:en.name,m:en.m};
+  if(en.type==='cardio')return Object.assign(base,{type:'cardio',unit:en.unit||'min',minutes:en.minutes||20});
+  return Object.assign(base,(isHold(en)||en.hold)?{sets:en.sets,reps:en.reps,hold:true}:{sets:en.sets,reps:en.reps});}
+function updateTplToggle(){const tt=document.getElementById('toggleTemplates');if(tt)tt.textContent='📋 שגרות שמורות ('+state.templates.length+')';}
+function saveTemplateFromDraft(){
+  if(!state.draft.length){toast('הוסף תרגילים לפני שמירת שגרה');return;}
+  const name=(prompt('שם לשגרה (למשל: יום דחיפה A):')||'').trim();if(!name)return;
+  state.templates.push({id:'t'+Date.now(),name,entries:draftToEntries()});saveT();
+  toast('השגרה "'+name+'" נשמרה 📋');updateTplToggle();
+  if(state.showTemplates)renderTemplatesPanel();
+}
+function renderTemplatesPanel(){
+  const a=document.getElementById('templatesArea');if(!a)return;
+  if(!state.templates.length){a.innerHTML='<div class="hint" style="padding:8px 4px">אין שגרות שמורות עדיין. בנה אימון ולחץ "שמור אימון זה כשגרה".</div>';return;}
+  a.innerHTML=state.templates.map(t=>`<div class="tplitem"><button class="tplload" data-tload="${t.id}"><b>${t.name}</b><span>${t.entries.length} תרגילים</span></button><button class="tpldel" data-tdel="${t.id}">✕</button></div>`).join('');
+}
+function loadTemplate(id){
+  const t=state.templates.find(x=>x.id===id);if(!t)return;
+  t.entries.forEach(en=>{const k=en.exId||('c:'+en.name);if(!state.draft.find(d=>(d.exId||('c:'+d.name))===k))state.draft.push(entryToDraft(en));});
+  state.showTemplates=false;const a=document.getElementById('templatesArea');if(a)a.classList.add('hidden');
+  afterDraftChange();toast('השגרה "'+t.name+'" נטענה');
+}
+function deleteTemplate(id){
+  const t=state.templates.find(x=>x.id===id);if(!t)return;
+  if(!confirm('למחוק את השגרה "'+t.name+'"?'))return;
+  state.templates=state.templates.filter(x=>x.id!==id);saveT();renderTemplatesPanel();updateTplToggle();
+}
 
 /* ================= COMPUTE ================= */
 function periodDays(p){return p==='week'?7:p==='month'?30:p==='year'?365:99999}
@@ -1531,7 +1509,7 @@ function switchTab(t){
   ['map','log','insights','reminders','progress'].forEach(x=>document.getElementById('tab-'+x).classList.toggle('hidden',x!==t));
   document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.tab===t));
   document.getElementById('fab').classList.toggle('hidden',t==='reminders'||t==='log'||t==='progress');
-  const subs={map:'מה עבד לאחרונה — ומה מחכה בתור',log:'נווט לפי חודש · שבוע · יום',insights:'מגמות והמלצות',reminders:'תזכורות אימון',progress:'שיאים אישיים והתקדמות'};
+  const subs={map:(profile&&profile.name?('שלום '+profile.name.split(' ')[0]+'! '):'')+'מה עבד לאחרונה',log:'נווט לפי חודש · שבוע · יום',insights:'מגמות והמלצות',reminders:'תזכורות אימון',progress:'שיאים אישיים והתקדמות'};
   document.getElementById('subtitle').textContent=subs[t];renderAll();
 }
 function renderAll(){
@@ -1569,7 +1547,19 @@ document.getElementById('fab').addEventListener('click',()=>openSheet(null,state
 document.getElementById('backupBtn').addEventListener('click',openBackupSheet);
 document.getElementById('resetBtn').addEventListener('click',()=>{if(confirm('לאפס את כל הנתונים ולהתחיל מחדש?')){state.workouts=[];saveW();Store.set(KEY_SEED,'1');renderAll();toast('הנתונים אופסו')}});
 
-(async function init(){await load();buildFigures();setupLogNav();setupProgressNav();state.selDate=todayISO();switchTab('map')})();
+let profile=null;
+function saveProfile(){Store.set(KEY_PROFILE,JSON.stringify(profile));}
+function enterApp(){const w=document.getElementById('welcome');if(w)w.classList.add('hidden');}
+function submitWelcome(){const inp=document.getElementById('wname');const n=(inp.value||'').trim();if(!n){inp.focus();inp.style.borderColor='var(--bad)';return;}profile={name:n,createdAt:Date.now()};saveProfile();enterApp();switchTab('map');setTimeout(()=>toast('ברוך הבא, '+n.split(' ')[0]+'! 💪'),300);}
+function hideSplash(){const s=document.getElementById('splash');if(!s)return;s.classList.add('gone');setTimeout(()=>s.classList.add('hidden'),650);if(!profile)document.getElementById('welcome').classList.remove('hidden');}
+(async function init(){
+  await load();
+  const p=await Store.get(KEY_PROFILE);profile=p?JSON.parse(p):null;
+  buildFigures();setupLogNav();setupProgressNav();state.selDate=todayISO();switchTab('map');
+  const sb=document.getElementById('startBtn');if(sb)sb.addEventListener('click',submitWelcome);
+  const wn=document.getElementById('wname');if(wn)wn.addEventListener('keydown',ev=>{if(ev.key==='Enter')submitWelcome();});
+  setTimeout(hideSplash,1500);
+})();
 if('serviceWorker' in navigator){
   let refreshing=false;
   navigator.serviceWorker.addEventListener('controllerchange',()=>{if(refreshing)return;refreshing=true;location.reload();});
